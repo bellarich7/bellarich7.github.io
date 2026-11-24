@@ -297,13 +297,17 @@ h2 em{font-style:normal;color:var(--gold-d)}
 .philo__quote{margin:clamp(30px,4vw,44px) 0 0;padding:22px 0 0;border-top:1px solid var(--line);
   font-family:var(--serif);font-size:clamp(16px,1.55vw,19px);line-height:1.8;color:var(--ink);font-weight:400}
 .philo__quote span{display:block;margin-top:10px;font-family:var(--sans);font-size:13px;letter-spacing:.1em;color:var(--muted-l)}
-.philo__text h2{font-size:clamp(28px,3.8vw,50px);line-height:1.46}
+.philo__text h2{font-size:clamp(28px,3.8vw,50px);line-height:1.46;font-weight:600;color:#0B1424}
+/* 강조어(다.르.다)는 금빛 성격은 남기되 종이 바탕에서 더 짙게 읽히도록 톤을 내린다 */
+.philo__text h2 em{color:#7A5B36}
 .philo__text p{margin:0 0 20px;font-size:clamp(18px,1.55vw,22px);line-height:1.88;color:#4A5464}
 .philo__text p:last-child{margin-bottom:0}
 .philo__text strong{color:var(--ink);font-weight:600}
 
 /* ---------- solutions ---------- */
 .sol__head{max-width:760px;margin-bottom:clamp(30px,4vw,48px)}
+.sol__head h2{font-weight:600;color:#0B1424}
+.sol__head h2 em{color:#7A5B36}
 .sol-hint{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:12.5px;letter-spacing:.02em;color:var(--muted);font-weight:500}
 .sol-hint::before{content:"";width:16px;height:1px;background:var(--gold)}
 .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.1vw,14px);border-bottom:0;margin-bottom:clamp(26px,3.4vw,42px)}
@@ -450,6 +454,22 @@ h2 em{font-style:normal;color:var(--gold-d)}
 .about__top{display:block}
 .about__body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3.2vw,52px)}
 .about__body p{font-size:17.5px;line-height:1.85;color:var(--muted);font-weight:500;margin:0}
+/* 대표 소개 영상 카드 — 유튜브 링크를 받은 뒤 About의 대표 사진 아래에서 사용한다.
+   (지금은 쓰는 곳이 없어 화면에 아무 영향이 없다) */
+.video-card{display:block;margin:18px 0 0;border:1px solid var(--line);background:#fff;overflow:hidden;
+  transition:.35s var(--ease)}
+.video-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.video-card__thumb{position:relative;display:block;aspect-ratio:16/9;background:#0B1933 center/cover no-repeat}
+.video-card__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:62px;height:62px;
+  border-radius:50%;background:rgba(11,25,51,.72);border:1px solid rgba(255,255,255,.65);
+  display:flex;align-items:center;justify-content:center;transition:.3s var(--ease)}
+.video-card:hover .video-card__play{background:var(--gold);border-color:var(--gold)}
+.video-card__play::before{content:"";width:0;height:0;border-style:solid;border-width:9px 0 9px 15px;
+  border-color:transparent transparent transparent #fff;margin-left:3px}
+.video-card:hover .video-card__play::before{border-left-color:var(--navy)}
+.video-card__cap{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:12px 16px;font-size:14px;line-height:1.4;font-weight:500;color:var(--ink)}
+.video-card__cap i{font-style:normal;font-size:11px;color:var(--gold-d)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 clamp(16px,2.2vw,24px)}
 .chip{font-size:13px;letter-spacing:.02em;color:#0B1933;border:1px solid rgba(11,25,51,.28);padding:7px 14px;border-radius:999px;background:#fff;font-weight:600}
 
@@ -508,7 +528,16 @@ h2 em{font-style:normal;color:var(--gold-d)}
 .contact__panel{border:1px solid rgba(255,255,255,.14);padding:clamp(24px,3vw,36px);background:rgba(255,255,255,.03);backdrop-filter:blur(2px)}
 .contact__panel h3{font-family:var(--serif);font-size:20px;font-weight:400;margin:0 0 8px;color:#F6F3ED}
 .contact__panel p{margin:0 0 22px;font-size:14.5px;line-height:1.8;color:rgba(245,241,233,.94)}
-.contact__acts{display:flex;flex-direction:column;gap:10px}
+.contact__acts{display:flex;flex-direction:column;gap:14px}
+/* 보조 링크(진단·카카오)는 작은 글씨 링크로 한 줄에 */
+.contact__links{display:flex;flex-wrap:wrap;align-items:center;gap:0 20px}
+.contact__links a{display:inline-flex;align-items:center;gap:5px;min-height:44px;padding:0 1px;
+  font-size:13px;letter-spacing:.01em;color:rgba(242,239,232,.86);transition:.3s var(--ease)}
+.contact__links a:hover{color:#fff}
+/* 밑줄은 글자에만 붙인다(터치 영역 44px는 링크 박스가 담당) */
+.contact__links .lb{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:.3s var(--ease)}
+.contact__links a:hover .lb{border-bottom-color:var(--gold)}
+.contact__links .ar{font-size:10px;color:var(--gold);transform:translateY(-.5px)}
 .contact__panel .btn{width:100%;min-height:50px;padding:14px 24px}
 .contact__panel .contact__hours{margin:18px 0 0;font-size:13px;line-height:1.7;color:rgba(242,239,232,.8)}
 .btn--outline{border-color:rgba(197,164,126,.55);color:var(--gold-l)}
@@ -633,7 +662,15 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .about__top{gap:30px}
   .about__body{grid-template-columns:1fr;gap:14px}
   .br-logo--nav{height:30px}
-  .hero__brand{display:none}
+  /* 모바일 히어로에도 PC와 같은 브랜드 로고를 왼쪽에 그대로 보여 준다.
+     높이는 PC(40~54px)보다 조금 낮춰 390px 폭에서 주변 요소를 밀지 않을 만큼만 줄인다. */
+  .hero__brand{display:flex;align-items:center;gap:12px;margin:0 0 14px;
+    transition:opacity .3s var(--ease),visibility .3s var(--ease)}
+  .hero__brand::after{flex-basis:72px}
+  .br-logo--hero{height:clamp(36px,10.5vw,46px)}
+  /* 스크롤해 상단 고정 내비 로고가 나타나면 히어로 로고는 사라져 두 로고가 겹쳐 보이지 않는다.
+     (PC와 같은 원칙 — 로고는 한 번에 하나만) 자리를 계속 차지하므로 레이아웃은 흔들리지 않는다. */
+  body:has(.nav.is-stuck) .hero__brand{opacity:0;visibility:hidden}
   .contact__grid{grid-template-columns:1fr;gap:34px}
   .books{grid-template-columns:1fr 1fr}
   .books__note{grid-column:1/-1;padding-left:0;margin-top:6px}
@@ -717,7 +754,7 @@ h2 em{font-style:normal;color:var(--gold-d)}
     <li><a href="#contact"><em>07</em>상담신청</a></li>
   </ul>
   <div class="mm-foot">
-    <a href="check/" target="_blank" rel="noopener">CHECK &nbsp;1분 법인 자산 건강검진</a>
+    <a href="check/" target="_blank" rel="noopener">CHECK &nbsp;1분 자산 건강검진</a>
     <a href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener">FORM &nbsp;상담 신청</a>
     <a href="tel:010-4825-5383">TEL &nbsp;010-4825-5383</a>
     <a href="mailto:bellarich7@naver.com">MAIL &nbsp;bellarich7@naver.com</a>
@@ -756,6 +793,19 @@ h2 em{font-style:normal;color:var(--gold-d)}
   <!-- ABOUT / CEO -->
   <section class="section" id="about">
     <div class="wrap">
+      <!-- 대표 소개 영상 카드 자리: 자영님 유튜브 링크 수령 후 대표 사진 바로 아래에 넣는다. (링크 미수령 → 공개 보류)
+           위치: About 섹션 대표 사진 칼럼의 사진 바로 아래 (모바일 390px에서는 사진 아래로 자연스럽게 쌓임)
+           규격: 카드 폭 = 사진 칼럼 폭 / 16:9 썸네일 + 가운데 재생 버튼 + 캡션 "김자영 대표 소개 영상", 클릭 시 새 탭 유튜브
+           썸네일: 가능하면 base64 인라인 임베드(img.youtube.com/vi/{영상ID}/hqdefault.jpg 1장), 용량이 크면 외부 URL 사용
+           예시)
+           <a class="video-card" href="https://www.youtube.com/watch?v=【영상ID】" target="_blank" rel="noopener"
+              aria-label="김자영 대표 소개 영상 유튜브에서 보기">
+             <span class="video-card__thumb" style="background-image:url(data:image/jpeg;base64,【썸네일】)">
+               <span class="video-card__play" aria-hidden="true"></span>
+             </span>
+             <span class="video-card__cap">김자영 대표 소개 영상 <i>YouTube ↗</i></span>
+           </a>
+      -->
       <div class="about__top">
         <div class="chips rv">
           <span class="chip">부동산전문가 20년</span>
@@ -1015,8 +1065,17 @@ h2 em{font-style:normal;color:var(--gold-d)}
           <!-- 상담신청 링크: 아래 1번 버튼과 스크립트 상단 CONTACT_LINK 상수 두 곳만 같은 주소(구글 폼 응답 주소)로 유지하면 됩니다. -->
           <div class="contact__acts">
             <a class="btn btn--gold" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청 <span>→</span></a>
-            <a class="btn btn--outline" href="check/" target="_blank" rel="noopener">1분 법인 자산 건강검진 <span>↗</span></a>
-            <a class="btn btn--outline" href="https://pf.kakao.com/_xkySDn" target="_blank" rel="noopener">카카오채널 친구 추가 <span>↗</span></a>
+            <!-- 절세 시뮬레이션 버튼: 링크 수령 후 상담 신청 바로 아래(둘째 줄)에 아래 규격으로 추가한다.
+                 자영님 링크가 아직 없어 비활성 상태로도 공개하지 않는다.
+                 규격: class="btn btn--outline" / 상담 신청과 같은 크기(패널에서 width:100%, 같은 padding·폰트)
+                 문구: 개인 소득세 절세 시뮬레이션 <span>↗</span> / target="_blank" rel="noopener"
+            <a class="btn btn--outline" href="【절세 시뮬레이션 링크】" target="_blank" rel="noopener">개인 소득세 절세 시뮬레이션 <span>↗</span></a>
+            -->
+            <!-- 셋째 줄: 보조 링크 2개를 작은 글씨로 한 줄에 -->
+            <div class="contact__links">
+              <a href="check/" target="_blank" rel="noopener"><span class="lb">1분 자산 건강검진</span><span class="ar">↗</span></a>
+              <a href="https://pf.kakao.com/_xkySDn" target="_blank" rel="noopener"><span class="lb">카카오채널 친구 추가</span><span class="ar">↗</span></a>
+            </div>
           </div>
           <p class="contact__hours">평일 09:00 – 21:00 · 상담 내용은 비밀이 보장됩니다</p>
         </div>
