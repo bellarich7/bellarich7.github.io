@@ -529,16 +529,12 @@ h2 em{font-style:normal;color:var(--gold-d)}
 .contact__panel{border:1px solid rgba(255,255,255,.14);padding:clamp(24px,3vw,36px);background:rgba(255,255,255,.03);backdrop-filter:blur(2px)}
 .contact__panel h3{font-family:var(--serif);font-size:20px;font-weight:400;margin:0 0 8px;color:#F6F3ED}
 .contact__panel p{margin:0 0 22px;font-size:14.5px;line-height:1.8;color:rgba(245,241,233,.94)}
-.contact__acts{display:flex;flex-direction:column;gap:14px}
-/* 보조 링크(진단·카카오)는 작은 글씨 링크로 한 줄에 */
-.contact__links{display:flex;flex-wrap:wrap;align-items:center;gap:0 20px}
-.contact__links a{display:inline-flex;align-items:center;gap:5px;min-height:44px;padding:0 1px;
-  font-size:13px;letter-spacing:.01em;color:rgba(242,239,232,.86);transition:.3s var(--ease)}
-.contact__links a:hover{color:#fff}
-/* 밑줄은 글자에만 붙인다(터치 영역 44px는 링크 박스가 담당) */
-.contact__links .lb{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:.3s var(--ease)}
-.contact__links a:hover .lb{border-bottom-color:var(--gold)}
-.contact__links .ar{font-size:10px;color:var(--gold);transform:translateY(-.5px)}
+.contact__acts{display:flex;flex-direction:column;gap:12px}
+/* 셋째 줄: 진단·카카오를 반반 폭의 작은 알약 버튼으로 한 줄에 */
+.contact__acts-pair{display:flex;gap:8px}
+.contact__acts-pair .btn{flex:1 1 0;min-width:0;width:auto;min-height:44px;padding:10px 6px;
+  gap:4px;font-size:clamp(11.5px,3.15vw,13px);letter-spacing:0;white-space:nowrap}
+.contact__acts-pair .btn span{font-size:10px}
 .contact__panel .btn{width:100%;min-height:50px;padding:14px 24px}
 .contact__panel .contact__hours{margin:18px 0 0;font-size:13px;line-height:1.7;color:rgba(242,239,232,.8)}
 .btn--outline{border-color:rgba(197,164,126,.55);color:var(--gold-l)}
@@ -672,7 +668,7 @@ h2 em{font-style:normal;color:var(--gold-d)}
   /* 스크롤해 상단 고정 내비 로고가 나타나면 히어로 로고는 사라져 두 로고가 겹쳐 보이지 않는다.
      (PC와 같은 원칙 — 로고는 한 번에 하나만) 자리를 계속 차지하므로 레이아웃은 흔들리지 않는다. */
   body:has(.nav.is-stuck) .hero__brand{opacity:0;visibility:hidden}
-  .contact__grid{grid-template-columns:1fr;gap:34px}
+  .contact__grid{grid-template-columns:minmax(0,1fr);gap:34px}
   .books{grid-template-columns:1fr 1fr}
   .books__note{grid-column:1/-1;padding-left:0;margin-top:6px}
   .career{grid-template-columns:1fr;gap:20px}
@@ -1062,17 +1058,14 @@ h2 em{font-style:normal;color:var(--gold-d)}
           <p>지금 상황을 남겨 주시면 담당 전문가가 확인 후 연락드립니다. 먼저 내 법인 자산을 1분 검진으로 점검해 보셔도 좋습니다.</p>
           <!-- 상담신청 링크: 아래 1번 버튼과 스크립트 상단 CONTACT_LINK 상수 두 곳만 같은 주소(구글 폼 응답 주소)로 유지하면 됩니다. -->
           <div class="contact__acts">
+            <!-- 1줄: 상담 신청 (큰 채운 버튼, 전체 폭) -->
             <a class="btn btn--gold" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청 <span>→</span></a>
-            <!-- 절세 시뮬레이션 버튼: 링크 수령 후 상담 신청 바로 아래(둘째 줄)에 아래 규격으로 추가한다.
-                 자영님 링크가 아직 없어 비활성 상태로도 공개하지 않는다.
-                 규격: class="btn btn--outline" / 상담 신청과 같은 크기(패널에서 width:100%, 같은 padding·폰트)
-                 문구: 개인 소득세 절세 시뮬레이션 <span>↗</span> / target="_blank" rel="noopener"
-            <a class="btn btn--outline" href="【절세 시뮬레이션 링크】" target="_blank" rel="noopener">개인 소득세 절세 시뮬레이션 <span>↗</span></a>
-            -->
-            <!-- 셋째 줄: 보조 링크 2개를 작은 글씨로 한 줄에 -->
-            <div class="contact__links">
-              <a href="check/" target="_blank" rel="noopener"><span class="lb">1분 자산 건강검진</span><span class="ar">↗</span></a>
-              <a href="https://pf.kakao.com/_xkySDn" target="_blank" rel="noopener"><span class="lb">카카오채널 친구 추가</span><span class="ar">↗</span></a>
+            <!-- 2줄: 개인 소득세 절세 시뮬레이션 — 상담 신청과 같은 버튼(btn--gold, 전체 폭) -->
+            <a class="btn btn--gold" href="https://invest.k4holdings.co.kr/?ref=A9CC2E79" target="_blank" rel="noopener">개인 소득세 절세 시뮬레이션 <span>↗</span></a>
+            <!-- 3줄: 1분 자산 건강검진 · 카카오채널 친구 추가 (반반 폭 작은 알약 버튼) -->
+            <div class="contact__acts-pair">
+              <a class="btn btn--outline" href="check/" target="_blank" rel="noopener">1분 자산 건강검진 <span>↗</span></a>
+              <a class="btn btn--outline" href="https://pf.kakao.com/_xkySDn" target="_blank" rel="noopener">카카오채널 친구 추가 <span>↗</span></a>
             </div>
           </div>
           <p class="contact__hours">평일 09:00 – 21:00 · 상담 내용은 비밀이 보장됩니다</p>
