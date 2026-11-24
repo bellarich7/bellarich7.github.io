@@ -171,7 +171,7 @@ h2 em{font-style:normal;color:var(--gold-d)}
 /* ---------- hero ---------- */
 .hero{
   position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;
-  padding:calc(var(--head-h) + clamp(22px,3.2vh,44px)) 0 clamp(20px,2.4vh,32px);
+  padding:calc(var(--head-h) + clamp(8px,1.6vh,24px)) 0 clamp(34px,5.4vh,70px);
   background:var(--navy);color:#fff;overflow:hidden;
 }
 .hero__media{
@@ -194,6 +194,12 @@ h2 em{font-style:normal;color:var(--gold-d)}
 .hero__brand{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin:0 0 clamp(14px,1.8vw,20px)}
 .hero__brand::after{content:"";flex:0 1 132px;height:1px;
   background:linear-gradient(90deg,rgba(197,164,126,.65),rgba(197,164,126,0))}
+/* 로고와 영문 캡션을 같은 줄에 올린다(윗선 정렬). 캡션은 오른쪽 끝. */
+.hero__top{display:flex;align-items:flex-start;justify-content:space-between;gap:clamp(20px,3vw,44px);
+  margin:0 0 clamp(22px,3vw,34px)}
+.hero__top .hero__brand{margin:0;flex:0 0 auto}
+.hero__top .hero__brand::after{flex:0 0 clamp(64px,9vw,132px)}
+.hero__top .hero__eyebrow{margin:0;white-space:nowrap}
 .hero__eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 clamp(22px,3vw,34px);
   font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);font-weight:500}
 .hero__eyebrow::before{content:"";width:36px;height:1px;background:var(--gold);opacity:.8}
@@ -244,7 +250,8 @@ h2 em{font-style:normal;color:var(--gold-d)}
 
 /* short desktop screens: keep the whole hero above the fold */
 @media (min-width:901px) and (min-height:841px) and (max-height:960px){
-  .hero{padding-top:calc(var(--head-h) + 14px);padding-bottom:14px}
+  .hero{padding-top:calc(var(--head-h) + 2px);
+    padding-bottom:clamp(14px, calc(100vh - 840px), 70px)}
   .hero__brand{margin-bottom:14px}
   .hero__eyebrow{margin-bottom:22px}
   .hero h1{margin-bottom:18px}
@@ -256,7 +263,7 @@ h2 em{font-style:normal;color:var(--gold-d)}
 }
 
 @media (min-width:901px) and (max-height:840px){
-  .hero{padding-top:calc(var(--head-h) + 18px);padding-bottom:18px}
+  .hero{padding-top:calc(var(--head-h) + 6px);padding-bottom:40px}
   .hero h1{font-size:clamp(26px,3.5vw,46px);line-height:1.4;margin-bottom:14px}
   .hero__brand{margin-bottom:10px}
   .hero__sub{margin-bottom:16px}
@@ -644,6 +651,8 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .hero{flex-direction:column;align-items:stretch;min-height:auto;
     padding-top:calc(var(--head-h) + 34px);padding-bottom:0;overflow:visible}
   .hero__in{order:1}
+  .hero__top{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:18px}
+  .hero__top .hero__eyebrow{white-space:normal;margin:0}
   .hero__eyebrow{font-size:10.5px;letter-spacing:.2em;margin-bottom:18px}
   .hero__media{order:2;position:relative;inset:auto;width:auto;height:min(92vw,470px);max-width:none;
     margin-top:clamp(26px,5vw,40px);background-position:50% bottom;background-size:auto 100%;opacity:1;z-index:1}
@@ -765,10 +774,12 @@ h2 em{font-style:normal;color:var(--gold-d)}
     <div class="hero__glow" aria-hidden="true"></div>
     <div class="hero__media" role="img" aria-label="벨라리치 김자영 대표 프로필"></div>
     <div class="hero__in wrap">
-      <div class="hero__brand">
-        <svg class="br-logo br-logo--hero" viewBox="0 0 237.33 62.74" role="img" aria-label="벨라리치 BellaRich"><use href="#brLogo"/></svg>
+      <div class="hero__top">
+        <div class="hero__brand">
+          <svg class="br-logo br-logo--hero" viewBox="0 0 237.33 62.74" role="img" aria-label="벨라리치 BellaRich"><use href="#brLogo"/></svg>
+        </div>
+        <p class="hero__eyebrow">Corporate Real Estate &amp; Asset Solutions</p>
       </div>
-      <p class="hero__eyebrow">Corporate Real Estate &amp; Asset Solutions</p>
       <h1>법인 CEO에게는<br>법인을 잘 아는 <em>부동산 전문가</em>가 필요합니다</h1>
       <p class="hero__sub">법인과 부동산을 잇는 1:1 마스터플랜, <b>벨라리치(주)</b><br><span class="hero__sub-2">매입·운용·승계·경영지원까지 한 자리에서 설계합니다.</span></p>
       <div class="hero__actions">
