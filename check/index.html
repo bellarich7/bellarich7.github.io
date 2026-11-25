@@ -292,6 +292,12 @@
   .section-title em {
     font-style: normal; color: #b08d4f;
   }
+  /* WHY BELLARICH 제목: '아는'이 두 줄로 쪼개지지 않도록 어절 단위로만 줄바꿈 */
+  .why-title { word-break: keep-all; }
+  .why-title .br-why { display: none; }
+  @media (max-width: 480px) {
+    .why-title .br-why { display: inline; }
+  }
   .section-desc {
     font-size: 15px; color: #5a6478;
     line-height: 1.7; margin: 0 auto;
@@ -2556,7 +2562,7 @@ const CATEGORY_META = [
     <div class="container">
       <div class="section-head">
         <div class="section-eyebrow">WHY BELLARICH</div>
-        <h2 class="section-title">법인CEO에게는 <em>법인을 잘 아는 부동산 전문가</em>가 필요하다</h2>
+        <h2 class="section-title why-title">법인CEO에게는 <em>법인을 잘<br class="br-why" />아는 부동산 전문가</em>가 필요하다</h2>
         <p class="section-desc">부동산 전문가 · 자산관리 · 법인 전문가 — 세 분야의 교집합에서 찾은 유일한 융합 모델</p>
       </div>
 
