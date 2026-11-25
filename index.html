@@ -377,6 +377,16 @@ h2 em{font-style:normal;color:var(--gold-d)}
 .card__more{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.1em;color:var(--card-more);margin-top:auto;font-weight:600}
 .card__more i{width:16px;height:1px;background:currentColor;display:block;transition:width .4s var(--ease)}
 .card:hover .card__more i{width:26px}
+/* 카드 하단 액션 (2026-11-25) — '자세히' 옆에 '상담 신청' 링크를 같은 줄에 둡니다.
+   카드를 열지 않고도 바로 상담 신청으로 갈 수 있게 하되, 목록이 산만해지지 않도록
+   버튼 박스 없이 같은 타이포의 텍스트 링크로만 둡니다. 터치 영역은 44px 높이를 확보합니다. */
+.card{cursor:pointer}
+.card__act{display:flex;align-items:center;gap:9px;margin-top:auto}
+.card__act .card__more{margin-top:0;min-height:44px;padding:0;align-items:center}
+.card__sep{color:var(--card-more);opacity:.5;font-size:12px;line-height:1;margin-top:-1px}
+.card__act a.card__more{white-space:nowrap;transition:color .3s var(--ease)}
+.card__act a.card__more:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.card__act a.card__more:focus-visible{outline-offset:2px}
 /* CTA card stays navy on every tab */
 .card--dark{background:var(--navy);border-color:rgba(197,164,126,.32);color:#fff}
 .card--dark h3{color:#fff}
@@ -979,13 +989,13 @@ h2 em{font-style:normal;color:var(--gold-d)}
       <div class="panel" id="panel-life" role="tabpanel" aria-labelledby="tab-life">
         <p class="panel__note">법인CEO 생애주기별 부동산 Plan</p>
         <div class="cards">
-          <button class="card" data-plan="inv1"><span class="card__no">01</span><h3>사옥/공장 만들기 플랜</h3><p>건물·지식산업센터·공장·토지를 매입해 사옥으로 사용하며 자본이득까지 함께 영위합니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="inv2"><span class="card__no">02</span><h3>가족법인 부동산 플랜</h3><p>꼬마빌딩 건물주의 꿈을 자녀와 나눕니다. 시세차익은 자녀에게, 월세는 직접.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="inv3"><span class="card__no">03</span><h3>CEO 은퇴 플랜</h3><p>수익형 부동산과 공유 비즈니스센터로 은퇴 후 노후소득을 설계합니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="inv4"><span class="card__no">04</span><h3>CEO 자녀 보금자리 플랜</h3><p>청약통장 없이도 서울에서 내 집 마련. 소규모재개발·재건축·저평가 아파트 전략.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="inv5"><span class="card__no">05</span><h3>개인소득세 절세 플랜</h3><p>벤처투자 소득공제 구조로 투자구간별 공제율과 소득공제액을 함께 설계합니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="inv6"><span class="card__no">06</span><h3>부동산 자산운용 플랜</h3><p>부동산·현금 두 축의 자산운용. 투자기간과 자산범위에 맞춘 실물·대체투자.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card card--wide" data-plan="suc1"><span class="card__no">07</span><h3>현물출자 법인전환<br>승계플랜</h3><p>개인 명의 부동산을 현물출자로 법인에 옮기고, 그 법인 지분을 자녀에게 — 부동산과 법인 양쪽에서 승계를 설계합니다.</p><span class="card__more"><i></i>자세히</span><span class="card__next" aria-hidden="true">가업승계 플랜 탭 →</span></button>
+          <div class="card" data-plan="inv1"><span class="card__no">01</span><h3>사옥/공장 만들기 플랜</h3><p>건물·지식산업센터·공장·토지를 매입해 사옥으로 사용하며 자본이득까지 함께 영위합니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="inv2"><span class="card__no">02</span><h3>가족법인 부동산 플랜</h3><p>꼬마빌딩 건물주의 꿈을 자녀와 나눕니다. 시세차익은 자녀에게, 월세는 직접.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="inv3"><span class="card__no">03</span><h3>CEO 은퇴 플랜</h3><p>수익형 부동산과 공유 비즈니스센터로 은퇴 후 노후소득을 설계합니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="inv4"><span class="card__no">04</span><h3>CEO 자녀 보금자리 플랜</h3><p>청약통장 없이도 서울에서 내 집 마련. 소규모재개발·재건축·저평가 아파트 전략.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card card--link" data-href="/plan/tax/"><span class="card__no">05</span><h3>개인소득세 절세 플랜</h3><p>벤처투자 소득공제 구조로 투자구간별 공제율과 소득공제액을 함께 설계합니다.</p><div class="card__act"><a class="card__more" href="/plan/tax/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="inv6"><span class="card__no">06</span><h3>부동산 자산운용 플랜</h3><p>부동산·현금 두 축의 자산운용. 투자기간과 자산범위에 맞춘 실물·대체투자.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card card--wide" data-plan="suc1"><span class="card__no">07</span><h3>현물출자 법인전환<br>승계플랜</h3><p>개인 명의 부동산을 현물출자로 법인에 옮기고, 그 법인 지분을 자녀에게 — 부동산과 법인 양쪽에서 승계를 설계합니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div><span class="card__next" aria-hidden="true">가업승계 플랜 탭 →</span></div>
         <div class="suc-block" id="succession" data-label="부동산 승계 구조">
           <div class="suc-block__head">
             <p class="eyebrow">Succession Structure</p>
@@ -1047,9 +1057,9 @@ h2 em{font-style:normal;color:var(--gold-d)}
       <div class="panel" id="panel-suc" role="tabpanel" aria-labelledby="tab-suc" hidden>
         <p class="panel__note">자녀 창업법인 · 가업상속공제·증여특례 · 상속·증여 신탁</p>
         <div class="cards cards--3">
-          <button class="card" data-plan="suc2"><span class="card__no">01</span><h3>자녀 창업법인으로<br>가업승계</h3><p>자녀 창업법인을 활용한 승계. 요건 진단부터 지분·경영권 이전까지 로드맵을 만듭니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="suc3"><span class="card__no">02</span><h3>가업상속공제<br>· 증여특례</h3><p>가업상속공제와 가업승계 증여특례 요건을 사전에 진단하고, 사후관리까지 설계합니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="suc4"><span class="card__no">03</span><h3>상속 · 증여 신탁</h3><p>유언·신탁 등 법적 수단을 통한 승계 구조. 법무법인 서초 자산관리센터와 협업합니다.</p><span class="card__more"><i></i>자세히</span></button>
+          <div class="card" data-plan="suc2"><span class="card__no">01</span><h3>자녀 창업법인으로<br>가업승계</h3><p>자녀 창업법인을 활용한 승계. 요건 진단부터 지분·경영권 이전까지 로드맵을 만듭니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="suc3"><span class="card__no">02</span><h3>가업상속공제<br>· 증여특례</h3><p>가업상속공제와 가업승계 증여특례 요건을 사전에 진단하고, 사후관리까지 설계합니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="suc4"><span class="card__no">03</span><h3>상속 · 증여 신탁</h3><p>유언·신탁 등 법적 수단을 통한 승계 구조. 법무법인 서초 자산관리센터와 협업합니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
           <a class="card card--cta" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener"><span class="card__no">04</span><h3>어떤 메뉴를 골라야 할지<br>모르겠다면</h3><p>지금 상황을 남겨 주시면 필요한 조합을 1:1로 설계해 드립니다.</p><span class="card__more"><i></i>상담 신청</span></a>
         </div>
 
@@ -1058,11 +1068,11 @@ h2 em{font-style:normal;color:var(--gold-d)}
       <div class="panel" id="panel-fin" role="tabpanel" aria-labelledby="tab-fin" hidden>
         <p class="panel__note">재무구조·세무·지배구조·M&amp;A까지, 법인의 재무와 구조를 정리합니다</p>
         <div class="cards">
-          <button class="card" data-plan="fin1"><span class="card__no">01</span><h3>재무구조·신용등급 개선</h3><p>부채구조·가지급금·자본확충을 진단하고 신용등급 개선안을 설계합니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="fin3"><span class="card__no">02</span><h3>주주이익 환원 · 지배구조</h3><p>잉여금의 절세 환원과 차명주식·지분 정리로 경영권을 함께 세웁니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card card--wide card--feature" data-plan="fin5"><span class="card__no">03</span><h3>개인사업자 법인전환</h3><p>사업은 그대로 두고 자산·부채 이전과 세제까지 — 부동산을 가진 개인사업자가 법인 구조로 옮겨가는 핵심 플랜입니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="fin2"><span class="card__no">04</span><h3>사내근로복지기금</h3><p>도입 요건과 출연 구조, 기금 운용(부동산 포함)까지 함께 설계합니다.</p><span class="card__more"><i></i>자세히</span></button>
-          <button class="card" data-plan="fin6"><span class="card__no">05</span><h3>M&amp;A·분할합병 · 법인설립</h3><p>조직 재편과 회생 대응, 설립·창업자금·벤처인증까지 한 번에 설계합니다.</p><span class="card__more"><i></i>자세히</span></button>
+          <div class="card" data-plan="fin1"><span class="card__no">01</span><h3>재무구조·신용등급 개선</h3><p>부채구조·가지급금·자본확충을 진단하고 신용등급 개선안을 설계합니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="fin3"><span class="card__no">02</span><h3>주주이익 환원 · 지배구조</h3><p>잉여금의 절세 환원과 차명주식·지분 정리로 경영권을 함께 세웁니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card card--wide card--feature" data-plan="fin5"><span class="card__no">03</span><h3>개인사업자 법인전환</h3><p>사업은 그대로 두고 자산·부채 이전과 세제까지 — 부동산을 가진 개인사업자가 법인 구조로 옮겨가는 핵심 플랜입니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="fin2"><span class="card__no">04</span><h3>사내근로복지기금</h3><p>도입 요건과 출연 구조, 기금 운용(부동산 포함)까지 함께 설계합니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card" data-plan="fin6"><span class="card__no">05</span><h3>M&amp;A·분할합병 · 법인설립</h3><p>조직 재편과 회생 대응, 설립·창업자금·벤처인증까지 한 번에 설계합니다.</p><div class="card__act"><button class="card__more" type="button"><i></i>자세히</button><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
           <a class="card card--cta" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener"><span class="card__no">06</span><h3>어떤 메뉴를 골라야 할지<br>모르겠다면</h3><p>지금 상황을 남겨 주시면 필요한 조합을 1:1로 설계해 드립니다.</p><span class="card__more"><i></i>상담 신청</span></a>
         </div>
       </div>
@@ -1291,7 +1301,18 @@ h2 em{font-style:normal;color:var(--gold-d)}
     if(lastFocus && lastFocus.focus) lastFocus.focus();
   }
   document.querySelectorAll('[data-plan]').forEach(function(card){
-    card.addEventListener('click', function(){ openModal(card.getAttribute('data-plan')); });
+    card.addEventListener('click', function(e){
+      /* 카드 안의 링크('상담 신청' 등)는 카드를 열지 않고 링크 그대로 갑니다 */
+      if(e.target.closest('a')) return;
+      openModal(card.getAttribute('data-plan'));
+    });
+  });
+  /* 상세 페이지가 있는 카드(개인소득세 절세 플랜)는 카드를 누르면 그 페이지로 이동합니다. */
+  document.querySelectorAll('.card[data-href]').forEach(function(card){
+    card.addEventListener('click', function(e){
+      if(e.target.closest('a')) return;
+      window.location.href = card.getAttribute('data-href');
+    });
   });
   modal.addEventListener('click', function(e){
     if(e.target.closest('[data-close]')) closeModal();
