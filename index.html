@@ -1402,7 +1402,6 @@ h2 em{font-style:normal;color:var(--gold-d)}
     if(!btn) return;
     var VIDEO_ID = 'k9K_hEMHeXk';
     var WATCH = 'https://youtu.be/' + VIDEO_ID;
-    var apiLoaded = false;
 
     function showFallback(card){
       if(document.getElementById('videoFallback')) return;
@@ -1430,7 +1429,6 @@ h2 em{font-style:normal;color:var(--gold-d)}
       card.replaceChild(frame, btn);
 
       window.onYouTubeIframeAPIReady = function(){
-        apiLoaded = true;
         new YT.Player('ytPlayer', {
           videoId: VIDEO_ID,
           playerVars: {autoplay: 1, playsinline: 1, rel: 0},
