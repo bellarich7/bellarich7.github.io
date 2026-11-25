@@ -175,7 +175,9 @@ h2 em{font-style:normal;color:var(--gold-d)}
   background:var(--navy);color:#fff;overflow:hidden;
 }
 .hero__media{
-  position:absolute;right:0;bottom:0;top:auto;height:90%;width:min(54%,780px);
+  /* 대표 사진은 원본(1022×1538)보다 작게 그려 다운샘플링되게 한다.
+     높이 80%·폭 상한 680px → 1440에서 약 478×720 CSS px(원본 대비 0.47배). */
+  position:absolute;right:0;bottom:0;top:auto;height:80%;width:min(48%,680px);
   background-image:var(--ceo-img);background-repeat:no-repeat;
   background-position:right bottom;background-size:contain;z-index:1;
 }
