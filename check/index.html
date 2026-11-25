@@ -141,6 +141,20 @@
     padding: 0 20px 80px;
   }
 
+  /* ===== 2026-11-25: 랜딩 세로 리듬 조정 (섹션 사이 유격 축소 + 구분선) ===== */
+  #screen-intro > .container { padding-bottom: 24px; }
+  .positioning > .container,
+  .intro > .container { padding-bottom: 0; }
+  .section-rule {
+    height: 1px; width: auto;
+    background: #ffffff;
+  }
+  .section-rule::before {
+    content: ''; display: block; height: 1px;
+    background: #ececec;
+    margin-inline: max(20px, calc((100% - 680px) / 2));
+  }
+
   /* ========== TOP BAR ========== */
   .topbar {
     background: #ffffff;
@@ -187,7 +201,7 @@
   }
   .hero-inner {
     max-width: 720px; margin: 0 auto;
-    padding: 56px 24px 48px;
+    padding: 36px 24px 28px;
     text-align: center;
   }
   .hero-eyebrow {
@@ -218,6 +232,15 @@
     font-size: 16px; color: #5a6478; margin: 0 0 32px;
     line-height: 1.65;
   }
+  /* 통계 아래 '법인 특화 부동산 자산관리' 한 줄 — 크게·진하게 */
+  .hero-sub--emphasis {
+    font-size: clamp(19px, 5vw, 21px);
+    font-weight: 800;
+    color: #0f2547;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    margin: 0;
+  }
   .hero-stats {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 0;
@@ -243,12 +266,13 @@
     font-size: 11.5px; color: #8a93a8; margin-top: 4px;
     letter-spacing: 0.3px;
   }
+  /* '국제공인재무설계사'가 '사'만 다음 줄로 떨어지지 않도록 */
+  .hero-stat-label--nowrap { white-space: nowrap; }
 
   /* ========== COMPANY INTRO SECTION ========== */
   .intro {
     background: #ffffff;
-    padding: 64px 0 56px;
-    border-top: 1px solid #ececec;
+    padding: 48px 0 40px;
   }
   .section-head {
     text-align: center;
@@ -858,7 +882,7 @@
 
   /* Footer with privacy link */
   .footer {
-    text-align: center; margin-top: 32px;
+    text-align: center; margin-top: 24px;
     font-size: 11.5px; color: #8a93a8; line-height: 1.7;
     padding: 0 24px;
   }
@@ -915,7 +939,7 @@
   /* ========== POSITIONING (3-in-1 Fusion) ========== */
   .positioning {
     background: linear-gradient(180deg, #f6f7f9 0%, #ffffff 100%);
-    padding: 64px 0 56px;
+    padding: 44px 0 32px;
     border-top: 1px solid #ececec;
   }
   .fusion-diagram {
@@ -927,7 +951,7 @@
     width: 100%;
     max-width: 460px;
     height: auto;
-    margin: 0 auto 24px;
+    margin: 0 auto 20px;
     background: #ffffff;
     padding: 16px;
     border-radius: 16px;
@@ -988,7 +1012,10 @@
   }
   @media (max-width: 480px) {
     .credentials-row { grid-template-columns: repeat(2, 1fr); }
-    .positioning { padding: 48px 0 40px; }
+    .positioning { padding: 32px 0 28px; }
+    .intro { padding: 40px 0 32px; }
+    .hero-inner { padding: 28px 20px 24px; }
+    .hero-stat-label--nowrap { font-size: 11px; letter-spacing: 0.1px; }
   }
 
   /* ========== SHARE (다른 분도 진단) ========== */
@@ -2517,10 +2544,10 @@ const CATEGORY_META = [
         </div>
         <div class="hero-stat">
           <span class="hero-stat-num">CFP</span>
-          <div class="hero-stat-label">국제공인재무설계사</div>
+          <div class="hero-stat-label hero-stat-label--nowrap">국제공인재무설계사</div>
         </div>
       </div>
-      <p class="hero-sub">법인 특화 부동산 자산관리</p>
+      <p class="hero-sub hero-sub--emphasis">법인 특화 부동산 자산관리</p>
     </div>
   </div>
 
@@ -2539,6 +2566,8 @@ const CATEGORY_META = [
       </div>
     </div>
   </div>
+
+  <div class="section-rule" aria-hidden="true"></div>
 
   <div class="intro">
     <div class="container">
@@ -2602,6 +2631,8 @@ const CATEGORY_META = [
     </div>
   </div>
 
+
+  <div class="section-rule" aria-hidden="true"></div>
 
   <div class="footer">
     <strong>벨라리치(BELLARICH)㈜</strong> · 서울 서대문구 이화여대길 38, 201-51<br>
