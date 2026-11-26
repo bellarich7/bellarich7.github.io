@@ -432,24 +432,6 @@ h2 em{font-style:normal;color:var(--gold-d)}
   #panel-life .card--cta .card__more,#panel-suc .card--cta .card__more{margin:0 0 0 auto;white-space:nowrap}
 }
 
-/* ---------- 승계 탭 3단계 흐름 (축약형) ----------
-   예전 부동산승계 설명 패널(.suc-block)은 /plan/in-kind/ 본문으로 옮기고,
-   홈에는 "개인부동산 → 법인화 → 자녀법인 지분 이전" 세 칸만 남깁니다. */
-.suc-flow{display:flex;align-items:stretch;margin:0 0 clamp(18px,2.2vw,26px);
-  border:1px solid rgba(154,123,87,.3);background:#FBF7EE;padding:14px clamp(14px,1.6vw,20px)}
-.suc-flow__label{display:flex;align-items:center;flex:0 0 auto;
-  padding:0 clamp(12px,1.6vw,20px) 0 0;margin-right:clamp(4px,.6vw,8px);
-  border-right:1px solid rgba(154,123,87,.26);
-  font-size:10.5px;letter-spacing:.18em;color:#6B4A22;font-weight:600;white-space:nowrap}
-.suc-flow__step{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1px;
-  padding:0 clamp(10px,1.4vw,18px)}
-.suc-flow__step span{font-family:var(--latin);font-size:10px;letter-spacing:.16em;color:#6B4A22;font-weight:600}
-.suc-flow__step b{font-family:var(--serif);font-size:clamp(14px,1.2vw,16px);font-weight:600;color:var(--ink);line-height:1.5}
-.suc-flow__step small{font-size:12px;line-height:1.5;color:var(--muted-l)}
-.suc-flow__arw{display:flex;align-items:center;justify-content:center;flex:0 0 auto;
-  width:clamp(14px,1.6vw,22px);font-style:normal;font-size:13px;color:#7A5B36}
-
-
 /* ---------- about ---------- */
 /* 카드는 폭·크기 그대로 두고 화면 가운데로 (margin-inline:auto) */
 .philo__video{max-width:680px;margin:clamp(34px,4.2vw,54px) auto 0}
@@ -692,13 +674,6 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .books__note{grid-column:1/-1;padding-left:0;margin-top:6px}
   .career{grid-template-columns:1fr;gap:20px}
   .career li{font-size:14.5px;line-height:1.45;padding:2px 0 2px 18px}
-  .suc-flow{flex-direction:column;gap:0}
-  .suc-flow__label{padding:0 0 8px;margin:0 0 6px;border-right:0;border-bottom:1px solid rgba(154,123,87,.26)}
-  .suc-flow__step{padding:4px 0;gap:0}
-  .suc-flow__step span{font-size:9.5px}
-  .suc-flow__step b{font-size:15px;line-height:1.45}
-  .suc-flow__arw{width:100%;height:16px;justify-content:flex-start;padding-left:1px;
-    transform:rotate(90deg);transform-origin:2px 50%;font-size:11px}
   .modal{justify-content:center;align-items:flex-end}
   .modal__panel{width:100%;max-height:92vh;max-height:92svh;transform:translateY(30px);border-radius:16px 16px 0 0;overflow:hidden}
   .modal.is-open .modal__panel{transform:translateY(0)}
@@ -834,44 +809,48 @@ body{background:var(--ivory)}
 .pcta__back:hover{color:#fff;border-bottom-color:var(--gold)}
 
 /* 부동산 승계 구조 블록 — 홈페이지의 어두운 설명 패널을 이 페이지로 옮기며
-   밝은 종이 배경에서 읽히도록 색만 바꿨습니다(문구는 홈에 있던 그대로). */
+   밝은 종이 배경에서 읽히도록 색만 바꿈습니다(문구는 홈에 있던 그대로).
+   2026-11-26: 배경을 한 단계 밝히고(#F2EBDD → #F7F2E8) 글자를 본문 대비 7:1 이상으로
+   올렸습니다. 배경이 흐릿해 글씨가 눌려 보인다는 지적에 따른 색·굵기 조정만 했습니다. */
 .pkind{margin:clamp(34px,4.4vw,52px) 0 0;padding:clamp(24px,3.4vw,42px);
-  background:#F2EBDD;border:1px solid rgba(154,123,87,.34)}
-.pkind .eyebrow{margin-bottom:10px;color:#6B4A22}
+  background:#F7F2E8;border:1px solid rgba(122,91,54,.42)}
+.pkind .eyebrow{margin-bottom:10px;color:#533616;font-weight:600}
 .pkind h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,29px);line-height:1.5;
-  letter-spacing:-.02em;color:var(--ink);margin:0 0 16px}
-.pkind h3 em{font-style:normal;color:#7A5B36}
-.pkind__lead{margin:0 0 clamp(22px,2.6vw,30px);font-size:15.5px;line-height:1.9;color:var(--muted-l)}
-.pkind__lead b{color:#7A5B36;font-weight:600}
+  letter-spacing:-.02em;color:#0B1526;margin:0 0 16px}
+.pkind h3 em{font-style:normal;color:#5C4018;font-weight:600}
+.pkind__lead{margin:0 0 clamp(22px,2.6vw,30px);font-size:15.5px;line-height:1.9;color:#16202E;font-weight:500}
+.pkind__lead b{color:#5C4018;font-weight:600}
 .pkind__pair{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
   margin-bottom:clamp(24px,3vw,34px)}
-.pkind__pair > div{border:1px solid rgba(154,123,87,.3);background:#fff;padding:clamp(18px,2.2vw,26px)}
-.pkind__pair b{display:block;font-family:var(--serif);font-size:16px;font-weight:600;color:#7A5B36;margin-bottom:8px}
-.pkind__pair p{margin:0;font-size:14.5px;line-height:1.85;color:var(--muted-l)}
+.pkind__pair > div{border:1px solid rgba(122,91,54,.42);background:#fff;padding:clamp(18px,2.2vw,26px);
+  box-shadow:0 1px 2px rgba(74,52,24,.06)}
+.pkind__pair b{display:block;font-family:var(--serif);font-size:16px;font-weight:600;color:#5C4018;margin-bottom:8px}
+.pkind__pair p{margin:0;font-size:14.5px;line-height:1.85;color:#16202E;font-weight:500}
 .pkind__flow{display:flex;align-items:stretch;margin:0 0 clamp(26px,3vw,36px)}
-.pkind__node{flex:1;border:1px solid rgba(154,123,87,.34);background:#fff;
-  padding:clamp(16px,2vw,24px) clamp(12px,1.4vw,18px);text-align:center}
-.pkind__idx{display:block;font-family:var(--latin);font-size:10px;letter-spacing:.18em;color:#6B4A22;
+.pkind__node{flex:1;border:1px solid rgba(122,91,54,.42);background:#fff;
+  padding:clamp(16px,2vw,24px) clamp(12px,1.4vw,18px);text-align:center;
+  box-shadow:0 1px 2px rgba(74,52,24,.06)}
+.pkind__idx{display:block;font-family:var(--latin);font-size:10px;letter-spacing:.18em;color:#533616;
   font-weight:600;margin-bottom:10px}
 .pkind__node em{display:block;font-family:var(--latin);font-style:normal;font-size:19px;
-  letter-spacing:.06em;color:#7A5B36;line-height:1.2}
-.pkind__node b{display:block;font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink);
+  letter-spacing:.06em;color:#5C4018;line-height:1.2}
+.pkind__node b{display:block;font-family:var(--serif);font-size:15px;font-weight:600;color:#0B1526;
   margin-top:6px;line-height:1.5}
-.pkind__node small{display:block;font-size:12.5px;color:var(--muted-l);margin-top:2px}
+.pkind__node small{display:block;font-size:12.5px;font-weight:500;color:#2A3240;margin-top:2px}
 .pkind__arw{display:flex;align-items:center;justify-content:center;flex:0 0 auto;
-  width:clamp(24px,3vw,44px);color:#7A5B36;font-size:14px}
+  width:clamp(24px,3vw,44px);color:#5C4018;font-size:14px;font-weight:600}
 .pkind__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,32px);
-  padding-top:clamp(22px,2.8vw,30px);border-top:1px solid rgba(154,123,87,.26)}
+  padding-top:clamp(22px,2.8vw,30px);border-top:1px solid rgba(122,91,54,.36)}
 .pdoc .pkind__cols h4{font-family:var(--serif);font-size:16.5px;font-weight:600;letter-spacing:-.01em;
-  text-transform:none;color:var(--ink);margin:0 0 12px}
-.pkind__cols h4 i{font-family:var(--latin);font-style:normal;color:#7A5B36;font-size:12px;
+  text-transform:none;color:#0B1526;margin:0 0 12px}
+.pkind__cols h4 i{font-family:var(--latin);font-style:normal;color:#5C4018;font-size:12px;
   letter-spacing:.14em;margin-right:9px;vertical-align:1px}
-.pkind__cols p{margin:0;font-size:14.5px;line-height:1.85;color:var(--muted-l)}
+.pkind__cols p{margin:0;font-size:14.5px;line-height:1.85;color:#16202E;font-weight:500}
 .pdoc .pkind__cols ol{margin:0;padding-left:1.1em;list-style:decimal}
-.pdoc .pkind__cols li{padding:0 0 9px;font-size:14.5px;line-height:1.8;color:var(--muted-l)}
+.pdoc .pkind__cols li{padding:0 0 9px;font-size:14.5px;line-height:1.8;color:#16202E;font-weight:500}
 .pdoc .pkind__cols li::before{content:none}
-.pkind__cols li b{color:#7A5B36;font-weight:600}
-.pdoc .pkind__cols li::marker{color:#7A5B36}
+.pkind__cols li b{color:#5C4018;font-weight:600}
+.pdoc .pkind__cols li::marker{color:#5C4018}
 
 @media (max-width:640px){
   /* 390 폭에서는 표를 옆으로 밀지 않고 한눈에 보이게 — 칸 안에서 줄바꿈됩니다 */
