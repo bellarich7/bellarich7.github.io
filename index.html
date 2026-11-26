@@ -307,22 +307,26 @@ h2 em{font-style:normal;color:var(--gold-d)}
 }
 
 /* ---------- PC 히어로: 사진 아래에 About the CEO ---------- */
-/*  자영님 지시(2026-11-27): 6feaf2e에서 사진이 작아지고 h1~sub 유격이 벌어진 것을 되돌린다.
-    사진은 c638bc9 그대로(466×578, 오른쪽 끝 자리 그대로) 두고 조금만 위로,
-    About the CEO 캡션은 자기 크기 그대로 사진 바로 아래 오른쪽으로,
-    왼쪽 뭉치(h1~상담 신청 버튼)는 통째로 조금 아래로. 내부 간격은 원래 값 그대로.
+/*  자영님 지시(2026-11-27): 사진(466×578)은 그대로 두고 조금 더 아래로 내리고,
+    About the CEO 캡션은 사진 폭에 맞춰(이름 왼쪽 끝 = 사진 왼쪽 끝) 사진 바로 아래에 붙인다.
+    인용구는 캡션에서 빼서 왼쪽 칼럼 상담 신청 버튼 아래로 옮겼다.
+    왼쪽 뭉치(h1~상담 신청 버튼)의 자리·간격은 그대로.
     1081px 이상에서만 적용한다 — 1080px 이하(태블릿·모바일)는 예전 흐름 그대로. */
 @media (min-width:1081px){
   .hero{
     /* ── 새벽에 값만 바꿔 재조정하는 두 줄 ── */
     --photo-up:0px;      /* 사진을 캡션 위로 더 올리는 값 (기본 0) */
+    --photo-down:40px;   /* 사진을 예전 자리에서 아래로 내리는 값 — 더 내리거나 올리라는 지시는 이 값만 바꾼다 */
     --copy-down:24px;    /* 왼쪽 뭉치(h1~상담 신청)를 내리는 값 */
+    /* 사진 상단이 서 있던 자리(수정 전 실측 기준선). 사진 높이만 따로 빼고 나머지는
+       예전 '사진 아래 여백(캡션 자리 + 사진·캡션 사이 16 + 히어로 아래 여백)' 값이다.
+       사진과 캡션은 위에서부터 쌓이므로, 인용구가 캡션에서 빠져 캡션이 짧아져도 사진은 이 자리를 지킨다. */
+    --photo-top:calc(100svh - var(--photo-h) - 248px);
     /* 사진 높이 — 1440×900 이상에서는 원래 크기 578px 그대로.
        화면이 낮아지면 캡션 자리를 남기고 조금씩 줄어든다(가로는 사진 비율을 따라간다). */
     --photo-h:clamp(300px, calc(100svh - 322px), 578px);
     --photo-w:calc(var(--photo-h) * 466 / 578);
     --cap-gap:16px;                                  /* 사진 아래 ~ 캡션 위 */
-    --side-bottom:clamp(12px,2svh,24px);             /* 오른쪽 덩어리 아랫선 여백 */
     --side-r:calc(var(--hero-m) - min(3vw, calc(var(--hero-m) * .5)));  /* 사진 오른쪽 끝 자리 */
   }
   /* 왼쪽 칼럼의 캡션은 숨기고(사진 아래 전용 캡션을 따로 쓴다) 뭉치는 위에서부터 쌓는다 */
@@ -330,11 +334,12 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .hero__in > .hero__cred{display:none}
   .hero__copy{padding-top:var(--copy-down)}   /* h1부터 버튼까지만 통째로 내려간다(내부 간격 불변) */
 
-  /* 오른쪽 덩어리: 사진 + 그 바로 아래 캡션 — 아랫선을 히어로 아래에 맞춘다 */
+  /* 오른쪽 덩어리: 사진 + 그 바로 아래 캡션 — 사진 상단을 기준으로 위에서부터 쌓는다 */
   .hero__side{
     position:absolute; inset:0; z-index:1;
-    display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-end;
-    padding-bottom:var(--side-bottom);
+    display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-start;
+    padding-top:calc(var(--photo-top) + var(--photo-down));
+    padding-bottom:0;
     pointer-events:none;
   }
   .hero__side .hero__cred{pointer-events:auto}
@@ -356,15 +361,20 @@ h2 em{font-style:normal;color:var(--gold-d)}
      잘린 선이 보이지 않게 한다(모바일과 같은 원리, 페이드만 길게). */
   .hero__photo .hero__media::after{background:
     linear-gradient(0deg,var(--navy) 0%,rgba(11,25,51,.85) 2%,rgba(11,25,51,.45) 7%,rgba(11,25,51,.15) 12%,rgba(11,25,51,0) 18%)}
-  /* 캡션: 크기·글자·문구는 원래 값 그대로, 오른쪽 끝만 사진 오른쪽 끝에 맞춘다 */
-  .hero__side .hero__cred{width:560px; max-width:none; margin-right:var(--side-r)}
+  /* 캡션: 글자·문구는 원래 값 그대로, 폭을 사진 폭에 맞춰 이름 왼쪽 끝이 사진 왼쪽 끝과 서게 한다 */
+  .hero__side .hero__cred{width:var(--photo-w); max-width:none; margin-right:var(--side-r)}
+  /* 버튼과 인용구 사이 — 버튼 아래 여백(위 미디어쿼리의 15~28px)이 그대로 인용구와의 사이가 되므로 18px로 맞춘다 */
+  .hero__copy .hero__actions{margin-bottom:18px}
+  .hero__in > .hero__cred-quote{margin-top:0; width:fit-content; max-width:100%}
 }
 /* 큰 화면: 예전처럼 로고가 내비 아래에서 조금 내려오게(히어로 내용이 짧아져 생기는 차이를 메운다) */
 @media (min-width:1081px) and (min-height:961px){
   .hero__in{padding-top:clamp(0px, calc(100svh - 1040px), 44px)}
+  .hero{--photo-top:calc(100svh - var(--photo-h) - 274px)}
 }
 @media (min-width:1081px) and (max-height:840px){
   .hero__in{padding-top:clamp(0px, calc(100svh - 768px), 25px)}
+  .hero{--photo-top:calc(100svh - var(--photo-h) - 222px)}
 }
 /* 짧은 PC 화면: 위의 max-height 규칙이 글자를 줄이므로 사진도 그만큼 더 줄여 캡션이 화면 안에 들어오게 한다 */
 @media (min-width:1081px) and (min-height:841px) and (max-height:960px){
@@ -377,6 +387,13 @@ h2 em{font-style:normal;color:var(--gold-d)}
 @media (max-width:1080px){
   .hero__side,.hero__photo{display:contents}
   .hero__cred--side{display:none}
+  /* 인용구가 캡션 밖으로 나갔다. 캡션의 아래 여백이 인용구 위로 올라가 버리므로
+     (이름·직함과 인용구 사이가 벌어지지 않게) 캡션 여백을 0으로 두고 같은 값을 인용구 아래로 옮긴다. */
+  .hero__in > .hero__cred{padding-bottom:0}
+  .hero__cred-quote--lead{max-width:470px;margin-bottom:0}
+}
+@media (max-width:900px){
+  .hero__cred-quote--lead{margin-bottom:clamp(30px,6vw,46px)}
 }
 
 /* ---------- marquee band ---------- */
@@ -873,8 +890,11 @@ h2 em{font-style:normal;color:var(--gold-d)}
           <h2 class="hero__cred-name"><b>김자영</b><span>대표</span></h2>
           <p class="hero__cred-role">부동산전문가 / 공인중개사 / 법인전문가 / CFP(국제공인자산관리사)</p>
         </div>
-        <blockquote class="hero__cred-quote">“법인을 아는 부동산 전문가,<br>부동산을 아는 법인 전문가.”</blockquote>
       </div>
+      <!-- 인용구: 캡션 안에서 빼서 상담 신청 버튼 바로 아래로 옮겼다(2026-11-27 지시).
+           PC에서는 이 칼럼의 캡션이 숨겨지므로 버튼 아래에 바로 서고,
+           1080px 이하에서는 캡션(이름·직함) 아래에 그대로 이어진다. -->
+      <blockquote class="hero__cred-quote hero__cred-quote--lead">“법인을 아는 부동산 전문가,<br>부동산을 아는 법인 전문가.”</blockquote>
     </div>
     <!-- PC(1081px 이상)에서는 사진과 그 아래 캡션이 한 덩어리로 오른쪽에 선다.
          사진은 .hero 바로 아래에 붙어 예전 자리·크기 그대로이고, 캡션만 사진 밑으로 내려간다.
@@ -890,7 +910,6 @@ h2 em{font-style:normal;color:var(--gold-d)}
           <h2 class="hero__cred-name"><b>김자영</b><span>대표</span></h2>
           <p class="hero__cred-role">부동산전문가 / 공인중개사 / 법인전문가 / CFP(국제공인자산관리사)</p>
         </div>
-        <blockquote class="hero__cred-quote">“법인을 아는 부동산 전문가,<br>부동산을 아는 법인 전문가.”</blockquote>
       </div>
     </div>
     <div class="hero__scroll" aria-hidden="true"><span>SCROLL</span><i></i></div>
