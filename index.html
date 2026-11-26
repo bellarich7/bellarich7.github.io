@@ -365,7 +365,9 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .hero__side .hero__cred{width:var(--photo-w); max-width:none; margin-right:var(--side-r)}
   /* 버튼과 인용구 사이 — 버튼 아래 여백(위 미디어쿼리의 15~28px)이 그대로 인용구와의 사이가 되므로 18px로 맞춘다 */
   .hero__copy .hero__actions{margin-bottom:45px}
-  .hero__in > .hero__cred-quote{margin-top:0; width:fit-content; max-width:100%}
+  .hero__in > .hero__cred-quote{margin-top:0; width:fit-content; max-width:100%; text-align:left}
+  /* 둘째 줄을 살짝 오른쪽으로 — 첫 줄 '아는' 아래에서 시작하게 */
+  .hero__in > .hero__cred-quote .hero__quote-l2{display:inline-block; margin-left:var(--quote-indent, 105px)}
 }
 /* 큰 화면: 예전처럼 로고가 내비 아래에서 조금 내려오게(히어로 내용이 짧아져 생기는 차이를 메운다) */
 @media (min-width:1081px) and (min-height:961px){
@@ -894,7 +896,7 @@ h2 em{font-style:normal;color:var(--gold-d)}
       <!-- 인용구: 캡션 안에서 빼서 상담 신청 버튼 바로 아래로 옮겼다(2026-11-27 지시).
            PC에서는 이 칼럼의 캡션이 숨겨지므로 버튼 아래에 바로 서고,
            1080px 이하에서는 캡션(이름·직함) 아래에 그대로 이어진다. -->
-      <blockquote class="hero__cred-quote hero__cred-quote--lead">“법인을 아는 부동산 전문가,<br>부동산을 아는 법인 전문가.”</blockquote>
+      <blockquote class="hero__cred-quote hero__cred-quote--lead">“법인을 아는 부동산 전문가,<br><span class="hero__quote-l2">부동산을 아는 법인 전문가.”</span></blockquote>
     </div>
     <!-- PC(1081px 이상)에서는 사진과 그 아래 캡션이 한 덩어리로 오른쪽에 선다.
          사진은 .hero 바로 아래에 붙어 예전 자리·크기 그대로이고, 캡션만 사진 밑으로 내려간다.
