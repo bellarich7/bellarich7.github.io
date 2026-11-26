@@ -1521,7 +1521,10 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    margin: 0 0 24px;
+    /* 아래 카카오 채널 카드와 같은 폭·여백으로 맞춘다(화면 끝까지 붙던 상자를 안으로 들임) */
+    max-width: 672px;
+    width: calc(100% - 48px);
+    margin: 0 auto 24px;
     padding: 18px 20px;
     background: linear-gradient(135deg, #fdf6e3 0%, #fffaf0 100%);
     border: 1.5px solid #e8d6a8;
@@ -1552,7 +1555,7 @@
     font-weight: 700;
   }
   @media (max-width: 480px) {
-    .result-mail-sent { padding: 14px 16px; gap: 10px; }
+    .result-mail-sent { width: calc(100% - 32px); padding: 14px 16px; gap: 10px; }
     .result-mail-icon { font-size: 26px; }
     .result-mail-text { font-size: 13px; }
     .result-mail-text strong { font-size: 13.5px; }
