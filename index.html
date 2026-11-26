@@ -181,6 +181,16 @@ h2 em{font-style:normal;color:var(--gold-d)}
   background-image:var(--ceo-img);background-repeat:no-repeat;
   background-position:right bottom;background-size:contain;z-index:1;
 }
+/* PC 레티나(2배 화면)는 히어로 사진을 최대 700 CSS px = 1400 기기 px로 그린다.
+   원본 1086px로는 1.29배 늘려야 해서 흐려지므로, 따로 만든 1400×1738 파일을 물린다.
+   1배 화면과 모바일은 위의 인라인 --ceo-img 를 그대로 써서 용량·화질 변화가 없다. */
+@media (min-width:1081px) and (min-resolution:1.8dppx){
+  .hero__media{background-image:url("assets/ceo-hero-2x.webp?v=1126a")}
+}
+/* 사파리 15 이하용 별칭 — 같은 파일이라 중복 요청은 없다 */
+@media (min-width:1081px) and (-webkit-min-device-pixel-ratio:1.8){
+  .hero__media{background-image:url("assets/ceo-hero-2x.webp?v=1126a")}
+}
 /* warm glow behind the portrait, then feathered edges so the studio
    cut-out melts into the hero gradient instead of sitting in a box */
 .hero__glow{position:absolute;right:-4%;bottom:-6%;width:min(62%,860px);aspect-ratio:1/.86;z-index:1;
