@@ -306,6 +306,76 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .hero__cred-quote{font-size:clamp(18px,1.7vw,23px);line-height:1.38;margin-top:16px}
 }
 
+/* ---------- PC 히어로: 사진 아래에 About the CEO, 좌우 위·아래 선 맞춤 ---------- */
+/*  자영님 지시(2026-11-27): 사진을 위로 올리고 그 아래에 About the CEO를 붙인다.
+    왼쪽(h1~버튼)과 오른쪽(사진~인용구)의 윗선·아랫선을 같은 선에 맞추고,
+    로고 아래의 위 여백과 양쪽 칼럼 아래의 아래 여백을 같게 둔다.
+    1081px 이상에서만 적용한다(모바일·940px대 노트북은 예전 그대로). */
+@media (min-width:1081px){
+  .hero{
+    /* 제목(사진과 함께)을 아래로 내리는 값 — 올리면 위·아래 유격이 같이 커지고
+       사진은 그 두 배만큼 작아져 아래 선(인용구·버튼)이 그대로 맞는다. 기본 0. */
+    --hero-drop:0px;
+    /* 사진 높이 — 사진 크기를 바꾸려면 이 한 값만 고치면 된다(가로는 사진 비율 466:578을 따라간다). */
+    --photo-h:clamp(240px, calc(100svh - 508px - 2 * var(--hero-drop)), 578px);
+    --photo-w:calc(var(--photo-h) * 466 / 578);
+    /* 캡션 최소 폭 — 이보다 좁아지면 인용구가 4줄로 늘어나 오히려 자리를 더 먹는다 */
+    --cap-min:352px;
+    /* 로고~h1 사이(브랜드 아래 여백 + 캡션 줄 + 캡션 아래 여백) — 위 여백과 아래 여백을 같게 만드는 기준값 */
+    --eb-gap:clamp(20px,1.8vw,26px);          /* 캡션 줄 아래 여백(짧은 화면 규칙이 이 값을 바꾼다) */
+    --eb-base:calc(var(--brand-gap) + 17.3px + var(--eb-gap));
+    --brand-gap:clamp(8px,1vw,14px);          /* 브랜드 로고 아래 여백(짧은 화면 규칙이 이 값을 바꾼다) */
+    --eb-block:calc(var(--eb-base) + var(--hero-drop));
+    /* 사진 오른쪽 끝 — 지금 자리 그대로(본문 폭 밖 오른쪽 여백 쪽으로 3vw 들인 값) */
+    --photo-right:calc(var(--hero-m) - min(3vw, calc(var(--hero-m) * .5)));
+    display:flex;flex-direction:column;justify-content:flex-start;
+    padding-top:var(--head-h);padding-bottom:0;min-height:100svh;
+  }
+  /* 프레임(왼쪽 칼럼 + 사진 덩어리)을 남는 공간의 가운데에 둔다 → 위·아래 유격이 저절로 같아진다.
+     아래 보정값은 위쪽 '로고~h1' 사이에 끼어 있는 캡션 줄(브랜드 아래 여백 + 캡션 + 캡션 아래 여백)과
+     같은 크기다. 그래서 로고~h1 여백과 칼럼 아래 끝~히어로 바닥 여백이 같은 값으로 맞는다. */
+  .hero__in{
+    display:flex;flex-direction:column;flex:1 1 auto;width:100%;
+    padding-bottom:var(--eb-block);
+  }
+  .hero__frame{display:flex;align-items:stretch;width:100%;margin-top:auto;margin-bottom:auto}
+  .hero__col{flex:1 1 auto;min-width:0;display:flex;flex-direction:column}
+  .hero__sub{margin-top:auto}          /* h1은 위, sub·버튼은 아래 — 프레임 높이만큼 유격이 벌어진다 */
+  .hero__eyebrow{margin-bottom:calc(var(--eb-gap) + var(--hero-drop))}  /* 제목을 내리는 값은 여기서 생긴다 */
+  .hero__actions{margin-bottom:0}      /* 버튼 아랫선 = 프레임 아랫선 = 인용구 아랫선 */
+  .hero__figure{
+    flex:0 0 auto;width:max(var(--photo-w), var(--cap-min));display:flex;flex-direction:column;
+    position:relative;
+    margin-left:auto;
+    margin-right:calc(var(--photo-right) - max(0px, (100vw - var(--w)) / 2) - var(--pad));
+  }
+  /* 따뜻한 빛 번짐도 사진을 따라 올라간다 — 사진 뒤에 깔리도록 사진 높이에 묶는다 */
+  .hero__glow{
+    inset:auto;top:-3%;left:-22%;right:-22%;bottom:auto;
+    width:auto;height:calc(var(--photo-h) * 1.08);aspect-ratio:auto;
+  }
+  .hero__media{
+    order:-1;align-self:flex-end;position:relative;inset:auto;
+    width:var(--photo-w);height:auto;flex:0 0 auto;
+    aspect-ratio:466 / 578;background-position:center bottom;
+  }
+  .hero__cred{margin-top:auto;width:100%;max-width:none}
+}
+/* 짧은 PC 화면: 위의 max-height 규칙이 로고·캡션 사이 여백을 줄이므로, 균형 기준값과 사진 높이도 같이 줄인다.
+   (이 블록이 위 PC 블록보다 뒤에 있어야 변수 값이 이긴다) */
+@media (min-width:1081px) and (min-height:841px) and (max-height:960px){
+  .hero{--brand-gap:14px;--eb-gap:26px;--photo-h:clamp(240px, calc(100svh - 484px - 2 * var(--hero-drop)), 560px)}
+}
+@media (min-width:1081px) and (max-height:840px){
+  .hero{--brand-gap:10px;--eb-gap:21px;--cap-min:306px;--photo-h:clamp(200px, calc(100svh - 444px - 2 * var(--hero-drop)), 470px)}
+}
+/* 1080px 이하: 새 래퍼들을 펼쳐 예전 흐름(제목 → sub → 버튼 → About the CEO → 사진) 그대로 둔다 */
+@media (max-width:1080px){
+  .hero__in{position:static}
+  .hero__frame,.hero__col,.hero__figure{display:contents}
+  .hero__brand,.hero__eyebrow,.hero h1,.hero__sub,.hero__actions,.hero__cred{position:relative;z-index:2}
+}
+
 /* ---------- marquee band ---------- */
 .band{background:var(--navy-2);color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);overflow:hidden}
 .band__track{display:flex;gap:0;white-space:nowrap;animation:slide 42s linear infinite;width:max-content}
@@ -665,8 +735,11 @@ h2 em{font-style:normal;color:var(--gold-d)}
   /* 모바일도 데스크톱과 같은 세로 배치: 로고 → 캡션 한 줄 → 제목.
      390 폭에서 캡션이 한 줄로 들어가도록 글자 크기와 자간을 이 폭에서만 좁힌다. */
   .hero__eyebrow{font-size:10.5px;letter-spacing:.12em;margin-bottom:19px}
-  .hero__media{order:2;position:relative;inset:auto;width:auto;height:min(112vw,540px);max-width:none;
-    margin-top:clamp(22px,4.4vw,34px);background-position:50% bottom;background-size:auto 100%;opacity:1;z-index:1}
+  /* 히어로 래퍼(.hero__in)가 이제 사진까지 감싸므로, 사진만 예전처럼 화면 폭 끝까지 나가게
+     좌우 여백을 되돌린다(.wrap 의 좌우 패딩만큼 음수 마진). */
+  .hero__media{position:relative;inset:auto;width:auto;height:min(112vw,540px);max-width:none;
+    margin:clamp(22px,4.4vw,34px) calc(var(--pad) * -1) 0;
+    background-position:50% bottom;background-size:auto 100%;opacity:1;z-index:1}
   /* 컷아웃이라 위 가장자리가 투명하다. 위쪽 그라데이션은 가장자리만 살짝 눌러 주고
      (머리카락이 navy로 먹히지 않게), 아래쪽은 잘린 상반신이 녹아들게 한다. */
   .hero__media::after{background:
@@ -780,26 +853,35 @@ h2 em{font-style:normal;color:var(--gold-d)}
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="hero__media" role="img" aria-label="벨라리치 김자영 대표 프로필"></div>
     <div class="hero__in wrap">
       <div class="hero__brand">
         <svg class="br-logo br-logo--hero" viewBox="0 0 237.33 62.74" role="img" aria-label="벨라리치 BellaRich"><use href="#brLogo"/></svg>
       </div>
       <p class="hero__eyebrow">Corporate Real Estate &amp; Asset Solutions</p>
-      <h1>법인 CEO에게는<br>법인을 잘 아는 <em>부동산 전문가</em>가 필요합니다</h1>
-      <p class="hero__sub">법인과 부동산을 잇는 1:1 마스터플랜, <b>벨라리치(주)</b><br><span class="hero__sub-2">매입·운용·승계·경영지원까지 한 자리에서 설계합니다.</span></p>
-      <div class="hero__actions">
-        <a class="btn btn--gold" href="#solutions">솔루션 보기 <span>→</span></a>
-        <a class="btn btn--ghost" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener">상담 신청 <span>↗</span></a>
-      </div>
-      <div class="hero__cred">
-        <p class="hero__cred-eyebrow">About the CEO</p>
-        <div class="hero__cred-row">
-          <h2 class="hero__cred-name"><b>김자영</b><span>대표</span></h2>
-          <p class="hero__cred-role">부동산전문가 / 공인중개사 / 법인전문가 / CFP(국제공인자산관리사)</p>
+      <!-- PC(1081px~)에서는 왼쪽 칼럼(h1~버튼)과 오른쪽 덩어리(사진 + About the CEO)가
+           한 프레임 안에서 위·아래 선을 맞춰 선다. 1080px 이하는 예전 그대로 흐르도록
+           frame/col/figure 를 display:contents 로 펼친다. -->
+      <div class="hero__frame">
+        <div class="hero__col">
+          <h1>법인 CEO에게는<br>법인을 잘 아는 <em>부동산 전문가</em>가 필요합니다</h1>
+          <p class="hero__sub">법인과 부동산을 잇는 1:1 마스터플랜, <b>벨라리치(주)</b><br><span class="hero__sub-2">매입·운용·승계·경영지원까지 한 자리에서 설계합니다.</span></p>
+          <div class="hero__actions">
+            <a class="btn btn--gold" href="#solutions">솔루션 보기 <span>→</span></a>
+            <a class="btn btn--ghost" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener">상담 신청 <span>↗</span></a>
+          </div>
         </div>
-        <blockquote class="hero__cred-quote">“법인을 아는 부동산 전문가,<br>부동산을 아는 법인 전문가.”</blockquote>
+        <div class="hero__figure">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <div class="hero__cred">
+            <p class="hero__cred-eyebrow">About the CEO</p>
+            <div class="hero__cred-row">
+              <h2 class="hero__cred-name"><b>김자영</b><span>대표</span></h2>
+              <p class="hero__cred-role">부동산전문가 / 공인중개사 / 법인전문가 / CFP(국제공인자산관리사)</p>
+            </div>
+            <blockquote class="hero__cred-quote">“법인을 아는 부동산 전문가,<br>부동산을 아는 법인 전문가.”</blockquote>
+          </div>
+          <div class="hero__media" role="img" aria-label="벨라리치 김자영 대표 프로필"></div>
+        </div>
       </div>
     </div>
     <div class="hero__scroll" aria-hidden="true"><span>SCROLL</span><i></i></div>
