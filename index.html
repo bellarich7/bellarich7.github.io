@@ -362,13 +362,14 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .hero__photo .hero__media::after{background:
     linear-gradient(0deg,var(--navy) 0%,rgba(11,25,51,.85) 2%,rgba(11,25,51,.45) 7%,rgba(11,25,51,.15) 12%,rgba(11,25,51,0) 18%)}
   /* 캡션: 글자·문구는 원래 값 그대로, 폭을 사진 폭에 맞춰 이름 왼쪽 끝이 사진 왼쪽 끝과 서게 한다 */
-  .hero__side .hero__cred{width:var(--photo-w); max-width:none; margin-right:var(--side-r)}
+  /* 사진 안에서 팔이 시작하는 지점(약 50px)에 캡션 왼쪽 끝을 맞춘다 */
+  .hero__side .hero__cred{width:var(--photo-w); max-width:none; margin-right:max(0px, calc(var(--side-r) - var(--cap-shift, 48px)))}
   /* 버튼과 인용구 사이 — 버튼 아래 여백(위 미디어쿼리의 15~28px)이 그대로 인용구와의 사이가 되므로 18px로 맞춘다 */
   .hero__copy .hero__actions{margin-bottom:45px}
   .hero__in > .hero__cred-quote{margin-top:0; width:fit-content; max-width:100%; text-align:left}
   /* 둘째 줄을 살짝 오른쪽으로 — 첫 줄 '아는' 아래에서 시작하게 */
   .hero__in > .hero__cred-quote .hero__quote-l2{display:inline-block; margin-left:var(--quote-indent, 105px)}
-  .hero__in > .hero__cred-quote--lead{line-height:2.15; margin-left:var(--quote-shift, 231px)}
+  .hero__in > .hero__cred-quote--lead{line-height:2.15; margin-left:var(--quote-shift, 75px)}
 }
 /* 큰 화면: 예전처럼 로고가 내비 아래에서 조금 내려오게(히어로 내용이 짧아져 생기는 차이를 메운다) */
 @media (min-width:1081px) and (min-height:961px){
