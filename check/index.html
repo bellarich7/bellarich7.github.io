@@ -1539,6 +1539,8 @@
     font-size: 14px;
     line-height: 1.55;
     color: #4a5b78;
+    /* 한글 단어 중간에서 줄이 끊기지 않게 한다('보내드릴게/요' 방지) */
+    word-break: keep-all;
   }
   .result-mail-text strong {
     font-size: 15px;
@@ -2772,8 +2774,8 @@ const CATEGORY_META = [
     <div class="result-mail-sent">
       <span class="result-mail-icon" aria-hidden="true">💬</span>
       <div class="result-mail-text">
-        <strong>자세한 결과는 <span id="result-email-display">입력하신 휴대폰 번호</span>(카카오톡)로 보내드릴게요</strong>
-        <span>등급 분석, 핵심 포인트, 문항별 진단 의견, 다음 단계 안내가 담겨 있어요.</span>
+        <strong>카카오톡으로 결과지를 보내드릴게요</strong>
+        <span><span id="result-email-display">입력하신 휴대폰 번호</span>로 등급 분석, 핵심 포인트, 문항별 진단 의견, 다음 단계 안내를 보내드려요.</span>
       </div>
     </div>
 
