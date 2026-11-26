@@ -366,10 +366,14 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .hero__photo .hero__media::after{background:
     linear-gradient(0deg,var(--navy) 0%,rgba(11,25,51,.85) 2%,rgba(11,25,51,.45) 7%,rgba(11,25,51,.15) 12%,rgba(11,25,51,0) 18%)}
   /* 캡션: 글자·문구는 원래 값 그대로, 폭을 사진 폭에 맞춰 이름 왼쪽 끝이 사진 왼쪽 끝과 서게 한다 */
-  .hero__side .hero__cred{width:var(--photo-w); max-width:none; margin-right:var(--side-r)}
+  /* 사진 안에서 팔이 시작하는 지점(약 50px)에 캡션 왼쪽 끝을 맞춘다 */
+  .hero__side .hero__cred{width:var(--photo-w); max-width:none; margin-right:max(0px, calc(var(--side-r) - var(--cap-shift, 48px)))}
   /* 버튼과 인용구 사이 — 버튼 아래 여백(위 미디어쿼리의 15~28px)이 그대로 인용구와의 사이가 되므로 18px로 맞춘다 */
   .hero__copy .hero__actions{margin-bottom:45px}
-  .hero__in > .hero__cred-quote{margin-top:0; width:fit-content; max-width:100%}
+  .hero__in > .hero__cred-quote{margin-top:0; width:fit-content; max-width:100%; text-align:left}
+  /* 둘째 줄을 살짝 오른쪽으로 — 첫 줄 '아는' 아래에서 시작하게 */
+  .hero__in > .hero__cred-quote .hero__quote-l2{display:inline-block; margin-left:var(--quote-indent, 105px)}
+  .hero__in > .hero__cred-quote--lead{line-height:2.15; margin-left:var(--quote-shift, 75px)}
 }
 /* 큰 화면: 예전처럼 로고가 내비 아래에서 조금 내려오게(히어로 내용이 짧아져 생기는 차이를 메운다) */
 @media (min-width:1081px) and (min-height:961px){
@@ -889,11 +893,9 @@ body{background:var(--ivory)}
 .pvideo .wrap{max-width:920px}
 .pvideo h2{font-size:clamp(24px,2.6vw,32px);margin-bottom:clamp(18px,2.2vw,26px)}
 .pvideo .video-card{margin:0}
-/* 유튜브 영상 — 누르기 전에는 외부 요청 0(썸네일도 받지 않음),
-   누르면 같은 자리에 youtube-nocookie 임베드가 들어와 16:9로 재생됩니다. */
-.video-card__frame{display:none;position:relative;width:100%;aspect-ratio:16/9;background:#0B1933}
-.video-card.is-playing .video-card__frame{display:block}
-.video-card__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+/* 영상 — 누르면 그 자리에서 사이트 안 <video>(assets/tax-venture.mp4)가 열려 바로 재생됩니다.
+   누르기 전에는 영상 파일을 받지 않으므로(preload="none") 모바일 데이터를 아낄 수 있습니다.
+   표지는 썸네일 그대로 쓰고, 재생기가 열리면 16:9로 자리를 잡습니다. */
 .video-card__cap{flex-wrap:wrap;row-gap:6px}
 .video-card__cap .video-card__cap-t{flex:1 1 16ch;min-width:0}
 .video-card__ph{position:absolute;left:0;right:0;bottom:12%;text-align:center;
@@ -1154,33 +1156,21 @@ body{background:var(--ivory)}
     rvs.forEach(function(el){ el.classList.add('in'); });
   }
 
-  /* 영상: 누르기 전에는 외부 요청 0(썸네일도 유튜브에서 받지 않습니다).
-     누르면 같은 자리에 youtube-nocookie 임베드가 들어와 16:9로 재생됩니다.
-     영상 ID는 카드의 data-video-id 한 곳에만 있습니다 — 다른 영상으로 바꿀 때 그 값만 고치면 됩니다. */
+  /* 영상: 누르기 전에는 영상 파일을 받지 않고(preload="none"), 표지도 assets에서만 받습니다.
+     누르면 같은 자리에서 사이트 안 <video>(assets/tax-venture.mp4)가 열려
+     모바일·PC 모두 페이지 안에서 바로 재생됩니다(유튜브로 나가지 않음).
+     자영님 폰(안드로이드 크롬·아이폰 사파리)에서 탭 한 번에 소리와 함께 재생되도록
+     클릭 핸들러 안에서 바로 video.play()를 호출합니다(playsinline 유지). */
   var vCard = document.getElementById('videoCard');
   var vBtn = document.getElementById('videoPlay');
-  var vFrame = document.getElementById('videoFrame');
-  if(vCard && vBtn && vFrame){
-    var vid = vCard.getAttribute('data-video-id');
-    var yt = document.getElementById('videoYt');
-    if(yt && vid) yt.setAttribute('href', 'https://youtu.be/' + vid);
+  var vEl = document.getElementById('videoPlayer');
+  if(vCard && vBtn && vEl){
     vBtn.addEventListener('click', function(){
-      if(!vid) return;
-      /* 휴대폰(1080px 이하): 임베드가 재생되지 않는 기기가 있어 유튜브 앱/사이트로 바로 연다. */
-      if(window.matchMedia('(max-width: 1080px)').matches){
-        window.open('https://www.youtube.com/watch?v=' + vid, '_blank', 'noopener');
-        return;
-      }
-      if(vFrame.querySelector('iframe')) return;
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&rel=0&modestbranding=1';
-      f.title = vCard.getAttribute('data-video-title') || '플랜 소개 영상';
-      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      f.allowFullscreen = true;
-      f.referrerPolicy = 'strict-origin-when-cross-origin';
-      vFrame.appendChild(f);
       vCard.classList.add('is-playing');
-      try { f.focus({preventScroll:true}); } catch(e){}
+      vEl.preload = 'auto';
+      var p = vEl.play();
+      if(p && p.catch){ p.catch(function(){ vEl.controls = true; }); }
+      try { vEl.focus({preventScroll:true}); } catch(e){ vEl.focus(); }
     });
   }
 })();
