@@ -1053,21 +1053,23 @@
   }
   .share-buttons {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   .share-btn {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 6px;
-    padding: 14px 6px 12px;
-    background: #fafbfc;
-    border: 1px solid #e5e8ee;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 12px;
+    background: #ffffff;
+    border: 1px solid #dfe4ec;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.15s ease;
     font-family: inherit;
+    color: #0f2547;
   }
   .share-btn:hover {
     transform: translateY(-2px);
@@ -1078,25 +1080,35 @@
     outline-offset: 2px;
   }
   .share-icon {
-    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     line-height: 1;
   }
+  .share-icon svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
   .share-label {
-    font-size: 11.5px;
-    font-weight: 600;
-    color: #1a1f2e;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: inherit;
     letter-spacing: -0.2px;
   }
-  .share-kakao:hover { border-color: #ffe600; background: #fffae6; }
-  .share-kakao:hover .share-label { color: #3c1e1e; }
-  .share-insta:hover { border-color: #e1306c; background: #fdf0f4; }
-  .share-insta:hover .share-label { color: #c13584; }
-  .share-naver:hover { border-color: #03c75a; background: #effaf2; }
-  .share-naver:hover .share-label { color: #03c75a; }
-  .share-gmail:hover { border-color: #ea4335; background: #fdf0ef; }
-  .share-gmail:hover .share-label { color: #c5221f; }
-  .share-copy:hover { border-color: #b08d4f; background: #fdf6e3; }
-  .share-copy:hover .share-label { color: #0f2547; }
+  .share-native {
+    background: #0f2547;
+    border-color: #0f2547;
+    color: #ffffff;
+  }
+  .share-native:hover {
+    background: #16325c;
+    border-color: #16325c;
+  }
+  .share-copy:hover {
+    border-color: #c9a14a;
+    background: #fdf6e3;
+  }
   .share-toast {
     margin-top: 14px;
     font-size: 12.5px;
@@ -1648,10 +1660,10 @@
   }
 
   @media (max-width: 480px) {
-    .share-buttons { grid-template-columns: repeat(5, 1fr); gap: 6px; }
-    .share-btn { padding: 12px 4px 10px; }
-    .share-label { font-size: 10.5px; }
-    .share-icon { font-size: 20px; }
+    .share-buttons { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .share-btn { padding: 14px 8px; gap: 6px; }
+    .share-label { font-size: 13.5px; }
+    .share-icon svg { width: 18px; height: 18px; }
   }
 </style>
 
@@ -2832,25 +2844,17 @@ const CATEGORY_META = [
         <h3 class="share-title" id="share-title">법인 CEO 지인분께도 <em>추천</em>해 주세요</h3>
         <p class="share-desc">1분이면 끝납니다. "나도 한번 해볼까" 하는 분께 공유해 보세요.</p>
         <div class="share-buttons">
-          <button type="button" class="share-btn share-kakao" onclick="shareKakao()" aria-label="카카오톡으로 공유">
-            <span class="share-icon" aria-hidden="true">💬</span>
-            <span class="share-label">카카오톡</span>
+          <button type="button" class="share-btn share-native" onclick="shareNative()" aria-label="공유하기">
+            <span class="share-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"></line><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"></line></svg>
+            </span>
+            <span class="share-label">공유하기</span>
           </button>
-          <button type="button" class="share-btn share-insta" onclick="shareInstagram()" aria-label="인스타그램으로 공유">
-            <span class="share-icon" aria-hidden="true">📷</span>
-            <span class="share-label">인스타</span>
-          </button>
-          <button type="button" class="share-btn share-naver" onclick="shareNaverMail()" aria-label="네이버 메일로 공유">
-            <span class="share-icon" aria-hidden="true">🟢</span>
-            <span class="share-label">네이버 메일</span>
-          </button>
-          <button type="button" class="share-btn share-gmail" onclick="shareGmail()" aria-label="구글 메일로 공유">
-            <span class="share-icon" aria-hidden="true">📧</span>
-            <span class="share-label">구글 메일</span>
-          </button>
-          <button type="button" class="share-btn share-copy" onclick="shareCopyUrl()" aria-label="URL 복사">
-            <span class="share-icon" aria-hidden="true">🔗</span>
-            <span class="share-label">URL 복사</span>
+          <button type="button" class="share-btn share-copy" onclick="shareCopyUrl()" aria-label="링크 복사">
+            <span class="share-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5 14.5 9.5"></path><path d="M11 6.5 12.9 4.6a4 4 0 0 1 5.7 5.7L16.7 12"></path><path d="M13 17.5 11.1 19.4a4 4 0 0 1-5.7-5.7L7.3 12"></path></svg>
+            </span>
+            <span class="share-label">링크 복사</span>
           </button>
         </div>
         <div class="share-toast" id="share-toast" role="status" aria-live="polite"></div>
@@ -3611,7 +3615,7 @@ const CATEGORY_META = [
   // ====== KAKAO SDK INIT ======
   // Kakao Developers에서 JavaScript 키를 발급받아 아래에 입력하세요.
   // https://developers.kakao.com → 내 애플리케이션 → 앱 설정 → 플랫폼 → Web 도메인 등록 → JavaScript 키 복사
-  // 발급 전에는 다른 공유 버튼은 정상 작동하며, 카카오 버튼만 클립보드 폴백으로 동작합니다.
+  // 발급 전에도 카카오채널 추가 버튼은 채널 링크로 정상 동작합니다 (공유 영역은 공유하기·링크 복사 2개만 둔다).
   const KAKAO_JS_KEY = '';  // ← 여기에 키 입력 (예: 'a1b2c3d4e5...')
   // 카카오톡 채널 공개 ID. 채널 관리자센터 → 채널 정보에서 확인. 밑줄로 시작한다.
   const KAKAO_CHANNEL_ID = '_xkySDn';
@@ -3688,152 +3692,46 @@ const CATEGORY_META = [
     setTimeout(() => t.classList.remove('show'), 2500);
   }
 
-  // ====== SHARE FUNCTIONS (Web Share API + mailto: 통합) ======
-  // 모바일: navigator.share로 native share sheet (한 번에 모든 앱 선택 가능)
-  // PC: 플랫폼별 fallback (Kakao SDK / 클립보드 / mailto:)
-  // 네이버/Gmail은 mailto: scheme 사용 → PC는 OS 메일 클라이언트, 모바일은 메일 앱 (body+subject 100% 전달)
+  // ====== SHARE FUNCTIONS ======
+  // 공유하기(shareNative) — 모바일·지원 브라우저는 OS 공유 시트(카톡·문자·메일 등 선택),
+  // PC 등 navigator.share 미지원 환경은 링크 복사(shareCopyUrl)로 이어진다.
 
-  const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-
-  function buildShareSubject() {
-    return '법인 자산 1분 건강검진 추천';
-  }
-
-  function buildShareBody() {
-    return `${getShareText()}\n\n진단 받아보기 → ${getShareUrl()}`;
-  }
-
-  // 모바일: Web Share API (네이티브 공유 시트)
-  function tryWebShare(fallback) {
-    if (navigator.share) {
-      const data = {
-        title: '법인 자산 1분 건강검진 | 벨라리치',
-        text: getShareText(),
-        url: getShareUrl()
-      };
-      try {
-        const result = navigator.share(data);
-        if (result && typeof result.catch === 'function') {
-          result.catch((e) => {
-            // AbortError(사용자 취소)는 무시, 그 외 에러는 fallback
-            if (e && e.name && e.name !== 'AbortError') {
-              console.warn('Web Share failed:', e);
-              fallback();
-            }
-          });
-        }
-        return true;
-      } catch (e) {
-        if (e && e.name !== 'AbortError') {
-          console.warn('Web Share error:', e);
-          return false;
-        }
-        return true; // AbortError는 정상 (취소)
-      }
-    }
-    return false;
-  }
-
-  // 카카오톡
-  function shareKakao() {
-    const url = getShareUrl();
-    const text = getShareText();
-    if (window.Kakao && window.Kakao.isInitialized()) {
-      window.Kakao.Share.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: '법인 자산 1분 건강검진 | 벨라리치',
-          description: text,
-          imageUrl: 'https://bellarich.co.kr/check/og-image.png',
-          link: { mobileWebUrl: url, webUrl: url }
-        },
-        buttons: [{
-          title: '진단 받아보기',
-          link: { mobileWebUrl: url, webUrl: url }
-        }]
-      });
+  function shareNative() {
+    if (!navigator.share) {
+      shareCopyUrl();
       return;
     }
-    // 모바일: Web Share API (사용자가 카카오톡 선택)
-    if (tryWebShare(kakaoPCFallback)) return;
-    // PC: 클립보드
-    kakaoPCFallback();
-  }
-
-  function kakaoPCFallback() {
-    const fullText = `${getShareText()}\n${getShareUrl()}`;
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(fullText).then(
-        () => showToast('링크를 복사했어요. 카카오톡에 붙여넣어 보내주세요.'),
-        () => showToast('링크 복사에 실패했어요. 주소창의 주소를 직접 복사해 주세요.')
-      );
-    } else {
-      fallbackCopy(getShareUrl());
+    const data = {
+      title: '법인 자산 1분 건강검진 | 벨라리치',
+      text: getShareText(),
+      url: getShareUrl()
+    };
+    let promise;
+    try {
+      promise = navigator.share(data);
+    } catch (e) {
+      // 사용자가 공유 시트를 닫은 경우(AbortError)는 안내 없이 넘어간다.
+      if (!e || e.name !== 'AbortError') {
+        console.warn('Web Share error:', e);
+        shareCopyUrl();
+      }
+      return;
     }
-  }
-
-  // 인스타그램
-  function shareInstagram() {
-    // 모바일: Web Share API (사용자가 Instagram 선택)
-    if (tryWebShare(instaPCFallback)) return;
-    // PC: 클립보드 + 인스타 웹
-    instaPCFallback();
-  }
-
-  function instaPCFallback() {
-    const fullText = `${getShareText()}\n${getShareUrl()}`;
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(fullText).then(() => {
-        showToast('링크가 복사됐어요. 인스타 DM/스토리에 붙여넣기 하세요.');
-        window.open('https://www.instagram.com/', '_blank', 'noopener');
+    if (promise && typeof promise.catch === 'function') {
+      promise.catch((e) => {
+        if (e && e.name === 'AbortError') return;
+        console.warn('Web Share failed:', e);
+        shareCopyUrl();
       });
-    } else {
-      fallbackCopy(getShareUrl());
-      window.open('https://www.instagram.com/', '_blank', 'noopener');
     }
   }
 
-  // 네이버 메일 — mailto: scheme (PC=OS 메일, 모바일=메일 앱, body+subject 100% 전달)
-  function shareNaverMail() {
-    // 모바일: Web Share API (사용자가 네이버 메일 선택)
-    if (tryWebShare(naverMailFallback)) return;
-    // PC/모바일 fallback: mailto: scheme
-    naverMailFallback();
-  }
-
-  function naverMailFallback() {
-    const subject = encodeURIComponent(buildShareSubject());
-    const body = encodeURIComponent(buildShareBody());
-    // mailto: scheme — 가장 호환성 높음. body, subject 모두 정상 전달
-    window.location.href = `mailto:bellarich7@naver.com?subject=${subject}&body=${body}`;
-    setTimeout(() => {
-      showToast('메일 앱이 안 열리면 "URL 복사" 후 직접 붙여넣기 하세요.');
-    }, 1500);
-  }
-
-  // Gmail — mailto: scheme (받는 사람 없이, body+subject 전달)
-  function shareGmail() {
-    // 모바일: Web Share API
-    if (tryWebShare(gmailFallback)) return;
-    // PC/모바일 fallback: mailto:
-    gmailFallback();
-  }
-
-  function gmailFallback() {
-    const subject = encodeURIComponent(buildShareSubject());
-    const body = encodeURIComponent(buildShareBody());
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
-    setTimeout(() => {
-      showToast('메일 앱이 안 열리면 "URL 복사" 후 직접 붙여넣기 하세요.');
-    }, 1500);
-  }
-
-  // URL 복사
+  // 링크 복사
   function shareCopyUrl() {
     const url = getShareUrl();
     if (navigator.clipboard) {
       navigator.clipboard.writeText(url).then(
-        () => showToast('URL이 복사됐어요.'),
+        () => showToast('링크가 복사됐어요.'),
         () => fallbackCopy(url)
       );
     } else {
@@ -3850,7 +3748,7 @@ const CATEGORY_META = [
     ta.select();
     try {
       document.execCommand('copy');
-      showToast('URL이 복사됐어요.');
+      showToast('링크가 복사됐어요.');
     } catch (e) {
       showToast('복사 실패. 직접 선택해 복사해 주세요.');
     }
