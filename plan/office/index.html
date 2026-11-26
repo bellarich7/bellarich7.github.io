@@ -179,25 +179,42 @@ h2 em{font-style:normal;color:var(--gold-d)}
   background:var(--navy);color:#fff;overflow:hidden;
 }
 .hero__media{
-  /* 상반신 정면 컷아웃(1086×1348)을 히어로 오른쪽 아래에 붙인다.
-     높이 84%·폭 상한 700px → 1440×900에서 약 600×756 CSS px. */
-  position:absolute;right:0;bottom:0;top:auto;height:84%;width:min(50%,700px);
+  /* 상반신 정면 컷아웃을 히어로 아래에 붙인다. 폭 상한 466px = 예전 700px의 2/3.
+     높이 84%·폭 466px → 1920×1080에서 466×578 CSS px.
+     오른쪽 끝에 붙이지 않고 본문 폭(1240px) 밖 여백 쪽으로 들여, 사진이 화면
+     가장자리가 아니라 가운데 쪽에 서 있게 한다(1024px 이하에서는 0). */
+  position:absolute;bottom:0;top:auto;height:84%;width:min(50%,466px);
+  right:clamp(0px,calc((100vw - var(--w)) * .5),320px);
   background-image:var(--ceo-img);background-repeat:no-repeat;
   background-position:right bottom;background-size:contain;z-index:1;
 }
-/* PC 레티나(2배 화면)는 히어로 사진을 최대 700 CSS px = 1400 기기 px로 그린다.
-   원본 1086px로는 1.29배 늘려야 해서 흐려지므로, 따로 만든 1400×1738 파일을 물린다.
-   1배 화면과 모바일은 위의 인라인 --ceo-img 를 그대로 써서 용량·화질 변화가 없다. */
+/* PC는 466 CSS px로 그리므로 2배 화면도 932 기기 px면 충분하다(원본 1086px 이내).
+   브라우저가 큰 파일을 줄이거나 작은 파일을 늘리지 않도록, 화면 배율마다 그 크기에
+   딱 맞춰 만든 파일을 물린다(1배 466 · 1.5배 699 · 2배 932). make_hero_pc.py.
+   1배·모바일은 위의 인라인 --ceo-img 를 그대로 써서 용량·화질 변화가 없다. */
+@media (min-width:1081px) and (max-resolution:1.1dppx){
+  .hero__media{background-image:url("assets/ceo-hero-pc-1x.webp?v=1126p")}
+}
+@media (min-width:1081px) and (min-resolution:1.11dppx) and (max-resolution:1.79dppx){
+  .hero__media{background-image:url("assets/ceo-hero-pc-15x.webp?v=1126p")}
+}
 @media (min-width:1081px) and (min-resolution:1.8dppx){
-  .hero__media{background-image:url("assets/ceo-hero-2x.webp?v=1126a")}
+  .hero__media{background-image:url("assets/ceo-hero-pc-2x.webp?v=1126p")}
 }
 /* 사파리 15 이하용 별칭 — 같은 파일이라 중복 요청은 없다 */
+@media (min-width:1081px) and (-webkit-max-device-pixel-ratio:1.1){
+  .hero__media{background-image:url("assets/ceo-hero-pc-1x.webp?v=1126p")}
+}
+@media (min-width:1081px) and (-webkit-min-device-pixel-ratio:1.11) and (-webkit-max-device-pixel-ratio:1.79){
+  .hero__media{background-image:url("assets/ceo-hero-pc-15x.webp?v=1126p")}
+}
 @media (min-width:1081px) and (-webkit-min-device-pixel-ratio:1.8){
-  .hero__media{background-image:url("assets/ceo-hero-2x.webp?v=1126a")}
+  .hero__media{background-image:url("assets/ceo-hero-pc-2x.webp?v=1126p")}
 }
 /* warm glow behind the portrait, then feathered edges so the studio
    cut-out melts into the hero gradient instead of sitting in a box */
-.hero__glow{position:absolute;right:-4%;bottom:-6%;width:min(62%,860px);aspect-ratio:1/.86;z-index:1;
+.hero__glow{position:absolute;bottom:-6%;width:min(44%,640px);aspect-ratio:1/.86;z-index:1;
+  right:calc(clamp(0px,calc((100vw - var(--w)) * .5),320px) - 4%);
   background:radial-gradient(50% 50% at 58% 62%,rgba(197,164,126,.22) 0%,rgba(197,164,126,.07) 46%,rgba(197,164,126,0) 72%);
   pointer-events:none}
 .hero__media::after{
