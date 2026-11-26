@@ -36,7 +36,7 @@
   --head-h:76px;
   /* 솔루션 플랜별 카드 바탕색 — 톤을 바꾸려면 이 세 줄만 고치면 됩니다 */
   --plan-life:#14243F;   /* 생애주기 플랜 · 남색 */
-  --plan-suc:#7F5423;    /* 가업승계 플랜 · 앰버 */
+  --plan-suc:#7F5423;    /* 부동산·가업 승계 플랜 · 앰버 */
   --plan-fin:#455E4D;    /* 재무·경영지원 플랜 · 세이지그린 */
   --card-on-dark-title:#FFFFFF;
   --card-on-dark-text:#FBF7EE;
@@ -350,13 +350,9 @@ h2 em{font-style:normal;color:var(--gold-d)}
 .panel__note{display:flex;align-items:center;gap:10px;margin:0 0 26px;font-size:13.5px;color:var(--ink);letter-spacing:.01em;font-weight:600}
 .panel__note::before{content:"";width:18px;height:1px;background:var(--gold)}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,22px)}
-#panel-life .cards,#panel-fin .cards{grid-template-columns:repeat(4,minmax(0,1fr))}
-#panel-suc .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
-#panel-life .cards .card--wide{grid-column:span 2}
+/* 탭마다 카드 수에 맞춰 칸을 잡니다 — 생애주기 6(3×2) · 부동산·가업 승계 4(한 줄) · 재무 5 */
+#panel-suc .cards,#panel-fin .cards{grid-template-columns:repeat(4,minmax(0,1fr))}
 #panel-life .card--cta,#panel-suc .card--cta{grid-column:1/-1}
-#panel-life .card--wide .card__next{position:absolute;right:26px;bottom:28px;font-size:12px;letter-spacing:.05em;
-  color:rgba(197,164,126,.95);display:inline-flex;align-items:center;gap:8px}
-@media (max-width:900px){#panel-life .card--wide .card__next{display:none}}
 .panel{
   --card-bg:#fff;--card-bd:rgba(11,25,51,.09);
   --card-title:var(--ink);--card-text:var(--muted);--card-num:var(--gold-d);--card-more:var(--gold-d);
@@ -432,49 +428,23 @@ h2 em{font-style:normal;color:var(--gold-d)}
   #panel-life .card--cta .card__more,#panel-suc .card--cta .card__more{margin:0 0 0 auto;white-space:nowrap}
 }
 
-/* ---------- succession ---------- */
-.suc__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);margin-bottom:clamp(38px,5vw,56px)}
-.suc__pair{border:1px solid rgba(255,255,255,.14);padding:clamp(22px,2.4vw,30px);display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.02)}
-.suc__pair b{font-family:var(--serif);font-size:16.5px;font-weight:500;color:var(--gold-l);white-space:nowrap;padding-top:2px}
-.suc__pair p{margin:0;font-size:15px;line-height:1.85;color:rgba(242,239,232,.9)}
-.flow{display:flex;align-items:stretch;gap:0;margin:clamp(24px,4vw,44px) 0 clamp(36px,5vw,56px)}
-.flow__node{
-  flex:1;border:1px solid rgba(197,164,126,.4);padding:clamp(18px,2.2vw,26px) clamp(14px,1.6vw,20px);
-  text-align:center;background:rgba(197,164,126,.06);transition:.4s var(--ease);
-}
-.flow__node:hover{background:rgba(197,164,126,.12);border-color:rgba(197,164,126,.7)}
-.flow__idx{display:block;font-size:10px;letter-spacing:.22em;color:rgba(197,164,126,.9);margin-bottom:12px;font-family:var(--latin)}
-.flow__node em{display:block;font-family:var(--latin);font-size:20px;font-style:normal;letter-spacing:.06em;color:var(--gold-l);line-height:1.2}
-.flow__node b{display:block;font-family:var(--serif);font-size:15.5px;font-weight:500;color:#F4F1EA;margin-top:6px;line-height:1.5}
-.flow__node small{display:block;font-size:12.5px;color:rgba(242,239,232,.8);margin-top:4px}
-.flow__arw{display:flex;align-items:center;justify-content:center;width:clamp(26px,4vw,54px);color:var(--gold);font-size:15px;flex:0 0 auto}
-.suc__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);padding-top:clamp(32px,4vw,44px);border-top:1px solid rgba(255,255,255,.12)}
-.suc__col h4{font-family:var(--serif);font-size:17.5px;font-weight:500;margin:0 0 14px;color:#F4F1EA;letter-spacing:-.01em}
-.suc__col h4 i{font-family:var(--latin);font-style:normal;color:var(--gold);font-size:12px;letter-spacing:.14em;margin-right:10px;vertical-align:2px}
-.suc__col p,.suc__col li{font-size:15px;line-height:1.85;color:rgba(242,239,232,.9);margin:0}
-.suc__col ol,.suc__col ul{margin:0;padding-left:16px}
-.suc__col li{margin-bottom:6px}
-.suc__col li::marker{color:var(--gold)}
-.suc__col .tagline{display:inline-block;font-size:12px;letter-spacing:.08em;color:var(--gold-l);border:1px solid rgba(197,164,126,.4);padding:4px 10px;margin-bottom:14px}
+/* ---------- 승계 탭 3단계 흐름 (축약형) ----------
+   예전 부동산승계 설명 패널(.suc-block)은 /plan/in-kind/ 본문으로 옮기고,
+   홈에는 "개인부동산 → 법인화 → 자녀법인 지분 이전" 세 칸만 남깁니다. */
+.suc-flow{display:flex;align-items:stretch;margin:0 0 clamp(18px,2.2vw,26px);
+  border:1px solid rgba(154,123,87,.3);background:#FBF7EE;padding:14px clamp(14px,1.6vw,20px)}
+.suc-flow__label{display:flex;align-items:center;flex:0 0 auto;
+  padding:0 clamp(12px,1.6vw,20px) 0 0;margin-right:clamp(4px,.6vw,8px);
+  border-right:1px solid rgba(154,123,87,.26);
+  font-size:10.5px;letter-spacing:.18em;color:#6B4A22;font-weight:600;white-space:nowrap}
+.suc-flow__step{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1px;
+  padding:0 clamp(10px,1.4vw,18px)}
+.suc-flow__step span{font-family:var(--latin);font-size:10px;letter-spacing:.16em;color:#6B4A22;font-weight:600}
+.suc-flow__step b{font-family:var(--serif);font-size:clamp(14px,1.2vw,16px);font-weight:600;color:var(--ink);line-height:1.5}
+.suc-flow__step small{font-size:12px;line-height:1.5;color:var(--muted-l)}
+.suc-flow__arw{display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:clamp(14px,1.6vw,22px);font-style:normal;font-size:13px;color:#9A7B57}
 
-/* ---------- succession block inside the solution panel ---------- */
-/* 카드와 구분되는 "설명 패널": 더 짙은 남색 + 골드 해어라인, 위에 라벨 */
-.cards > .suc-block{grid-column:1 / -1;margin-top:clamp(12px,1.6vw,20px)}
-.suc-block{position:relative;margin-top:clamp(40px,5vw,64px);padding:clamp(28px,3.6vw,54px);
-  background:#081326;color:#EDEAE3;border:1px solid rgba(197,164,126,.26);
-  box-shadow:inset 0 1px 0 rgba(197,164,126,.3),0 30px 60px -40px rgba(8,19,38,.55)}
-.suc-block::before{content:attr(data-label);position:absolute;left:clamp(28px,3.6vw,54px);top:-28px;
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
-.suc-block::after{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;
-  background:linear-gradient(90deg,rgba(197,164,126,.55),rgba(197,164,126,0) 55%)}
-.suc-block .lead{color:rgba(245,241,233,.95)}
-.suc-block__head{max-width:740px;margin-bottom:clamp(24px,3vw,38px)}
-.suc-block h3{font-family:var(--serif);font-weight:300;font-size:clamp(22px,2.6vw,32px);line-height:1.5;letter-spacing:-.02em;margin:0 0 16px;color:#F6F3ED}
-.suc-block h3 em{font-style:normal;color:var(--gold-l)}
-.suc-block .lead{color:rgba(242,239,232,.92)}
-.suc-block .suc__grid{margin-bottom:clamp(30px,4vw,46px)}
-.suc-block .suc__cols{padding-top:clamp(26px,3.4vw,40px)}
 
 /* ---------- about ---------- */
 /* 카드는 폭·크기 그대로 두고 화면 가운데로 (margin-inline:auto) */
@@ -675,7 +645,6 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   #panel-life .cards,#panel-suc .cards,#panel-fin .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .about__top{gap:42px}
-  .suc__cols{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
   :root{--head-h:64px}
@@ -719,10 +688,13 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .books__note{grid-column:1/-1;padding-left:0;margin-top:6px}
   .career{grid-template-columns:1fr;gap:20px}
   .career li{font-size:14.5px;line-height:1.45;padding:2px 0 2px 18px}
-  .flow{flex-direction:column}
-  .flow__arw{width:100%;height:34px;transform:rotate(90deg)}
-  .suc__grid{grid-template-columns:1fr}
-  .suc__cols{grid-template-columns:1fr}
+  .suc-flow{flex-direction:column;gap:0}
+  .suc-flow__label{padding:0 0 8px;margin:0 0 6px;border-right:0;border-bottom:1px solid rgba(154,123,87,.26)}
+  .suc-flow__step{padding:4px 0;gap:0}
+  .suc-flow__step span{font-size:9.5px}
+  .suc-flow__step b{font-size:15px;line-height:1.45}
+  .suc-flow__arw{width:100%;height:16px;justify-content:flex-start;padding-left:1px;
+    transform:rotate(90deg);transform-origin:2px 50%;font-size:11px}
   .modal{justify-content:center;align-items:flex-end}
   .modal__panel{width:100%;max-height:92vh;max-height:92svh;transform:translateY(30px);border-radius:16px 16px 0 0;overflow:hidden}
   .modal.is-open .modal__panel{transform:translateY(0)}
@@ -748,16 +720,12 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .tab[aria-selected="true"]::after{width:auto}
   .tab b{font-size:12px;margin-left:10px}
   .cards,#panel-life .cards,#panel-suc .cards,#panel-fin .cards{grid-template-columns:1fr}
-  #panel-life .cards .card--wide{grid-column:auto}
   .card{min-height:0}
   .panel .card{min-height:0}
   .books{grid-template-columns:1fr 1fr;gap:16px}
   .books__head{margin-bottom:2px}
   .book figcaption{margin-top:12px}
   .book b{font-size:15px}
-  .flow__node{text-align:center}
-  .suc__pair{flex-direction:column;gap:10px}
-  .suc__pair b{padding-top:0}
   .m-row{grid-template-columns:72px minmax(0,1fr);gap:10px}
   .modal__bar{padding:16px 20px}
   .m-points p{padding-left:48px}
@@ -781,7 +749,7 @@ h2 em{font-style:normal;color:var(--gold-d)}
         <li><a class="nav__link" href="#about">대표소개</a></li>
         <li><a class="nav__link" href="#philosophy">철학</a></li>
         <li><button class="nav__link" type="button" data-goto="solutions" data-tab="life">생애주기 플랜</button></li>
-        <li><button class="nav__link" type="button" data-goto="solutions" data-tab="suc">가업승계 플랜</button></li>
+        <li><button class="nav__link" type="button" data-goto="solutions" data-tab="suc">부동산·가업 승계</button></li>
         <li><button class="nav__link" type="button" data-goto="solutions" data-tab="fin">재무·경영지원</button></li>
       </ul>
     </nav>
@@ -796,7 +764,7 @@ h2 em{font-style:normal;color:var(--gold-d)}
     <li><a href="#about"><em>02</em>대표소개</a></li>
     <li><a href="#philosophy"><em>03</em>철학</a></li>
     <li><button type="button" data-goto="solutions" data-tab="life"><em>04</em>생애주기 플랜</button></li>
-    <li><button type="button" data-goto="solutions" data-tab="suc"><em>05</em>가업승계 플랜</button></li>
+    <li><button type="button" data-goto="solutions" data-tab="suc"><em>05</em>부동산·가업 승계</button></li>
     <li><button type="button" data-goto="solutions" data-tab="fin"><em>06</em>법인 재무·경영지원 플랜</button></li>
     <li><a href="#contact"><em>07</em>상담신청</a></li>
   </ul>
@@ -991,13 +959,13 @@ h2 em{font-style:normal;color:var(--gold-d)}
       <div class="sol__head rv">
         <p class="eyebrow">Solutions</p>
         <h2>법인과 부동산을 잇는<br>솔루션 <em>메뉴</em></h2>
-        <p class="lead">법인CEO의 생애주기를 따라가는 부동산 플랜, 가업승계 플랜, 그리고 법인 재무·경영지원 플랜. 세 갈래의 메뉴에서 지금 필요한 전략을 고르시면, 카드를 눌러 상세 내용을 확인하실 수 있습니다.</p>
+        <p class="lead">법인CEO의 생애주기를 따라가는 부동산 플랜, 부동산·가업 승계 플랜, 그리고 법인 재무·경영지원 플랜. 세 갈래의 메뉴에서 지금 필요한 전략을 고르시면, 카드를 눌러 상세 내용을 확인하실 수 있습니다.</p>
       </div>
 
       <p class="sol-hint">플랜 버튼을 누르면 각 플랜의 메뉴가 열립니다</p>
       <div class="tabs rv" role="tablist" aria-label="솔루션 카테고리">
-        <button class="tab" role="tab" id="tab-life" aria-controls="panel-life" aria-selected="true">법인CEO 생애주기별 부동산 플랜 <b>08</b></button>
-        <button class="tab" role="tab" id="tab-suc" aria-controls="panel-suc" aria-selected="false">가업승계 플랜 <b>04</b></button>
+        <button class="tab" role="tab" id="tab-life" aria-controls="panel-life" aria-selected="true">법인CEO 생애주기별 부동산 플랜 <b>07</b></button>
+        <button class="tab" role="tab" id="tab-suc" aria-controls="panel-suc" aria-selected="false">부동산·가업 승계 플랜 <b>05</b></button>
         <button class="tab" role="tab" id="tab-fin" aria-controls="panel-fin" aria-selected="false">법인 재무·경영지원 플랜 <b>06</b></button>
       </div>
 
@@ -1010,72 +978,27 @@ h2 em{font-style:normal;color:var(--gold-d)}
           <div class="card card--link" data-href="/plan/home-for-kids/" role="link" tabindex="0" aria-label="CEO 자녀 보금자리 플랜 상세 페이지"><span class="card__no">04</span><h3>CEO 자녀 보금자리 플랜</h3><p>청약통장 없이도 서울에서 내 집 마련. 소규모재개발·재건축·저평가 아파트 전략.</p><div class="card__act"><a class="card__more" href="/plan/home-for-kids/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
           <div class="card card--link" data-href="/plan/tax/" role="link" tabindex="0" aria-label="개인소득세 절세 플랜 상세 페이지"><span class="card__no">05</span><h3>개인소득세 절세 플랜</h3><p>벤처투자 소득공제 구조로 투자구간별 공제율과 소득공제액을 함께 설계합니다.</p><div class="card__act"><a class="card__more" href="/plan/tax/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
           <div class="card card--link" data-href="/plan/asset/" role="link" tabindex="0" aria-label="부동산 자산운용 플랜 상세 페이지"><span class="card__no">06</span><h3>부동산 자산운용 플랜</h3><p>부동산·현금 두 축의 자산운용. 투자기간과 자산범위에 맞춘 실물·대체투자.</p><div class="card__act"><a class="card__more" href="/plan/asset/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
-          <div class="card card--wide card--link" data-href="/plan/in-kind/" role="link" tabindex="0" aria-label="부동산 현물출자 법인전환 상세 페이지"><span class="card__no">07</span><h3>부동산 현물출자 법인전환</h3><p>개인 명의 부동산을 현물출자로 법인에 옮기고, 그 법인 지분을 자녀에게 — 부동산과 법인 양쪽에서 승계를 설계합니다.</p><div class="card__act"><a class="card__more" href="/plan/in-kind/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div><span class="card__next" aria-hidden="true">가업승계 플랜 탭 →</span></div>
-        <div class="suc-block" id="succession" data-label="부동산 승계 구조">
-          <div class="suc-block__head">
-            <p class="eyebrow">Succession Structure</p>
-            <h3>부동산승계 <em>법인컨설팅</em></h3>
-            <p class="lead">부동산 자산이전의 가격기준이 기준시가나 공시지가가 아닌 실거래가로 바뀌고 있어, 상속과 증여를 통한 부(富)의 세대 간 이동시 부담해야 하는 개인의 세금이 감당하기 힘든 수준으로 올라가고 있습니다. 부동산 자산의 세대이전에 대한 절세계획 솔루션으로 <b style="color:#D9C1A0;font-weight:400">법인활용 전략</b>은 필수입니다.</p>
-          </div>
-
-          <div class="suc__grid">
-            <div class="suc__pair">
-              <b>부동산 전문가</b>
-              <p>부동산 현황분석, 미래가치 검토에 따른 부동산승계전략 수립 및 향후 부동산 활용전략</p>
-            </div>
-            <div class="suc__pair">
-              <b>법인 전문가</b>
-              <p>상법 및 세법 등 검토를 통한 법인활용전략 수립, 자녀법인 등 활용한 세대간 자산이동 절세승계 및 상속 전략</p>
-            </div>
-          </div>
-
-          <div class="flow">
-            <div class="flow__node">
-              <span class="flow__idx">STEP 01 · 개인</span>
-              <em>A&#8242;</em><b>부모님 개인부동산</b><small>개인 명의 자산</small>
-            </div>
-            <div class="flow__arw" aria-hidden="true">→</div>
-            <div class="flow__node">
-              <span class="flow__idx">STEP 02 · 법인화</span>
-              <em>(주)A&#8242;</em><b>부모님 100%</b><small>법인 전환</small>
-            </div>
-            <div class="flow__arw" aria-hidden="true">→</div>
-            <div class="flow__node">
-              <span class="flow__idx">STEP 03 · 승계</span>
-              <em>(주)B</em><b>자녀법인 100%</b><small>지분 이전</small>
-            </div>
-          </div>
-
-          <div class="suc__cols">
-            <div class="suc__col">
-              <h4><i>01</i>개인자산 법인화</h4>
-              <p>개인부동산 형태로 자산이전시 50%까지 최대세율이 적용됩니다. 개인부동산을 법인화하여 주식으로 자녀법인 등에 자산이전하는 전략을 통해 가문의 부동산을 형성합니다.</p>
-            </div>
-            <div class="suc__col">
-              <h4><i>02</i>상속·증여시 장점</h4>
-              <ol>
-                <li><b style="color:#D9C1A0;font-weight:400">자녀법인에 재산을 증여</b><br>자녀법인은 증여재산에 대해 법인세를 납부 — 2억원까지 9%, 200억원까지 19%</li>
-                <li><b style="color:#D9C1A0;font-weight:400">5년이 경과하면 상속재산에 합산하지 않는다</b><br>상속인에게 미리 증여한 재산은 10년 이내 합산, 상속인 아닌 자(손자·자녀법인 등)에게 미리 증여한 재산은 5년 이내 합산</li>
-              </ol>
-            </div>
-            <div class="suc__col">
-              <h4><i>03</i>신탁활용</h4>
-              <p>자녀에게 사전증여를 통한 절세전략과 더불어 법적제도를 통해 그 재산에 관련된 모든 권한을 부모가 관리할 수 있는 신탁제도를 활용합니다.</p>
-            </div>
-          </div>
-        </div>
-          <a class="card card--cta" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener"><span class="card__no">08</span><h3>어떤 메뉴를 골라야 할지<br>모르겠다면</h3><p>지금 상황을 남겨 주시면 필요한 조합을 1:1로 설계해 드립니다.</p><span class="card__more"><i></i>상담 신청</span></a>
+          <a class="card card--cta" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener"><span class="card__no">07</span><h3>어떤 메뉴를 골라야 할지<br>모르겠다면</h3><p>지금 상황을 남겨 주시면 필요한 조합을 1:1로 설계해 드립니다.</p><span class="card__more"><i></i>상담 신청</span></a>
         </div>
 
       </div>
 
       <div class="panel" id="panel-suc" role="tabpanel" aria-labelledby="tab-suc" hidden>
-        <p class="panel__note">자녀 창업법인 · 가업상속공제·증여특례 · 상속·증여 신탁</p>
-        <div class="cards cards--3">
-          <div class="card card--link" data-href="/plan/startup-succession/" role="link" tabindex="0" aria-label="자녀 창업법인으로 가업승계 상세 페이지"><span class="card__no">01</span><h3>자녀 창업법인으로<br>가업승계</h3><p>자녀 창업법인을 활용한 승계. 요건 진단부터 지분·경영권 이전까지 로드맵을 만듭니다.</p><div class="card__act"><a class="card__more" href="/plan/startup-succession/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
-          <div class="card card--link" data-href="/plan/family-business/" role="link" tabindex="0" aria-label="가업상속공제 · 증여특례 상세 페이지"><span class="card__no">02</span><h3>가업상속공제<br>· 증여특례</h3><p>가업상속공제와 가업승계 증여특례 요건을 사전에 진단하고, 사후관리까지 설계합니다.</p><div class="card__act"><a class="card__more" href="/plan/family-business/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
-          <div class="card card--link" data-href="/plan/trust/" role="link" tabindex="0" aria-label="상속 · 증여 신탁 상세 페이지"><span class="card__no">03</span><h3>상속 · 증여 신탁</h3><p>유언·신탁 등 법적 수단을 통한 승계 구조. 법무법인 서초 자산관리센터와 협업합니다.</p><div class="card__act"><a class="card__more" href="/plan/trust/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
-          <a class="card card--cta" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener"><span class="card__no">04</span><h3>어떤 메뉴를 골라야 할지<br>모르겠다면</h3><p>지금 상황을 남겨 주시면 필요한 조합을 1:1로 설계해 드립니다.</p><span class="card__more"><i></i>상담 신청</span></a>
+        <p class="panel__note">부동산 승계 플랜 · 자녀 창업법인 · 가업상속공제·증여특례 · 상속·증여 신탁</p>
+        <div class="suc-flow" aria-label="부동산 승계 3단계">
+          <span class="suc-flow__label">부동산 승계 구조</span>
+          <div class="suc-flow__step"><span>STEP 01 · 개인</span><b>A′ 부모님 개인부동산</b><small>개인 명의 자산</small></div>
+          <i class="suc-flow__arw" aria-hidden="true">→</i>
+          <div class="suc-flow__step"><span>STEP 02 · 법인화</span><b>(주)A′ 부모님 100%</b><small>법인 전환</small></div>
+          <i class="suc-flow__arw" aria-hidden="true">→</i>
+          <div class="suc-flow__step"><span>STEP 03 · 승계</span><b>(주)B 자녀법인 100%</b><small>지분 이전</small></div>
+        </div>
+        <div class="cards">
+          <div class="card card--link" data-href="/plan/in-kind/" role="link" tabindex="0" aria-label="부동산 승계 플랜 상세 페이지"><span class="card__no">01</span><h3>부동산 승계 플랜</h3><p>개인 명의 부동산을 현물출자로 법인에 옮기고, 그 법인 지분을 자녀에게 — 부동산과 법인 양쪽에서 승계를 설계합니다.</p><div class="card__act"><a class="card__more" href="/plan/in-kind/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card card--link" data-href="/plan/startup-succession/" role="link" tabindex="0" aria-label="자녀 창업법인으로 가업승계 상세 페이지"><span class="card__no">02</span><h3>자녀 창업법인으로<br>가업승계</h3><p>자녀 창업법인을 활용한 승계. 요건 진단부터 지분·경영권 이전까지 로드맵을 만듭니다.</p><div class="card__act"><a class="card__more" href="/plan/startup-succession/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card card--link" data-href="/plan/family-business/" role="link" tabindex="0" aria-label="가업상속공제 · 증여특례 상세 페이지"><span class="card__no">03</span><h3>가업상속공제<br>· 증여특례</h3><p>가업상속공제와 가업승계 증여특례 요건을 사전에 진단하고, 사후관리까지 설계합니다.</p><div class="card__act"><a class="card__more" href="/plan/family-business/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <div class="card card--link" data-href="/plan/trust/" role="link" tabindex="0" aria-label="상속 · 증여 신탁 상세 페이지"><span class="card__no">04</span><h3>상속 · 증여 신탁</h3><p>유언·신탁 등 법적 수단을 통한 승계 구조. 법무법인 서초 자산관리센터와 협업합니다.</p><div class="card__act"><a class="card__more" href="/plan/trust/"><i></i>자세히</a><span class="card__sep" aria-hidden="true">·</span><a class="card__more card__apply" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청</a></div></div>
+          <a class="card card--cta" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" target="_blank" rel="noopener"><span class="card__no">05</span><h3>어떤 메뉴를 골라야 할지<br>모르겠다면</h3><p>지금 상황을 남겨 주시면 필요한 조합을 1:1로 설계해 드립니다.</p><span class="card__more"><i></i>상담 신청</span></a>
         </div>
 
       </div>
@@ -1419,8 +1342,8 @@ h2 em{font-style:normal;color:var(--gold-d)}
   "html": "<p class=\"m-lead\">부동산과 현금, 두 축의 자산운용. 자산 규모와 투자기간에 맞춰 실물운용과 대체투자를 함께 설계합니다.</p><h4>부동산 / 현금 자산운용</h4><div class=\"table-wrap\"><table class=\"m-table m-table--kv\"><caption>서비스 개요</caption><thead><tr><th>구분</th><th>내용</th></tr></thead><tbody><tr><td class=\"hl\">투자기간</td><td>연단위 / 3년</td></tr><tr><td class=\"hl\">자산범위</td><td>5억 이상</td></tr><tr><td class=\"hl\">서비스비용</td><td>자산 0.5~1%</td></tr><tr><td class=\"hl\">투자성과수수료</td><td>10~30%</td></tr></tbody></table></div><h4>운용대상</h4><div class=\"table-wrap\"><table class=\"m-table m-table--kv\"><caption>실물운용 · 현금운용</caption><thead><tr><th>구분</th><th>운용대상</th></tr></thead><tbody><tr><td class=\"hl\">실물운용 / 부동산투자</td><td>경공매 · 매매 · 개발</td></tr><tr><td class=\"hl\">현금운용 / 대체투자</td><td>NPL · P2P · 재개발재건축 · 부동산 공간개발 · 부동산 시행개발 · 기타 부동산관련 자산운용</td></tr></tbody></table></div><h4>현금 자산운용 (대체투자)</h4><div class=\"table-wrap\"><table class=\"m-table m-table--kv\"><caption>서비스 개요</caption><thead><tr><th>구분</th><th>내용</th></tr></thead><tbody><tr><td class=\"hl\">투자기간</td><td>연단위</td></tr><tr><td class=\"hl\">자산범위</td><td>0.3억 이상</td></tr><tr><td class=\"hl\">서비스비용</td><td>자산 0.6~3%</td></tr><tr><td class=\"hl\">투자성과수수료</td><td>10~30%</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"m-table m-table--kv\"><caption>운용대상</caption><thead><tr><th>구분</th><th>운용대상</th></tr></thead><tbody><tr><td class=\"hl\">투자방식</td><td>개별투자 · 공동투자 · 벤처투자 · 사모펀드</td></tr><tr><td class=\"hl\">운용대상</td><td>NPL · P2P · 재개발재건축 · 부동산 공간개발 · 부동산 시행개발 · 기타 부동산관련 자산운용</td></tr></tbody></table></div><p class=\"m-note\">※ 투자기간·자산범위·비용·성과수수료는 자산과 전략에 따라 달라지며, 개별 상담에서 확정됩니다. 투자에는 원금 손실 위험이 있습니다.</p><div class=\"m-cta\"><p>이 플랜이 궁금하시다면 상담을 신청해 주세요.</p><a class=\"btn btn--navy\" href=\"https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform\" target=\"_blank\" rel=\"noopener\">상담 신청 <span>→</span></a></div>"
  },
  "suc1": {
-  "cat": "생애주기 플랜",
-  "title": "부동산 현물출자 법인전환",
+  "cat": "부동산·가업 승계",
+  "title": "부동산 승계 플랜",
   "html": "<p class=\"m-lead\">현물출자·법인전환 등 법인 활용 전문. 개인 명의 부동산을 법인으로 옮기고, 그 법인을 자녀에게 넘기는 구조를 부동산과 법인 양쪽에서 설계합니다.</p><h4>주요 내용</h4><ul><li>개인부동산의 <b>현물출자·법인전환</b> 구조 검토</li><li>양도차익·취득세·법인세를 함께 보는 <b>절세 시나리오</b></li><li><b>자녀법인 지분 이전</b>을 통한 단계적 승계 설계</li><li>승계 후 부동산 <b>활용(임대·개발)</b> 전략 연계</li></ul><h4>Point</h4><div class=\"m-points\"><p><b>Point 1</b>부동산 가치평가와 세부담 시뮬레이션을 먼저 진행합니다.</p><p><b>Point 2</b>법인전환·자녀법인·주식이동 등 법인컨설팅을 병행합니다.</p></div><div class=\"m-cta\"><p>이 플랜이 궁금하시다면 상담을 신청해 주세요.</p><a class=\"btn btn--navy\" href=\"https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform\" target=\"_blank\" rel=\"noopener\">상담 신청 <span>→</span></a></div>"
  },
  "suc2": {

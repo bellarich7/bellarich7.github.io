@@ -40,7 +40,7 @@
   --head-h:76px;
   /* 솔루션 플랜별 카드 바탕색 — 톤을 바꾸려면 이 세 줄만 고치면 됩니다 */
   --plan-life:#14243F;   /* 생애주기 플랜 · 남색 */
-  --plan-suc:#7F5423;    /* 가업승계 플랜 · 앰버 */
+  --plan-suc:#7F5423;    /* 부동산·가업 승계 플랜 · 앰버 */
   --plan-fin:#455E4D;    /* 재무·경영지원 플랜 · 세이지그린 */
   --card-on-dark-title:#FFFFFF;
   --card-on-dark-text:#FBF7EE;
@@ -179,9 +179,21 @@ h2 em{font-style:normal;color:var(--gold-d)}
   background:var(--navy);color:#fff;overflow:hidden;
 }
 .hero__media{
-  position:absolute;right:0;bottom:0;top:auto;height:90%;width:min(54%,780px);
+  /* 상반신 정면 컷아웃(1086×1348)을 히어로 오른쪽 아래에 붙인다.
+     높이 84%·폭 상한 700px → 1440×900에서 약 600×756 CSS px. */
+  position:absolute;right:0;bottom:0;top:auto;height:84%;width:min(50%,700px);
   background-image:var(--ceo-img);background-repeat:no-repeat;
   background-position:right bottom;background-size:contain;z-index:1;
+}
+/* PC 레티나(2배 화면)는 히어로 사진을 최대 700 CSS px = 1400 기기 px로 그린다.
+   원본 1086px로는 1.29배 늘려야 해서 흐려지므로, 따로 만든 1400×1738 파일을 물린다.
+   1배 화면과 모바일은 위의 인라인 --ceo-img 를 그대로 써서 용량·화질 변화가 없다. */
+@media (min-width:1081px) and (min-resolution:1.8dppx){
+  .hero__media{background-image:url("assets/ceo-hero-2x.webp?v=1126a")}
+}
+/* 사파리 15 이하용 별칭 — 같은 파일이라 중복 요청은 없다 */
+@media (min-width:1081px) and (-webkit-min-device-pixel-ratio:1.8){
+  .hero__media{background-image:url("assets/ceo-hero-2x.webp?v=1126a")}
 }
 /* warm glow behind the portrait, then feathered edges so the studio
    cut-out melts into the hero gradient instead of sitting in a box */
@@ -342,13 +354,9 @@ h2 em{font-style:normal;color:var(--gold-d)}
 .panel__note{display:flex;align-items:center;gap:10px;margin:0 0 26px;font-size:13.5px;color:var(--ink);letter-spacing:.01em;font-weight:600}
 .panel__note::before{content:"";width:18px;height:1px;background:var(--gold)}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,22px)}
-#panel-life .cards,#panel-fin .cards{grid-template-columns:repeat(4,minmax(0,1fr))}
-#panel-suc .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
-#panel-life .cards .card--wide{grid-column:span 2}
+/* 탭마다 카드 수에 맞춰 칸을 잡니다 — 생애주기 6(3×2) · 부동산·가업 승계 4(한 줄) · 재무 5 */
+#panel-suc .cards,#panel-fin .cards{grid-template-columns:repeat(4,minmax(0,1fr))}
 #panel-life .card--cta,#panel-suc .card--cta{grid-column:1/-1}
-#panel-life .card--wide .card__next{position:absolute;right:26px;bottom:28px;font-size:12px;letter-spacing:.05em;
-  color:rgba(197,164,126,.95);display:inline-flex;align-items:center;gap:8px}
-@media (max-width:900px){#panel-life .card--wide .card__next{display:none}}
 .panel{
   --card-bg:#fff;--card-bd:rgba(11,25,51,.09);
   --card-title:var(--ink);--card-text:var(--muted);--card-num:var(--gold-d);--card-more:var(--gold-d);
@@ -424,52 +432,27 @@ h2 em{font-style:normal;color:var(--gold-d)}
   #panel-life .card--cta .card__more,#panel-suc .card--cta .card__more{margin:0 0 0 auto;white-space:nowrap}
 }
 
-/* ---------- succession ---------- */
-.suc__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);margin-bottom:clamp(38px,5vw,56px)}
-.suc__pair{border:1px solid rgba(255,255,255,.14);padding:clamp(22px,2.4vw,30px);display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.02)}
-.suc__pair b{font-family:var(--serif);font-size:16.5px;font-weight:500;color:var(--gold-l);white-space:nowrap;padding-top:2px}
-.suc__pair p{margin:0;font-size:15px;line-height:1.85;color:rgba(242,239,232,.9)}
-.flow{display:flex;align-items:stretch;gap:0;margin:clamp(24px,4vw,44px) 0 clamp(36px,5vw,56px)}
-.flow__node{
-  flex:1;border:1px solid rgba(197,164,126,.4);padding:clamp(18px,2.2vw,26px) clamp(14px,1.6vw,20px);
-  text-align:center;background:rgba(197,164,126,.06);transition:.4s var(--ease);
-}
-.flow__node:hover{background:rgba(197,164,126,.12);border-color:rgba(197,164,126,.7)}
-.flow__idx{display:block;font-size:10px;letter-spacing:.22em;color:rgba(197,164,126,.9);margin-bottom:12px;font-family:var(--latin)}
-.flow__node em{display:block;font-family:var(--latin);font-size:20px;font-style:normal;letter-spacing:.06em;color:var(--gold-l);line-height:1.2}
-.flow__node b{display:block;font-family:var(--serif);font-size:15.5px;font-weight:500;color:#F4F1EA;margin-top:6px;line-height:1.5}
-.flow__node small{display:block;font-size:12.5px;color:rgba(242,239,232,.8);margin-top:4px}
-.flow__arw{display:flex;align-items:center;justify-content:center;width:clamp(26px,4vw,54px);color:var(--gold);font-size:15px;flex:0 0 auto}
-.suc__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);padding-top:clamp(32px,4vw,44px);border-top:1px solid rgba(255,255,255,.12)}
-.suc__col h4{font-family:var(--serif);font-size:17.5px;font-weight:500;margin:0 0 14px;color:#F4F1EA;letter-spacing:-.01em}
-.suc__col h4 i{font-family:var(--latin);font-style:normal;color:var(--gold);font-size:12px;letter-spacing:.14em;margin-right:10px;vertical-align:2px}
-.suc__col p,.suc__col li{font-size:15px;line-height:1.85;color:rgba(242,239,232,.9);margin:0}
-.suc__col ol,.suc__col ul{margin:0;padding-left:16px}
-.suc__col li{margin-bottom:6px}
-.suc__col li::marker{color:var(--gold)}
-.suc__col .tagline{display:inline-block;font-size:12px;letter-spacing:.08em;color:var(--gold-l);border:1px solid rgba(197,164,126,.4);padding:4px 10px;margin-bottom:14px}
+/* ---------- 승계 탭 3단계 흐름 (축약형) ----------
+   예전 부동산승계 설명 패널(.suc-block)은 /plan/in-kind/ 본문으로 옮기고,
+   홈에는 "개인부동산 → 법인화 → 자녀법인 지분 이전" 세 칸만 남깁니다. */
+.suc-flow{display:flex;align-items:stretch;margin:0 0 clamp(18px,2.2vw,26px);
+  border:1px solid rgba(154,123,87,.3);background:#FBF7EE;padding:14px clamp(14px,1.6vw,20px)}
+.suc-flow__label{display:flex;align-items:center;flex:0 0 auto;
+  padding:0 clamp(12px,1.6vw,20px) 0 0;margin-right:clamp(4px,.6vw,8px);
+  border-right:1px solid rgba(154,123,87,.26);
+  font-size:10.5px;letter-spacing:.18em;color:#6B4A22;font-weight:600;white-space:nowrap}
+.suc-flow__step{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1px;
+  padding:0 clamp(10px,1.4vw,18px)}
+.suc-flow__step span{font-family:var(--latin);font-size:10px;letter-spacing:.16em;color:#6B4A22;font-weight:600}
+.suc-flow__step b{font-family:var(--serif);font-size:clamp(14px,1.2vw,16px);font-weight:600;color:var(--ink);line-height:1.5}
+.suc-flow__step small{font-size:12px;line-height:1.5;color:var(--muted-l)}
+.suc-flow__arw{display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:clamp(14px,1.6vw,22px);font-style:normal;font-size:13px;color:#9A7B57}
 
-/* ---------- succession block inside the solution panel ---------- */
-/* 카드와 구분되는 "설명 패널": 더 짙은 남색 + 골드 해어라인, 위에 라벨 */
-.cards > .suc-block{grid-column:1 / -1;margin-top:clamp(12px,1.6vw,20px)}
-.suc-block{position:relative;margin-top:clamp(40px,5vw,64px);padding:clamp(28px,3.6vw,54px);
-  background:#081326;color:#EDEAE3;border:1px solid rgba(197,164,126,.26);
-  box-shadow:inset 0 1px 0 rgba(197,164,126,.3),0 30px 60px -40px rgba(8,19,38,.55)}
-.suc-block::before{content:attr(data-label);position:absolute;left:clamp(28px,3.6vw,54px);top:-28px;
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
-.suc-block::after{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;
-  background:linear-gradient(90deg,rgba(197,164,126,.55),rgba(197,164,126,0) 55%)}
-.suc-block .lead{color:rgba(245,241,233,.95)}
-.suc-block__head{max-width:740px;margin-bottom:clamp(24px,3vw,38px)}
-.suc-block h3{font-family:var(--serif);font-weight:300;font-size:clamp(22px,2.6vw,32px);line-height:1.5;letter-spacing:-.02em;margin:0 0 16px;color:#F6F3ED}
-.suc-block h3 em{font-style:normal;color:var(--gold-l)}
-.suc-block .lead{color:rgba(242,239,232,.92)}
-.suc-block .suc__grid{margin-bottom:clamp(30px,4vw,46px)}
-.suc-block .suc__cols{padding-top:clamp(26px,3.4vw,40px)}
 
 /* ---------- about ---------- */
-.philo__video{max-width:680px;margin:clamp(34px,4.2vw,54px) 0 0}
+/* 카드는 폭·크기 그대로 두고 화면 가운데로 (margin-inline:auto) */
+.philo__video{max-width:680px;margin:clamp(34px,4.2vw,54px) auto 0}
 .about__top{display:block}
 .about__body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3.2vw,52px)}
 .about__body p{font-size:17.5px;line-height:1.85;color:var(--muted);font-weight:500;margin:0}
@@ -666,7 +649,6 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   #panel-life .cards,#panel-suc .cards,#panel-fin .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .about__top{gap:42px}
-  .suc__cols{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
   :root{--head-h:64px}
@@ -680,11 +662,13 @@ h2 em{font-style:normal;color:var(--gold-d)}
   /* 모바일도 데스크톱과 같은 세로 배치: 로고 → 캡션 한 줄 → 제목.
      390 폭에서 캡션이 한 줄로 들어가도록 글자 크기와 자간을 이 폭에서만 좁힌다. */
   .hero__eyebrow{font-size:10.5px;letter-spacing:.12em;margin-bottom:19px}
-  .hero__media{order:2;position:relative;inset:auto;width:auto;height:min(92vw,470px);max-width:none;
-    margin-top:clamp(26px,5vw,40px);background-position:50% bottom;background-size:auto 100%;opacity:1;z-index:1}
+  .hero__media{order:2;position:relative;inset:auto;width:auto;height:min(112vw,540px);max-width:none;
+    margin-top:clamp(22px,4.4vw,34px);background-position:50% bottom;background-size:auto 100%;opacity:1;z-index:1}
+  /* 컷아웃이라 위 가장자리가 투명하다. 위쪽 그라데이션은 가장자리만 살짝 눌러 주고
+     (머리카락이 navy로 먹히지 않게), 아래쪽은 잘린 상반신이 녹아들게 한다. */
   .hero__media::after{background:
-    linear-gradient(180deg,var(--navy) 0%,rgba(11,25,51,.5) 5%,rgba(11,25,51,0) 16%),
-    linear-gradient(0deg,var(--navy) 0%,rgba(11,25,51,.45) 3%,rgba(11,25,51,0) 9%)}
+    linear-gradient(180deg,var(--navy) 0%,rgba(11,25,51,.35) 2%,rgba(11,25,51,0) 6%),
+    linear-gradient(0deg,var(--navy) 0%,rgba(11,25,51,.55) 4%,rgba(11,25,51,0) 12%)}
   .hero__glow{display:none}
   .hero__actions{margin-bottom:clamp(28px,5vh,40px)}
   .hero__cred{border-top-color:rgba(197,164,126,.26);padding-bottom:clamp(30px,6vw,46px)}
@@ -708,10 +692,13 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .books__note{grid-column:1/-1;padding-left:0;margin-top:6px}
   .career{grid-template-columns:1fr;gap:20px}
   .career li{font-size:14.5px;line-height:1.45;padding:2px 0 2px 18px}
-  .flow{flex-direction:column}
-  .flow__arw{width:100%;height:34px;transform:rotate(90deg)}
-  .suc__grid{grid-template-columns:1fr}
-  .suc__cols{grid-template-columns:1fr}
+  .suc-flow{flex-direction:column;gap:0}
+  .suc-flow__label{padding:0 0 8px;margin:0 0 6px;border-right:0;border-bottom:1px solid rgba(154,123,87,.26)}
+  .suc-flow__step{padding:4px 0;gap:0}
+  .suc-flow__step span{font-size:9.5px}
+  .suc-flow__step b{font-size:15px;line-height:1.45}
+  .suc-flow__arw{width:100%;height:16px;justify-content:flex-start;padding-left:1px;
+    transform:rotate(90deg);transform-origin:2px 50%;font-size:11px}
   .modal{justify-content:center;align-items:flex-end}
   .modal__panel{width:100%;max-height:92vh;max-height:92svh;transform:translateY(30px);border-radius:16px 16px 0 0;overflow:hidden}
   .modal.is-open .modal__panel{transform:translateY(0)}
@@ -737,16 +724,12 @@ h2 em{font-style:normal;color:var(--gold-d)}
   .tab[aria-selected="true"]::after{width:auto}
   .tab b{font-size:12px;margin-left:10px}
   .cards,#panel-life .cards,#panel-suc .cards,#panel-fin .cards{grid-template-columns:1fr}
-  #panel-life .cards .card--wide{grid-column:auto}
   .card{min-height:0}
   .panel .card{min-height:0}
   .books{grid-template-columns:1fr 1fr;gap:16px}
   .books__head{margin-bottom:2px}
   .book figcaption{margin-top:12px}
   .book b{font-size:15px}
-  .flow__node{text-align:center}
-  .suc__pair{flex-direction:column;gap:10px}
-  .suc__pair b{padding-top:0}
   .m-row{grid-template-columns:72px minmax(0,1fr);gap:10px}
   .modal__bar{padding:16px 20px}
   .m-points p{padding-left:48px}
@@ -850,6 +833,46 @@ body{background:var(--ivory)}
   border-bottom:1px solid rgba(197,164,126,.5);padding-bottom:2px;transition:.3s var(--ease)}
 .pcta__back:hover{color:#fff;border-bottom-color:var(--gold)}
 
+/* 부동산 승계 구조 블록 — 홈페이지의 어두운 설명 패널을 이 페이지로 옮기며
+   밝은 종이 배경에서 읽히도록 색만 바꿨습니다(문구는 홈에 있던 그대로). */
+.pkind{margin:clamp(34px,4.4vw,52px) 0 0;padding:clamp(24px,3.4vw,42px);
+  background:#F2EBDD;border:1px solid rgba(154,123,87,.34)}
+.pkind .eyebrow{margin-bottom:10px;color:#6B4A22}
+.pkind h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,29px);line-height:1.5;
+  letter-spacing:-.02em;color:var(--ink);margin:0 0 16px}
+.pkind h3 em{font-style:normal;color:#7A5B36}
+.pkind__lead{margin:0 0 clamp(22px,2.6vw,30px);font-size:15.5px;line-height:1.9;color:var(--muted-l)}
+.pkind__lead b{color:#7A5B36;font-weight:600}
+.pkind__pair{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
+  margin-bottom:clamp(24px,3vw,34px)}
+.pkind__pair > div{border:1px solid rgba(154,123,87,.3);background:#fff;padding:clamp(18px,2.2vw,26px)}
+.pkind__pair b{display:block;font-family:var(--serif);font-size:16px;font-weight:600;color:#7A5B36;margin-bottom:8px}
+.pkind__pair p{margin:0;font-size:14.5px;line-height:1.85;color:var(--muted-l)}
+.pkind__flow{display:flex;align-items:stretch;margin:0 0 clamp(26px,3vw,36px)}
+.pkind__node{flex:1;border:1px solid rgba(154,123,87,.34);background:#fff;
+  padding:clamp(16px,2vw,24px) clamp(12px,1.4vw,18px);text-align:center}
+.pkind__idx{display:block;font-family:var(--latin);font-size:10px;letter-spacing:.18em;color:#6B4A22;
+  font-weight:600;margin-bottom:10px}
+.pkind__node em{display:block;font-family:var(--latin);font-style:normal;font-size:19px;
+  letter-spacing:.06em;color:#7A5B36;line-height:1.2}
+.pkind__node b{display:block;font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink);
+  margin-top:6px;line-height:1.5}
+.pkind__node small{display:block;font-size:12.5px;color:var(--muted-l);margin-top:2px}
+.pkind__arw{display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:clamp(24px,3vw,44px);color:#9A7B57;font-size:14px}
+.pkind__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,32px);
+  padding-top:clamp(22px,2.8vw,30px);border-top:1px solid rgba(154,123,87,.26)}
+.pdoc .pkind__cols h4{font-family:var(--serif);font-size:16.5px;font-weight:600;letter-spacing:-.01em;
+  text-transform:none;color:var(--ink);margin:0 0 12px}
+.pkind__cols h4 i{font-family:var(--latin);font-style:normal;color:#9A7B57;font-size:12px;
+  letter-spacing:.14em;margin-right:9px;vertical-align:1px}
+.pkind__cols p{margin:0;font-size:14.5px;line-height:1.85;color:var(--muted-l)}
+.pdoc .pkind__cols ol{margin:0;padding-left:1.1em;list-style:decimal}
+.pdoc .pkind__cols li{padding:0 0 9px;font-size:14.5px;line-height:1.8;color:var(--muted-l)}
+.pdoc .pkind__cols li::before{content:none}
+.pkind__cols li b{color:#7A5B36;font-weight:600}
+.pdoc .pkind__cols li::marker{color:#9A7B57}
+
 @media (max-width:640px){
   /* 390 폭에서는 표를 옆으로 밀지 않고 한눈에 보이게 — 칸 안에서 줄바꿈됩니다 */
   .pdoc .m-table{min-width:0;font-size:13px}
@@ -859,6 +882,10 @@ body{background:var(--ivory)}
   .plogo .br-logo{height:26px}
   .phero__acts .btn,.pcta__acts .btn{width:100%}
   .pcta__foot{flex-direction:column;align-items:flex-start;gap:12px}
+  .pkind__pair{grid-template-columns:1fr}
+  .pkind__flow{flex-direction:column}
+  .pkind__arw{width:100%;height:26px;transform:rotate(90deg)}
+  .pkind__cols{grid-template-columns:1fr;gap:20px}
 }
 </style>
 <!-- 플랜별 상단·하단 색 — build.py 의 PLAN_ACCENT 한 곳에서 생성됩니다 -->
@@ -889,7 +916,7 @@ body{background:var(--ivory)}
       <nav class="pcrumb" aria-label="현재 위치">
         <a href="/">홈</a><i aria-hidden="true">›</i><a href="/#solutions">솔루션 메뉴</a><i aria-hidden="true">›</i><span>자녀 창업법인으로 가업승계</span>
       </nav>
-      <p class="phero__eyebrow">Solution 01 · 가업승계 플랜</p>
+      <p class="phero__eyebrow">Solution 02 · 부동산·가업 승계 플랜</p>
       <h1>자녀 창업법인으로 <em>가업승계</em></h1>
       <p class="phero__sub">자녀 창업법인을 활용한 승계. 요건 진단부터 지분·경영권 이전까지 로드맵을 만듭니다.</p>
       <div class="phero__acts">
