@@ -2920,7 +2920,7 @@ const CATEGORY_META = [
   // 결과·이탈·만족도·카카오 클릭 데이터를 받을 곳. 자영님 소유의 수신처가 정해지면
   // 아래 SUBMIT_ENDPOINT 에 주소를 넣으면 그때부터 전송이 시작된다.
   //
-  //   SUBMIT_ENDPOINT = ''                 → 아무것도 전송하지 않음 (현재 상태)
+  //   SUBMIT_ENDPOINT = ''                 → 아무것도 전송하지 않음
   //   SUBMIT_ENDPOINT = 'https://script.google.com/macros/s/..../exec'
   //                                        → Google Apps Script 웹앱(JSON POST, no-cors)
   //   SUBMIT_ENDPOINT = 'https://docs.google.com/forms/d/e/.../formResponse'
@@ -2930,9 +2930,10 @@ const CATEGORY_META = [
   // 수신 형식: JSON 본문(Content-Type: application/json 또는 text/plain).
   //   type: 'result' | 'exit' | 'rating' | 'kakao' 구분 필드가 들어 있다.
   //
-  // 주의: 예전에 쓰던 제3자(다른 계정) Apps Script 주소는 이 파일에서 제거했다.
-  //       그 주소로는 어떤 데이터도 가지 않는다.
-  const SUBMIT_ENDPOINT = '';
+  // 수신처: bellarichtest@gmail.com 계정의 1분 진단 백엔드 Apps Script 웹앱
+  //   (실행 계정 bellarichtest@gmail.com, 액세스 '모든 사용자', 배포 URL 고정)
+  //   자료는 그 계정의 스프레드시트에 쌓이고, 신청자에게 결과 메일이 나간다.
+  const SUBMIT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwDYShx9JqX1H86FroITA1yd-b8w-F-OMdFNMuOLF7Os4dSB0M-wPQFmcUTRJUDNkjz/exec';
 
   // 결과 화면 상담 CTA가 연결되는 곳. 카카오톡 채널 1:1 채팅이다.
   // 연결처를 바꾸려면 이 한 줄만 고치면 된다.
