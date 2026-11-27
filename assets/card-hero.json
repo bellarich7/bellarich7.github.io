@@ -1,0 +1,37 @@
+{
+ "src": "/workspace/bellarich-site/assets/_src_ceo-charcoal.png",
+ "crop": [
+  0,
+  60,
+  1086,
+  1448
+ ],
+ "crop_size": [
+  1086,
+  1388
+ ],
+ "w_ratio": 0.66,
+ "canvas": [
+  1645,
+  1388
+ ],
+ "pad": [
+  279,
+  280
+ ],
+ "aspect": 1.185159,
+ "edge_top": "#888688",
+ "edge_mid": "#8a8788",
+ "edge_bottom": "#7c7c7e",
+ "edge_mid_l": "#858284",
+ "edge_mid_r": "#8e8b8c",
+ "page_top": "#888688",
+ "page_mid": "#8a8788",
+ "page_bot": "#7c7c7e",
+ "stage_h_at_390": 329.1,
+ "photo_w_at_390": 257.5,
+ "side_pad_at_390": 66.1,
+ "face_h_at_390": 109.5,
+ "face_w_at_390": 104.3,
+ "bytes": 129926
+}
