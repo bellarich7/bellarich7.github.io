@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8">
+<style>body{margin:0;background:#fff;padding:20px}
+svg{display:block;margin:10px 0}
+.a{--br-blk:#1b2a44;--br-let:#1b2a44;--br-gold:#C5A47E}
+.b{--br-blk:transparent;--br-let:#1b2a44;--br-gold:#C5A47E}
+.c{--br-blk:#dbe2ec;--br-let:#1b2a44;--br-gold:#C5A47E}
+</style>
+<div id="host"></div>
+<script>
+fetch('/logo-symbol.html').then(r=>r.text()).then(t=>{
+ const host=document.getElementById('host');
+ host.innerHTML='<svg width="0" height="0" style="position:absolute">'+t+'</svg>';
+ ['a','b','c'].forEach(c=>{
+  const s=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','0 0 237.33 62.74'); s.setAttribute('class',c);
+  s.style.height='64px'; s.style.width='242px';
+  s.innerHTML='<use href="#brLogo"/>';
+  host.appendChild(s);
+ });
+});
+</script>
