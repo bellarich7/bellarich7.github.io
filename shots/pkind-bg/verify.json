@@ -1,0 +1,1406 @@
+{
+ "320": {
+  "panel": "#F0E7D6",
+  "border": "rgba(122, 91, 54, 0.42)",
+  "items": [
+   {
+    "text": "부동산 승계 구조",
+    "tag": "p.eyebrow",
+    "color": "#533616",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "11px",
+    "contrast": 8.97
+   },
+   {
+    "text": "부동산승계",
+    "tag": "h3",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "22px",
+    "contrast": 14.88
+   },
+   {
+    "text": "법인컨설팅",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "22px",
+    "contrast": 7.77
+   },
+   {
+    "text": "부동산 자산이전의 가격기준이 기준시가나 공시지가가 아닌 실거래가로 바뀌고",
+    "tag": "p.pkind__lead",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "15.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "법인활용 전략",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "15.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "은 필수입니다.",
+    "tag": "p.pkind__lead",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "15.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "부동산 전문가",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "16px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부동산 현황분석, 미래가치 검토에 따른 부동산승계전략 수립 및 향후 부동",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 16.4
+   },
+   {
+    "text": "법인 전문가",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "16px",
+    "contrast": 9.54
+   },
+   {
+    "text": "상법 및 세법 등 검토를 통한 법인활용전략 수립, 자녀법인 등 활용한 세",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 16.4
+   },
+   {
+    "text": "STEP 01 · 개인",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "A′",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부모님 개인부동산",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "개인 명의 자산",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "→",
+    "tag": "div.pkind__arw",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14px",
+    "contrast": 7.77
+   },
+   {
+    "text": "STEP 02 · 법인화",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "(주)A′",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부모님 100%",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "법인 전환",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "→",
+    "tag": "div.pkind__arw",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14px",
+    "contrast": 7.77
+   },
+   {
+    "text": "STEP 03 · 승계",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "(주)B",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "자녀법인 100%",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "지분 이전",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "01",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "개인자산 법인화",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "개인부동산 형태로 자산이전시 50%까지 최대세율이 적용됩니다. 개인부동산",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "02",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "상속·증여시 장점",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "자녀법인에 재산을 증여",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "자녀법인은 증여재산에 대해 법인세를 납부 — 2억원까지 9%, 200억원",
+    "tag": "li",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "5년이 경과하면 상속재산에 합산하지 않는다",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "상속인에게 미리 증여한 재산은 10년 이내 합산, 상속인 아닌 자(손자·",
+    "tag": "li",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "03",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "신탁활용",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "자녀에게 사전증여를 통한 절세전략과 더불어 법적제도를 통해 그 재산에 관",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   }
+  ],
+  "cards": [
+   "rgb(255, 255, 255)"
+  ],
+  "minContrast": 7.77,
+  "minItem": {
+   "text": "법인컨설팅",
+   "tag": "em",
+   "color": "#5C4018",
+   "bg": "#F0E7D6",
+   "weight": "600",
+   "size": "22px",
+   "contrast": 7.77
+  },
+  "under45": 0,
+  "under7": 0,
+  "scrollW": 320,
+  "clientW": 320,
+  "cols": 3,
+  "nodes": 3,
+  "errors": [],
+  "bad_responses": []
+ },
+ "390": {
+  "panel": "#F0E7D6",
+  "border": "rgba(122, 91, 54, 0.42)",
+  "items": [
+   {
+    "text": "부동산 승계 구조",
+    "tag": "p.eyebrow",
+    "color": "#533616",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "11px",
+    "contrast": 8.97
+   },
+   {
+    "text": "부동산승계",
+    "tag": "h3",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "22px",
+    "contrast": 14.88
+   },
+   {
+    "text": "법인컨설팅",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "22px",
+    "contrast": 7.77
+   },
+   {
+    "text": "부동산 자산이전의 가격기준이 기준시가나 공시지가가 아닌 실거래가로 바뀌고",
+    "tag": "p.pkind__lead",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "15.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "법인활용 전략",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "15.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "은 필수입니다.",
+    "tag": "p.pkind__lead",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "15.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "부동산 전문가",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "16px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부동산 현황분석, 미래가치 검토에 따른 부동산승계전략 수립 및 향후 부동",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 16.4
+   },
+   {
+    "text": "법인 전문가",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "16px",
+    "contrast": 9.54
+   },
+   {
+    "text": "상법 및 세법 등 검토를 통한 법인활용전략 수립, 자녀법인 등 활용한 세",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 16.4
+   },
+   {
+    "text": "STEP 01 · 개인",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "A′",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부모님 개인부동산",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "개인 명의 자산",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "→",
+    "tag": "div.pkind__arw",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14px",
+    "contrast": 7.77
+   },
+   {
+    "text": "STEP 02 · 법인화",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "(주)A′",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부모님 100%",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "법인 전환",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "→",
+    "tag": "div.pkind__arw",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14px",
+    "contrast": 7.77
+   },
+   {
+    "text": "STEP 03 · 승계",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "(주)B",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "자녀법인 100%",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "지분 이전",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "01",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "개인자산 법인화",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "개인부동산 형태로 자산이전시 50%까지 최대세율이 적용됩니다. 개인부동산",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "02",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "상속·증여시 장점",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "자녀법인에 재산을 증여",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "자녀법인은 증여재산에 대해 법인세를 납부 — 2억원까지 9%, 200억원",
+    "tag": "li",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "5년이 경과하면 상속재산에 합산하지 않는다",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "상속인에게 미리 증여한 재산은 10년 이내 합산, 상속인 아닌 자(손자·",
+    "tag": "li",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "03",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "신탁활용",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "자녀에게 사전증여를 통한 절세전략과 더불어 법적제도를 통해 그 재산에 관",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   }
+  ],
+  "cards": [
+   "rgb(255, 255, 255)"
+  ],
+  "minContrast": 7.77,
+  "minItem": {
+   "text": "법인컨설팅",
+   "tag": "em",
+   "color": "#5C4018",
+   "bg": "#F0E7D6",
+   "weight": "600",
+   "size": "22px",
+   "contrast": 7.77
+  },
+  "under45": 0,
+  "under7": 0,
+  "scrollW": 390,
+  "clientW": 390,
+  "cols": 3,
+  "nodes": 3,
+  "errors": [],
+  "bad_responses": []
+ },
+ "768": {
+  "panel": "#F0E7D6",
+  "border": "rgba(122, 91, 54, 0.42)",
+  "items": [
+   {
+    "text": "부동산 승계 구조",
+    "tag": "p.eyebrow",
+    "color": "#533616",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "11.5px",
+    "contrast": 8.97
+   },
+   {
+    "text": "부동산승계",
+    "tag": "h3",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "22px",
+    "contrast": 14.88
+   },
+   {
+    "text": "법인컨설팅",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "22px",
+    "contrast": 7.77
+   },
+   {
+    "text": "부동산 자산이전의 가격기준이 기준시가나 공시지가가 아닌 실거래가로 바뀌고",
+    "tag": "p.pkind__lead",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "15.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "법인활용 전략",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "15.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "은 필수입니다.",
+    "tag": "p.pkind__lead",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "15.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "부동산 전문가",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "16px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부동산 현황분석, 미래가치 검토에 따른 부동산승계전략 수립 및 향후 부동",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 16.4
+   },
+   {
+    "text": "법인 전문가",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "16px",
+    "contrast": 9.54
+   },
+   {
+    "text": "상법 및 세법 등 검토를 통한 법인활용전략 수립, 자녀법인 등 활용한 세",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 16.4
+   },
+   {
+    "text": "STEP 01 · 개인",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "A′",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부모님 개인부동산",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "개인 명의 자산",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "→",
+    "tag": "div.pkind__arw",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14px",
+    "contrast": 7.77
+   },
+   {
+    "text": "STEP 02 · 법인화",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "(주)A′",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부모님 100%",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "법인 전환",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "→",
+    "tag": "div.pkind__arw",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14px",
+    "contrast": 7.77
+   },
+   {
+    "text": "STEP 03 · 승계",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "(주)B",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "자녀법인 100%",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "지분 이전",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "01",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "개인자산 법인화",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "개인부동산 형태로 자산이전시 50%까지 최대세율이 적용됩니다. 개인부동산",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "02",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "상속·증여시 장점",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "자녀법인에 재산을 증여",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "자녀법인은 증여재산에 대해 법인세를 납부 — 2억원까지 9%, 200억원",
+    "tag": "li",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "5년이 경과하면 상속재산에 합산하지 않는다",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "상속인에게 미리 증여한 재산은 10년 이내 합산, 상속인 아닌 자(손자·",
+    "tag": "li",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "03",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "신탁활용",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "자녀에게 사전증여를 통한 절세전략과 더불어 법적제도를 통해 그 재산에 관",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   }
+  ],
+  "cards": [
+   "rgb(255, 255, 255)"
+  ],
+  "minContrast": 7.77,
+  "minItem": {
+   "text": "법인컨설팅",
+   "tag": "em",
+   "color": "#5C4018",
+   "bg": "#F0E7D6",
+   "weight": "600",
+   "size": "22px",
+   "contrast": 7.77
+  },
+  "under45": 0,
+  "under7": 0,
+  "scrollW": 768,
+  "clientW": 768,
+  "cols": 3,
+  "nodes": 3,
+  "errors": [],
+  "bad_responses": []
+ },
+ "1440": {
+  "panel": "#F0E7D6",
+  "border": "rgba(122, 91, 54, 0.42)",
+  "items": [
+   {
+    "text": "부동산 승계 구조",
+    "tag": "p.eyebrow",
+    "color": "#533616",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "11.5px",
+    "contrast": 8.97
+   },
+   {
+    "text": "부동산승계",
+    "tag": "h3",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "29px",
+    "contrast": 14.88
+   },
+   {
+    "text": "법인컨설팅",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "29px",
+    "contrast": 7.77
+   },
+   {
+    "text": "부동산 자산이전의 가격기준이 기준시가나 공시지가가 아닌 실거래가로 바뀌고",
+    "tag": "p.pkind__lead",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "15.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "법인활용 전략",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "15.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "은 필수입니다.",
+    "tag": "p.pkind__lead",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "15.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "부동산 전문가",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "16px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부동산 현황분석, 미래가치 검토에 따른 부동산승계전략 수립 및 향후 부동",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 16.4
+   },
+   {
+    "text": "법인 전문가",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "16px",
+    "contrast": 9.54
+   },
+   {
+    "text": "상법 및 세법 등 검토를 통한 법인활용전략 수립, 자녀법인 등 활용한 세",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 16.4
+   },
+   {
+    "text": "STEP 01 · 개인",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "A′",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부모님 개인부동산",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "개인 명의 자산",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "→",
+    "tag": "div.pkind__arw",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14px",
+    "contrast": 7.77
+   },
+   {
+    "text": "STEP 02 · 법인화",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "(주)A′",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "부모님 100%",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "법인 전환",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "→",
+    "tag": "div.pkind__arw",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14px",
+    "contrast": 7.77
+   },
+   {
+    "text": "STEP 03 · 승계",
+    "tag": "span.pkind__idx",
+    "color": "#533616",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "10px",
+    "contrast": 11.01
+   },
+   {
+    "text": "(주)B",
+    "tag": "em",
+    "color": "#5C4018",
+    "bg": "#FFFFFF",
+    "weight": "400",
+    "size": "19px",
+    "contrast": 9.54
+   },
+   {
+    "text": "자녀법인 100%",
+    "tag": "b",
+    "color": "#0B1526",
+    "bg": "#FFFFFF",
+    "weight": "600",
+    "size": "15px",
+    "contrast": 18.27
+   },
+   {
+    "text": "지분 이전",
+    "tag": "small",
+    "color": "#2A3240",
+    "bg": "#FFFFFF",
+    "weight": "500",
+    "size": "12.5px",
+    "contrast": 12.89
+   },
+   {
+    "text": "01",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "개인자산 법인화",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "개인부동산 형태로 자산이전시 50%까지 최대세율이 적용됩니다. 개인부동산",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "02",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "상속·증여시 장점",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "자녀법인에 재산을 증여",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "자녀법인은 증여재산에 대해 법인세를 납부 — 2억원까지 9%, 200억원",
+    "tag": "li",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "5년이 경과하면 상속재산에 합산하지 않는다",
+    "tag": "b",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "14.5px",
+    "contrast": 7.77
+   },
+   {
+    "text": "상속인에게 미리 증여한 재산은 10년 이내 합산, 상속인 아닌 자(손자·",
+    "tag": "li",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   },
+   {
+    "text": "03",
+    "tag": "i",
+    "color": "#5C4018",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "12px",
+    "contrast": 7.77
+   },
+   {
+    "text": "신탁활용",
+    "tag": "h4",
+    "color": "#0B1526",
+    "bg": "#F0E7D6",
+    "weight": "600",
+    "size": "16.5px",
+    "contrast": 14.88
+   },
+   {
+    "text": "자녀에게 사전증여를 통한 절세전략과 더불어 법적제도를 통해 그 재산에 관",
+    "tag": "p",
+    "color": "#16202E",
+    "bg": "#F0E7D6",
+    "weight": "500",
+    "size": "14.5px",
+    "contrast": 13.36
+   }
+  ],
+  "cards": [
+   "rgb(255, 255, 255)"
+  ],
+  "minContrast": 7.77,
+  "minItem": {
+   "text": "법인컨설팅",
+   "tag": "em",
+   "color": "#5C4018",
+   "bg": "#F0E7D6",
+   "weight": "600",
+   "size": "29px",
+   "contrast": 7.77
+  },
+  "under45": 0,
+  "under7": 0,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "cols": 3,
+  "nodes": 3,
+  "errors": [],
+  "bad_responses": []
+ }
+}

@@ -1,0 +1,239 @@
+{
+ "pc1440": {
+  "hero": {
+   "vh": 900,
+   "vw": 1440,
+   "navH": 76,
+   "logo": {
+    "x": 140,
+    "y": 76,
+    "w": 204,
+    "h": 54
+   },
+   "eb": {
+    "x": 140,
+    "y": 144,
+    "w": 1160,
+    "h": 17
+   },
+   "ebLines": 1,
+   "lines": [
+    [
+     190,
+     144,
+     394
+    ]
+   ],
+   "h1": {
+    "x": 140,
+    "y": 187,
+    "w": 720,
+    "h": 254
+   },
+   "gapEbH1": 26,
+   "brandHairline": "132px",
+   "ebDash": "36px",
+   "credBottom": 836,
+   "heroH": 900,
+   "scrollW": 1440
+  },
+  "contact": [
+   {
+    "text": "상담 신청 →",
+    "href": "https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform",
+    "w": 385,
+    "h": 56,
+    "y": 6629,
+    "style": "btn btn--gold"
+   },
+   {
+    "text": "내 소득세 절세 금액 알아보기 ↗",
+    "href": "https://invest.k4holdings.co.kr/?ref=A9CC2E79",
+    "w": 385,
+    "h": 56,
+    "y": 6697,
+    "style": "btn btn--outline"
+   },
+   {
+    "text": "1분 자산 건강검진 ↗",
+    "href": "check/",
+    "w": 385,
+    "h": 56,
+    "y": 6766,
+    "style": "btn btn--outline"
+   }
+  ],
+  "video": {
+   "tag": "A",
+   "href": "https://youtu.be/k9K_hEMHeXk",
+   "target": "_blank",
+   "rel": "noopener",
+   "play": true,
+   "cap": "https://youtu.be/k9K_hEMHeXk",
+   "iframe": false,
+   "fallback": false,
+   "thumbBytes": 137470
+  },
+  "youtube_requests_before_click": [],
+  "page_errors": [],
+  "failed_requests": []
+ },
+ "pc1366": {
+  "hero": {
+   "vh": 768,
+   "vw": 1366,
+   "navH": 76,
+   "logo": {
+    "x": 103,
+    "y": 76,
+    "w": 204,
+    "h": 54
+   },
+   "eb": {
+    "x": 103,
+    "y": 140,
+    "w": 1160,
+    "h": 17
+   },
+   "ebLines": 1,
+   "lines": [
+    [
+     153,
+     140,
+     394
+    ]
+   ],
+   "h1": {
+    "x": 103,
+    "y": 178,
+    "w": 720,
+    "h": 193
+   },
+   "gapEbH1": 21,
+   "brandHairline": "132px",
+   "ebDash": "36px",
+   "credBottom": 732,
+   "heroH": 768,
+   "scrollW": 1366
+  },
+  "contact": [
+   {
+    "text": "상담 신청 →",
+    "href": "https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform",
+    "w": 385,
+    "h": 56,
+    "y": 6379,
+    "style": "btn btn--gold"
+   },
+   {
+    "text": "내 소득세 절세 금액 알아보기 ↗",
+    "href": "https://invest.k4holdings.co.kr/?ref=A9CC2E79",
+    "w": 385,
+    "h": 56,
+    "y": 6448,
+    "style": "btn btn--outline"
+   },
+   {
+    "text": "1분 자산 건강검진 ↗",
+    "href": "check/",
+    "w": 385,
+    "h": 56,
+    "y": 6516,
+    "style": "btn btn--outline"
+   }
+  ],
+  "video": {
+   "tag": "A",
+   "href": "https://youtu.be/k9K_hEMHeXk",
+   "target": "_blank",
+   "rel": "noopener",
+   "play": true,
+   "cap": "https://youtu.be/k9K_hEMHeXk",
+   "iframe": false,
+   "fallback": false,
+   "thumbBytes": 137470
+  },
+  "youtube_requests_before_click": [],
+  "page_errors": [],
+  "failed_requests": []
+ },
+ "m390": {
+  "hero": {
+   "vh": 844,
+   "vw": 390,
+   "navH": 64,
+   "logo": {
+    "x": 20,
+    "y": 66,
+    "w": 155,
+    "h": 41
+   },
+   "eb": {
+    "x": 20,
+    "y": 121,
+    "w": 350,
+    "h": 16
+   },
+   "ebLines": 1,
+   "lines": [
+    [
+     70,
+     121,
+     284
+    ]
+   ],
+   "h1": {
+    "x": 20,
+    "y": 156,
+    "w": 350,
+    "h": 130
+   },
+   "gapEbH1": 19,
+   "brandHairline": "72px",
+   "ebDash": "36px",
+   "credBottom": 645,
+   "heroH": 1029,
+   "scrollW": 390
+  },
+  "contact": [
+   {
+    "text": "상담 신청 →",
+    "href": "https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform",
+    "w": 300,
+    "h": 56,
+    "y": 9471,
+    "style": "btn btn--gold"
+   },
+   {
+    "text": "내 소득세 절세 금액 알아보기 ↗",
+    "href": "https://invest.k4holdings.co.kr/?ref=A9CC2E79",
+    "w": 300,
+    "h": 56,
+    "y": 9540,
+    "style": "btn btn--outline"
+   },
+   {
+    "text": "1분 자산 건강검진 ↗",
+    "href": "check/",
+    "w": 300,
+    "h": 56,
+    "y": 9608,
+    "style": "btn btn--outline"
+   }
+  ],
+  "video": {
+   "tag": "A",
+   "href": "https://youtu.be/k9K_hEMHeXk",
+   "target": "_blank",
+   "rel": "noopener",
+   "play": true,
+   "cap": "https://youtu.be/k9K_hEMHeXk",
+   "iframe": false,
+   "fallback": false,
+   "thumbBytes": 137470
+  },
+  "youtube_requests_before_click": [],
+  "page_errors": [],
+  "failed_requests": []
+ }
+}
