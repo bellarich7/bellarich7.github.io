@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>상속 · 증여 신탁 | 벨라리치(주)</title>
+<meta name="description" content="상속 · 증여 신탁 — 유언·신탁 등 법적 수단을 통한 승계 구조. 법무법인 서초 자산관리센터와 협업합니다.">
+<meta property="og:title" content="상속 · 증여 신탁 | 벨라리치(주)">
+<meta property="og:description" content="유언·신탁 등 법적 수단을 통한 승계 구조. 법무법인 서초 자산관리센터와 협업합니다.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://bellarich.co.kr/plan/trust/">
+<meta property="og:url" content="https://bellarich.co.kr/plan/trust/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Serif+KR:wght@200;300;400;500;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- 디자인은 메인 페이지와 같은 CSS를 그대로 씁니다(build.py가 _index.src.html의 <style>을 넣습니다).
+     메인 디자인이 바뀌면 이 페이지도 build.py를 다시 돌릴 때 함께 따라갑니다. -->
+<style>
+
+:root{
+  --navy:#0B1933;
+  --navy-2:#14243F;
+  --navy-3:#1D3152;
+  --gold:#C5A47E;
+  --gold-l:#D9C1A0;
+  --gold-d:#9A7B57;
+  --ivory:#FAF8F5;
+  --paper:#F4F0E9;
+  --ink:#0F1B30;
+  --muted:#1B2331;
+  --muted-l:#3A4351;
+  --line:rgba(11,25,51,.12);
+  --line-l:rgba(255,255,255,.16);
+  --serif:'Noto Serif KR','Nanum Myeongjo','AppleMyungjo','Batang',serif;
+  --sans:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Helvetica Neue',sans-serif;
+  --latin:'Cormorant Garamond','Noto Serif KR',Georgia,serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --w:1240px;
+  --pad:clamp(20px,4vw,40px);
+  --head-h:76px;
+  /* 솔루션 플랜별 카드 바탕색 — 톤을 바꾸려면 이 세 줄만 고치면 됩니다 */
+  --plan-life:#14243F;   /* 생애주기 플랜 · 남색 */
+  --plan-suc:#7F5423;    /* 부동산·가업 승계 플랜 · 앰버 */
+  --plan-fin:#455E4D;    /* 재무·경영지원 플랜 · 세이지그린 */
+  --card-on-dark-title:#FFFFFF;
+  --card-on-dark-text:#FBF7EE;
+  --card-on-dark-num:#F2E3C8;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+/* anchor jumps land below the fixed header instead of under it */
+section[id]{scroll-margin-top:calc(var(--head-h) + 6px)}
+#home{scroll-margin-top:0}
+body{
+  margin:0;background:var(--ivory);color:var(--ink);
+  font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.82;
+  letter-spacing:-.008em;-webkit-font-smoothing:antialiased;
+  word-break:keep-all;overflow-x:hidden;
+}
+body.is-locked{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:rgba(197,164,126,.32)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--w);margin:0 auto;padding:0 var(--pad)}
+.section{padding:clamp(52px,6.6vw,96px) 0;position:relative;scroll-margin-top:calc(var(--head-h) - 1px)}
+.section--paper{background:var(--paper)}
+.section--navy{background:var(--navy);color:#EDEAE3}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:11.5px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold-d);margin:0 0 22px;
+}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold);display:block}
+.section--navy .eyebrow{color:var(--gold-l)}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,3.3vw,42px);line-height:1.5;letter-spacing:-.02em;margin:0 0 20px;color:var(--ink)}
+.section--navy h2{color:#F6F3ED}
+h2 em{font-style:normal;color:var(--gold-d)}
+.section--navy h2 em{color:var(--gold-l)}
+.lead{font-size:clamp(16.5px,1.32vw,18px);line-height:1.86;color:var(--muted);max-width:56ch;margin:0;font-weight:400}
+.section--navy .lead{color:rgba(242,239,232,.92)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.small{font-size:14px;color:var(--muted-l);line-height:1.8}
+
+/* ---------- nav ---------- */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:80;height:var(--head-h);
+  display:flex;align-items:center;
+  transition:background .45s var(--ease),box-shadow .45s var(--ease),height .35s var(--ease),border-color .45s var(--ease);
+  border-bottom:1px solid transparent;color:#fff;
+}
+.nav__in{max-width:var(--w);width:100%;margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:14px;line-height:1;color:#fff;transition:color .4s var(--ease)}
+.logo span{font-family:var(--sans);font-size:10px;letter-spacing:.16em;opacity:.6;padding-left:14px;
+  border-left:1px solid rgba(255,255,255,.24);font-weight:400;white-space:nowrap;transition:.4s var(--ease)}
+.nav.is-stuck .logo span{color:var(--muted);border-left-color:rgba(11,25,51,.16)}
+
+/* brand mark (SVG symbol, one definition reused) */
+.br-logo{display:block;width:auto;overflow:visible}
+.br-logo--nav{height:34px}
+.br-logo--hero{height:clamp(40px,4.4vw,54px)}
+.br-logo--footer{height:27px}
+/* dark surfaces (hero, transparent nav, footer): keep the skyline block visible.
+   The letters read as a knockout, so --br-let follows the navy behind them. */
+.nav:not(.is-stuck) .br-logo,
+.hero .br-logo,
+.footer .br-logo{--br-blk:#F6F2EA;--br-let:var(--navy);--br-gold:#C5A47E}
+.nav__menu{display:flex;align-items:center;gap:clamp(14px,2vw,30px);list-style:none;margin:0;padding:0}
+.nav__link{
+  position:relative;font-size:14.5px;letter-spacing:.01em;padding:8px 0;color:rgba(255,255,255,.94);
+  transition:color .3s var(--ease);white-space:nowrap;font-weight:400;
+}
+.nav__link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav__link:hover::after,.nav__link.is-active::after{transform:scaleX(1)}
+.nav__cta{
+  font-size:13.5px;letter-spacing:.05em;padding:11px 22px;border:1px solid rgba(197,164,126,.65);
+  color:var(--gold-l);border-radius:999px;transition:.35s var(--ease);white-space:nowrap;font-weight:400;
+}
+.nav__cta:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.nav.is-stuck{
+  background:rgba(250,248,245,.94);backdrop-filter:blur(14px) saturate(140%);
+  border-bottom-color:var(--line);box-shadow:0 1px 24px rgba(11,25,51,.05);color:var(--ink);height:66px;
+}
+.nav .logo{opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s var(--ease)}
+.nav.is-stuck .logo{opacity:1;visibility:visible;color:var(--ink)}
+.nav.is-stuck .nav__link{color:rgba(15,27,48,.9)}
+.nav.is-stuck .nav__link:hover,.nav.is-stuck .nav__link.is-active{color:var(--ink)}
+.nav.is-stuck .nav__cta{color:var(--gold-d);border-color:rgba(197,164,126,.75)}
+.nav.is-stuck .nav__cta:hover{color:#fff;background:var(--gold-d);border-color:var(--gold-d)}
+
+/* dropdown */
+.has-sub{position:relative}
+.submenu{
+  position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,8px);
+  min-width:224px;background:rgba(250,248,245,.985);border:1px solid var(--line);
+  box-shadow:0 24px 60px -24px rgba(11,25,51,.35);padding:12px;
+  opacity:0;visibility:hidden;transition:.32s var(--ease);
+}
+.has-sub:hover .submenu,.has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.submenu button{display:block;width:100%;text-align:left;padding:11px 14px;font-size:14px;color:rgba(15,27,48,.9);transition:.25s}
+.submenu button:hover{background:var(--paper);color:var(--ink)}
+.submenu small{display:block;font-size:12px;color:var(--muted-l);letter-spacing:.03em;margin-top:2px}
+
+.nav__burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;margin-right:-10px}
+.nav__burger i{display:block;width:22px;height:1px;background:currentColor;position:relative;transition:.3s}
+.nav__burger i::before,.nav__burger i::after{content:"";position:absolute;left:0;width:22px;height:1px;background:currentColor;transition:.3s}
+.nav__burger i::before{top:-7px}.nav__burger i::after{top:7px}
+.nav.is-open .nav__burger i{background:transparent}
+.nav.is-open .nav__burger i::before{top:0;transform:rotate(45deg)}
+.nav.is-open .nav__burger i::after{top:0;transform:rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;inset:0;z-index:75;background:var(--navy);color:#F2EFE8;
+  padding:calc(var(--head-h) + 40px) var(--pad) 40px;
+  display:flex;flex-direction:column;justify-content:space-between;gap:24px;
+  opacity:0;visibility:hidden;transition:.45s var(--ease);overflow-y:auto;
+}
+.mobile-menu.is-open{opacity:1;visibility:visible}
+.mobile-menu ul{list-style:none;margin:0;padding:0}
+.mobile-menu li{border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-menu a,.mobile-menu button{display:flex;align-items:baseline;gap:14px;width:100%;text-align:left;padding:15px 0;
+  font-family:var(--serif);font-size:23px;font-weight:400;line-height:1.35;color:#F2EFE8}
+.mobile-menu em{font-family:var(--latin);font-size:12px;letter-spacing:.2em;color:var(--gold);font-style:normal}
+.mobile-menu .mm-sub{padding-left:0;margin-bottom:6px}
+.mobile-menu .mm-sub li{border-bottom:0;padding:0 0 0 30px;position:relative}
+.mobile-menu .mm-sub li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:1px;background:rgba(197,164,126,.55)}
+.mobile-menu .mm-sub a,.mobile-menu .mm-sub button{display:block;width:100%;text-align:left;padding:9px 0;
+  font-family:var(--sans);font-size:15.5px;font-weight:400;letter-spacing:0;color:rgba(242,239,232,.82)}
+.mm-foot{display:flex;flex-direction:column;gap:14px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1)}
+.mm-foot a{font-size:14px;letter-spacing:.05em;color:var(--gold-l)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;
+  padding:var(--head-h) 0 clamp(70px,11vh,150px);
+  background:var(--navy);color:#fff;overflow:hidden;
+  /* 본문(1240px) 바깥 오른쪽 여백 — 사진과 빛 번짐이 이 값을 기준으로 놓인다 */
+  --hero-m:clamp(0px,calc((100vw - var(--w)) * .5),320px);
+}
+.hero__media{
+  /* 상반신 정면 컷아웃을 히어로 아래에 붙인다. 폭 상한 466px = 예전 700px의 2/3.
+     높이 84%·폭 466px → 1920×1080에서 466×578 CSS px.
+     오른쪽 끝에 붙이지 않고 본문 폭(1240px) 밖 여백 쪽으로 들여, 사진이 화면
+     가장자리가 아니라 가운데 쪽에 서 있게 한다(1024px 이하에서는 0). */
+  position:absolute;bottom:0;top:auto;height:84%;width:min(50%,466px);
+  /* 글씨와 사진 사이에 숨 쉴 여백 — 오른쪽 여백의 절반만큼(최대 화면 폭의 3%, 1440에서 약 43px)
+     사진을 오른쪽으로 민다. 여백이 좁은 화면에서는 여백의 절반에서 멈춰,
+     사진이 화면 가장자리에 바짝 붙거나 잘리지 않는다. 1240px 이하는 지금처럼 끝에 붙는다. */
+  right:calc(var(--hero-m) - min(3vw,calc(var(--hero-m) * .5)));
+  background-image:var(--ceo-img);background-repeat:no-repeat;
+  background-position:right bottom;background-size:contain;z-index:1;
+}
+/* PC는 466 CSS px로 그리므로 2배 화면도 932 기기 px면 충분하다(원본 1086px 이내).
+   브라우저가 큰 파일을 줄이거나 작은 파일을 늘리지 않도록, 화면 배율마다 그 크기에
+   딱 맞춰 만든 파일을 물린다(1배 466 · 1.5배 699 · 2배 932). make_hero_pc.py.
+   1배·모바일은 위의 인라인 --ceo-img 를 그대로 써서 용량·화질 변화가 없다. */
+@media (min-width:1081px) and (max-resolution:1.1dppx){
+  .hero__media{background-image:url("assets/ceo-hero-pc-1x.webp?v=1126p")}
+}
+@media (min-width:1081px) and (min-resolution:1.11dppx) and (max-resolution:1.79dppx){
+  .hero__media{background-image:url("assets/ceo-hero-pc-15x.webp?v=1126p")}
+}
+@media (min-width:1081px) and (min-resolution:1.8dppx){
+  .hero__media{background-image:url("assets/ceo-hero-pc-2x.webp?v=1126p")}
+}
+/* 사파리 15 이하용 별칭 — 같은 파일이라 중복 요청은 없다 */
+@media (min-width:1081px) and (-webkit-max-device-pixel-ratio:1.1){
+  .hero__media{background-image:url("assets/ceo-hero-pc-1x.webp?v=1126p")}
+}
+@media (min-width:1081px) and (-webkit-min-device-pixel-ratio:1.11) and (-webkit-max-device-pixel-ratio:1.79){
+  .hero__media{background-image:url("assets/ceo-hero-pc-15x.webp?v=1126p")}
+}
+@media (min-width:1081px) and (-webkit-min-device-pixel-ratio:1.8){
+  .hero__media{background-image:url("assets/ceo-hero-pc-2x.webp?v=1126p")}
+}
+/* warm glow behind the portrait, then feathered edges so the studio
+   cut-out melts into the hero gradient instead of sitting in a box */
+.hero__glow{position:absolute;bottom:-6%;width:min(44%,640px);aspect-ratio:1/.86;z-index:1;
+  /* 사진과 같은 거리만큼 함께 움직여, 빛 번짐이 사진 뒤에 그대로 남게 한다.
+     화면 밖으로 나가지 않도록 0에서 멈춘다. */
+  right:max(0px,calc(var(--hero-m) - min(3vw,calc(var(--hero-m) * .5)) - 4%));
+  background:radial-gradient(50% 50% at 58% 62%,rgba(197,164,126,.22) 0%,rgba(197,164,126,.07) 46%,rgba(197,164,126,0) 72%);
+  pointer-events:none}
+.hero__media::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,var(--navy) 0%,rgba(11,25,51,.30) 1.4%,rgba(11,25,51,0) 3.4%);
+}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 80% at 8% 30%,rgba(29,49,82,.85) 0%,rgba(11,25,51,0) 58%);z-index:1}
+.hero__in{position:relative;z-index:2;width:100%}
+/* 히어로 맨 위는 세로 배치 — (a) 로고 → (b) 영문 캡션 한 줄 → (c) 제목.
+   로고는 고정 내비 바로 아래 맨 윗줄에 붙이고, 캡션을 아래로 내려도 로고가 밀리지 않게 한다. */
+.hero__brand{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin:0 0 clamp(8px,1vw,14px)}
+.hero__brand::after{content:"";flex:0 1 132px;height:1px;
+  background:linear-gradient(90deg,rgba(197,164,126,.65),rgba(197,164,126,0))}
+.hero__eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 clamp(20px,1.8vw,26px);
+  font-size:11.5px;line-height:1.5;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);font-weight:500}
+.hero__eyebrow::before{content:"";flex:0 0 auto;width:36px;height:1px;background:var(--gold);opacity:.8}
+.hero h1{
+  font-family:var(--serif);font-weight:300;letter-spacing:-.025em;
+  font-size:clamp(29px,4.3vw,58px);line-height:1.46;margin:0 0 clamp(14px,2vw,22px);
+  max-width:16em;text-wrap:balance;
+}
+.hero h1 em{font-style:normal;color:var(--gold-l);position:relative;white-space:nowrap}
+.hero__sub{font-size:clamp(15.5px,1.34vw,17.5px);line-height:1.88;color:rgba(255,255,255,.88);max-width:40ch;margin:0 0 clamp(18px,2.4vw,28px);font-weight:400}
+.hero__sub b{color:#fff;font-family:var(--serif);font-size:clamp(18px,1.6vw,21px);font-weight:700;
+  letter-spacing:-.015em;line-height:1.25;white-space:nowrap}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:clamp(18px,2.6vh,30px)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 28px;border-radius:999px;font-size:14.5px;letter-spacing:.03em;font-weight:500;
+  transition:.38s var(--ease);border:1px solid transparent;
+}
+.btn--gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.btn--gold:hover{background:#D2B491;border-color:#D2B491;transform:translateY(-1px)}
+.btn--ghost{border-color:rgba(255,255,255,.34);color:#fff}
+.btn--ghost:hover{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+.btn--navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn--navy:hover{background:var(--navy-3);border-color:var(--navy-3)}
+.btn--line{border-color:rgba(11,25,51,.24);color:var(--ink)}
+.btn--line:hover{border-color:var(--ink)}
+.btn span{font-size:11px;letter-spacing:0;transform:translateY(-.5px)}
+/* credential block — the About the CEO head (eyebrow · name · role · quote),
+   moved up into the hero; kept small so it sits below the CTA hierarchy */
+.hero__cred{max-width:560px;padding-top:clamp(14px,1.8vw,18px);border-top:1px solid rgba(197,164,126,.3)}
+.hero__cred-eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 clamp(14px,1.8vw,20px);
+  font-size:clamp(11px,.85vw,12.5px);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);font-weight:600}
+.hero__cred-eyebrow::before{content:"";width:22px;height:1px;background:rgba(217,193,160,.9)}
+.hero__cred-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px}
+.hero__cred-name{display:flex;align-items:baseline;gap:7px;margin:0;
+  font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.6vw,34px);line-height:1.2;
+  letter-spacing:.01em;color:#fff}
+.hero__cred-name b{font-family:var(--serif);font-weight:700;color:#fff}
+.hero__cred-name span{font-family:var(--sans);font-size:clamp(14px,1.3vw,18px);letter-spacing:.08em;color:#EBD9BC;font-weight:500}
+.hero__cred-role{margin:0;font-size:clamp(14px,1.1vw,15.5px);line-height:1.5;letter-spacing:.01em;color:rgba(255,255,255,.95);font-weight:500}
+.hero__cred-quote{margin:clamp(18px,2.2vw,28px) 0 0;padding:0;border-left:0;text-align:center;
+  font-family:var(--serif);font-weight:600;font-size:clamp(20px,2.15vw,28px);line-height:1.44;
+  letter-spacing:.005em;color:rgba(255,255,255,.97);text-wrap:balance}
+.hero__scroll{display:none}
+.hero h1{max-width:min(100%,720px)}
+.hero__scroll i{width:1px;height:38px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0));display:block;animation:scrollHint 2.4s var(--ease) infinite}
+@keyframes scrollHint{0%{transform:scaleY(.2);transform-origin:top;opacity:0}40%{transform:scaleY(1);opacity:1}100%{transform:scaleY(.2);transform-origin:bottom;opacity:0}}
+
+/* short desktop screens: keep the whole hero above the fold */
+@media (min-width:901px) and (min-height:841px) and (max-height:960px){
+  .hero{padding-top:var(--head-h);
+    padding-bottom:clamp(10px, calc(100vh - 836px), 96px)}
+  .hero__brand{margin-bottom:14px}
+  .hero__eyebrow{margin-bottom:26px}
+  .hero h1{margin-bottom:18px}
+  .hero__sub{margin-bottom:22px}
+  .hero__actions{margin-bottom:17px}
+  .hero__cred{padding-top:14px}
+  .hero__cred-eyebrow{margin-bottom:12px}
+  .hero__cred-quote{margin-top:18px}
+}
+
+@media (min-width:901px) and (max-height:840px){
+  .hero{padding-top:var(--head-h);padding-bottom:clamp(12px, calc(100vh - 732px), 56px)}
+  .hero h1{font-size:clamp(26px,3.5vw,46px);line-height:1.4;margin-bottom:14px}
+  .hero__brand{margin-bottom:10px}
+  .hero__eyebrow{margin-bottom:21px}
+  .hero__sub{margin-bottom:16px}
+  .hero__actions{margin-bottom:15px}
+  .hero__cred{padding-top:10px}
+  .hero__cred-name{font-size:clamp(22px,2.2vw,30px);line-height:1.18}
+  .hero__cred-quote{font-size:clamp(18px,1.7vw,23px);line-height:1.38;margin-top:16px}
+}
+
+/* ---------- PC 히어로: 사진 아래에 About the CEO ---------- */
+/*  자영님 지시(2026-11-27): 사진(466×578)은 그대로 두고 조금 더 아래로 내리고,
+    About the CEO 캡션은 사진 폭에 맞춰(이름 왼쪽 끝 = 사진 왼쪽 끝) 사진 바로 아래에 붙인다.
+    인용구는 캡션에서 빼서 왼쪽 칼럼 상담 신청 버튼 아래로 옮겼다.
+    왼쪽 뭉치(h1~상담 신청 버튼)의 자리·간격은 그대로.
+    1081px 이상에서만 적용한다 — 1080px 이하(태블릿·모바일)는 예전 흐름 그대로. */
+@media (min-width:1081px){
+  .hero{
+    /* ── 새벽에 값만 바꿔 재조정하는 두 줄 ── */
+    --photo-up:0px;      /* 사진을 캡션 위로 더 올리는 값 (기본 0) */
+    --photo-down:40px;   /* 사진을 예전 자리에서 아래로 내리는 값 — 더 내리거나 올리라는 지시는 이 값만 바꾼다 */
+    --copy-down:24px;    /* 왼쪽 뭉치(h1~상담 신청)를 내리는 값 */
+    /* 사진 상단이 서 있던 자리(수정 전 실측 기준선). 사진 높이만 따로 빼고 나머지는
+       예전 '사진 아래 여백(캡션 자리 + 사진·캡션 사이 16 + 히어로 아래 여백)' 값이다.
+       사진과 캡션은 위에서부터 쌓이므로, 인용구가 캡션에서 빠져 캡션이 짧아져도 사진은 이 자리를 지킨다. */
+    --photo-top:calc(100svh - var(--photo-h) - 248px);
+    /* 사진 높이 — 1440×900 이상에서는 원래 크기 578px 그대로.
+       화면이 낮아지면 캡션 자리를 남기고 조금씩 줄어든다(가로는 사진 비율을 따라간다). */
+    --photo-h:clamp(300px, calc(100svh - 322px), 578px);
+    --photo-w:calc(var(--photo-h) * 466 / 578);
+    --cap-gap:16px;                                  /* 사진 아래 ~ 캡션 위 */
+    --side-r:calc(var(--hero-m) - min(3vw, calc(var(--hero-m) * .5)));  /* 사진 오른쪽 끝 자리 */
+  }
+  /* 왼쪽 칼럼의 캡션은 숨기고(사진 아래 전용 캡션을 따로 쓴다) 뭉치는 위에서부터 쌓는다 */
+  .hero__in{align-self:flex-start}
+  .hero__in > .hero__cred{display:none}
+  .hero__copy{padding-top:var(--copy-down)}   /* h1부터 버튼까지만 통째로 내려간다(내부 간격 불변) */
+
+  /* 오른쪽 덩어리: 사진 + 그 바로 아래 캡션 — 사진 상단을 기준으로 위에서부터 쌓는다 */
+  .hero__side{
+    position:absolute; inset:0; z-index:1;
+    display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-start;
+    padding-top:calc(var(--photo-top) + var(--photo-down));
+    padding-bottom:0;
+    pointer-events:none;
+  }
+  .hero__side .hero__cred{pointer-events:auto}
+  .hero__photo{
+    position:relative; flex:0 0 auto;
+    width:var(--photo-w); height:var(--photo-h);
+    margin-right:var(--side-r);
+    margin-bottom:calc(var(--cap-gap) + var(--photo-up));
+  }
+  .hero__photo .hero__media{
+    position:absolute; inset:0; width:100%; height:100%;
+    background-position:right bottom; background-size:contain;
+  }
+  /* 따뜻한 빛 번짐은 사진 뒤에 그대로 따라간다 */
+  .hero__photo .hero__glow{
+    inset:2% -20% -6% -20%; width:auto; height:auto; aspect-ratio:auto;
+  }
+  /* 사진 아래가 화면 끝이 아니라 캡션 위에서 끊기므로, 상반신 끝을 넉넉히 녹여
+     잘린 선이 보이지 않게 한다(모바일과 같은 원리, 페이드만 길게). */
+  .hero__photo .hero__media::after{background:
+    linear-gradient(0deg,var(--navy) 0%,rgba(11,25,51,.85) 2%,rgba(11,25,51,.45) 7%,rgba(11,25,51,.15) 12%,rgba(11,25,51,0) 18%)}
+  /* 캡션: 글자·문구는 원래 값 그대로, 폭을 사진 폭에 맞춰 이름 왼쪽 끝이 사진 왼쪽 끝과 서게 한다 */
+  /* 사진 안에서 팔이 시작하는 지점(약 50px)에 캡션 왼쪽 끝을 맞춘다 */
+  .hero__side .hero__cred{width:var(--photo-w); max-width:none; margin-right:max(0px, calc(var(--side-r) - var(--cap-shift, 48px)))}
+  /* 버튼과 인용구 사이 — 버튼 아래 여백(위 미디어쿼리의 15~28px)이 그대로 인용구와의 사이가 되므로 18px로 맞춘다 */
+  .hero__copy .hero__actions{margin-bottom:45px}
+  .hero__in > .hero__cred-quote{margin-top:0; width:fit-content; max-width:100%; text-align:left}
+  /* 둘째 줄을 살짝 오른쪽으로 — 첫 줄 '아는' 아래에서 시작하게 */
+  .hero__in > .hero__cred-quote .hero__quote-l2{display:inline-block; margin-left:var(--quote-indent, 105px)}
+  .hero__in > .hero__cred-quote--lead{line-height:2.15; margin-left:var(--quote-shift, 75px)}
+}
+/* 큰 화면: 예전처럼 로고가 내비 아래에서 조금 내려오게(히어로 내용이 짧아져 생기는 차이를 메운다) */
+@media (min-width:1081px) and (min-height:961px){
+  .hero__in{padding-top:clamp(0px, calc(100svh - 1040px), 44px)}
+  .hero{--photo-top:calc(100svh - var(--photo-h) - 274px)}
+}
+@media (min-width:1081px) and (max-height:840px){
+  .hero__in{padding-top:clamp(0px, calc(100svh - 768px), 25px)}
+  .hero{--photo-top:calc(100svh - var(--photo-h) - 222px)}
+}
+/* 짧은 PC 화면: 위의 max-height 규칙이 글자를 줄이므로 사진도 그만큼 더 줄여 캡션이 화면 안에 들어오게 한다 */
+@media (min-width:1081px) and (min-height:841px) and (max-height:960px){
+  .hero{--photo-h:clamp(300px, calc(100svh - 300px), 578px)}
+}
+@media (min-width:1081px) and (max-height:840px){
+  .hero{--photo-h:clamp(260px, calc(100svh - 300px), 520px)}
+}
+/* 1080px 이하: 새 래퍼를 펼쳐 예전 흐름(제목 → sub → 버튼 → About the CEO → 사진) 그대로 둔다 */
+@media (max-width:1080px){
+  .hero__side,.hero__photo{display:contents}
+  .hero__cred--side{display:none}
+  /* 인용구가 캡션 밖으로 나갔다. 캡션의 아래 여백이 인용구 위로 올라가 버리므로
+     (이름·직함과 인용구 사이가 벌어지지 않게) 캡션 여백을 0으로 두고 같은 값을 인용구 아래로 옮긴다. */
+  .hero__in > .hero__cred{padding-bottom:0}
+  .hero__cred-quote--lead{max-width:470px;margin-bottom:0}
+}
+@media (max-width:900px){
+  .hero__cred-quote--lead{margin-bottom:clamp(30px,6vw,46px)}
+}
+
+/* ---------- marquee band ---------- */
+.band{background:var(--navy-2);color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);overflow:hidden}
+.band__track{display:flex;gap:0;white-space:nowrap;animation:slide 42s linear infinite;width:max-content}
+.band__track span{display:inline-flex;align-items:center;gap:26px;padding:16px 26px;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase}
+.band__track span::after{content:"◆";font-size:7px;color:var(--gold);opacity:.8}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- philosophy ---------- */
+.philo__grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(36px,6vw,88px);align-items:center}
+.venn{display:flex;flex-direction:column;align-items:center;gap:clamp(22px,3vw,32px);width:min(480px,100%);margin:0 auto}
+.venn__stage{position:relative;width:100%;aspect-ratio:1/.86}
+.venn__c{position:absolute;width:58%;aspect-ratio:1;border-radius:50%;border:2px solid rgba(11,25,51,.55);background:rgba(197,164,126,.22)}
+.venn__c--top{left:21%;top:0}
+.venn__c--left{left:0;bottom:0}
+.venn__c--right{right:0;bottom:0}
+.venn__c--left,.venn__c--right{border-color:rgba(11,25,51,.55);background:rgba(197,164,126,.22)}
+.venn__core{position:absolute;left:50%;top:57%;transform:translate(-50%,-50%);width:20%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 45%,rgba(168,132,84,.95),rgba(197,164,126,.62) 55%,rgba(197,164,126,.18) 74%,rgba(197,164,126,0) 84%);
+  box-shadow:0 0 0 1px rgba(168,132,84,.35)}
+.venn__label{position:absolute;font-size:21px;line-height:1.45;letter-spacing:-.01em;color:#0B1933;text-align:center;font-weight:700}
+.venn__label small{display:block;font-size:14px;letter-spacing:.14em;color:#8A6A3E;margin-top:3px;font-weight:700}
+.venn__label--top{left:50%;top:11%;transform:translateX(-50%)}
+.venn__label--left{left:20%;bottom:15%;transform:translateX(-50%)}
+.venn__label--right{left:80%;bottom:15%;transform:translateX(-50%)}
+.venn__arrow{position:absolute;left:50%;top:69%;transform:translateX(-50%);color:var(--gold-d);font-size:12px}
+.venn__out{width:100%;text-align:center;
+  font-family:var(--serif);font-size:clamp(18px,1.95vw,25px);line-height:1.68;color:#1B2537;font-weight:600}
+.venn__out b{display:block;font-weight:700;color:#0B1933;font-size:1.06em;letter-spacing:.02em;margin-bottom:4px}
+.philo__quote{margin:clamp(30px,4vw,44px) 0 0;padding:22px 0 0;border-top:1px solid var(--line);
+  font-family:var(--serif);font-size:clamp(16px,1.55vw,19px);line-height:1.8;color:var(--ink);font-weight:400}
+.philo__quote span{display:block;margin-top:10px;font-family:var(--sans);font-size:13px;letter-spacing:.1em;color:var(--muted-l)}
+.philo__text h2{font-size:clamp(28px,3.8vw,50px);line-height:1.46;font-weight:600;color:#0B1424}
+/* 강조어(다.르.다)는 금빛 성격은 남기되 종이 바탕에서 더 짙게 읽히도록 톤을 내린다 */
+.philo__text h2 em{color:#7A5B36}
+.philo__text p{margin:0 0 20px;font-size:clamp(18px,1.55vw,22px);line-height:1.88;color:#4A5464}
+.philo__text p:last-child{margin-bottom:0}
+.philo__text strong{color:var(--ink);font-weight:600}
+
+/* ---------- solutions ---------- */
+.sol__head{max-width:760px;margin-bottom:clamp(30px,4vw,48px)}
+.sol__head h2{font-weight:600;color:#0B1424}
+.sol__head h2 em{color:#7A5B36}
+.sol-hint{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:12.5px;letter-spacing:.02em;color:var(--muted);font-weight:500}
+.sol-hint::before{content:"";width:16px;height:1px;background:var(--gold)}
+.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.1vw,14px);border-bottom:0;margin-bottom:clamp(26px,3.4vw,42px)}
+/* plan tabs as real buttons — neutral paper when idle, filled navy when open,
+   gold badge + gold bottom bar on the active one. Gold elsewhere is the CTA card. */
+.tab{
+  position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:18px 20px;margin:0;text-align:left;cursor:pointer;
+  background:#F2E9DA;border:1px solid rgba(140,110,70,.38);border-radius:5px;
+  font-family:var(--serif);font-size:clamp(17px,1.7vw,21px);line-height:1.4;letter-spacing:-.01em;
+  color:#0B1933;font-weight:700;
+  transition:color .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease);
+}
+.tab::after{content:"";position:absolute;left:-1px;right:-1px;bottom:-1px;height:3px;border-radius:0 0 5px 5px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.tab b{font-family:var(--latin);font-size:13px;letter-spacing:.06em;color:#6B4A22;font-weight:700;flex:0 0 auto;margin:0}
+.tab:hover:not([aria-selected="true"]){background:#F8F1E5;border-color:rgba(140,110,70,.6);transform:translateY(-1px)}
+.tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#F7F3EA;font-weight:600;
+  box-shadow:0 18px 34px -24px rgba(11,25,51,.65)}
+.tab[aria-selected="true"] b{color:var(--gold-l)}
+.tab[aria-selected="true"]::after{transform:scaleX(1)}
+.tab:focus-visible{outline-color:var(--navy)}
+.panel[hidden]{display:none}
+.panel__note{display:flex;align-items:center;gap:10px;margin:0 0 26px;font-size:13.5px;color:var(--ink);letter-spacing:.01em;font-weight:600}
+.panel__note::before{content:"";width:18px;height:1px;background:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,22px)}
+/* 탭마다 카드 수에 맞춰 칸을 잡니다 — 생애주기 6+상담(3×2) · 부동산·가업 승계 4+상담(한 줄)
+   · 재무 5+상담 = 6칸(3×2). 재무도 생애주기와 같은 3열이라 카드 한 장의 크기가 두 탭에서 같다. */
+#panel-suc .cards{grid-template-columns:repeat(4,minmax(0,1fr))}
+#panel-life .card--cta,#panel-suc .card--cta{grid-column:1/-1}
+.panel{
+  --card-bg:#fff;--card-bd:rgba(11,25,51,.09);
+  --card-title:var(--ink);--card-text:var(--muted);--card-num:var(--gold-d);--card-more:var(--gold-d);
+  --cta-bg:#F2E9DA;--cta-bg-h:#EADCC4;--cta-bd:rgba(154,123,87,.55);
+  --cta-ink:#14243F;--cta-ink-2:#2B3A54;--cta-accent:#7A5A31;
+}
+#panel-life{--card-bg:var(--plan-life);--card-bd:rgba(197,164,126,.26)}
+#panel-suc{--card-bg:var(--plan-suc);--card-bd:rgba(233,206,163,.3)}
+#panel-fin{--card-bg:var(--plan-fin);--card-bd:rgba(213,224,209,.26)}
+#panel-life,#panel-suc,#panel-fin{
+  --card-title:var(--card-on-dark-title);--card-text:var(--card-on-dark-text);
+  --card-num:var(--card-on-dark-num);--card-more:#EBD6B7;
+}
+#panel-suc{--card-num:#FAF0DC;--card-more:#F7E7CB}
+#panel-fin{--card-num:#EDF3E8;--card-more:#EDF3E8}
+.card{
+  position:relative;display:flex;flex-direction:column;text-align:left;
+  background:var(--card-bg);border:1px solid var(--card-bd);padding:clamp(22px,2.2vw,30px);
+  color:var(--card-title);min-height:222px;transition:.42s var(--ease);overflow:hidden;
+}
+.panel .card{padding:26px 24px;min-height:240px}
+.panel .card h3{font-size:clamp(18px,1.55vw,20px);font-weight:600}
+.panel .card p{font-size:14.5px;line-height:1.82;font-weight:500}
+.card::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--gold);transition:width .5s var(--ease)}
+.card:hover{transform:translateY(-4px);border-color:rgba(197,164,126,.55);box-shadow:0 26px 50px -32px rgba(11,25,51,.4)}
+.card:hover::before{width:100%}
+.card__no{font-family:var(--latin);font-size:13px;letter-spacing:.16em;color:var(--card-num);margin-bottom:auto;font-weight:500}
+.card h3{font-family:var(--serif);font-size:clamp(18px,1.6vw,21px);font-weight:500;line-height:1.5;margin:18px 0 10px;letter-spacing:-.015em;word-break:keep-all;color:var(--card-title)}
+.card p{margin:0 0 18px;font-size:14px;line-height:1.8;color:var(--card-text);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card__more{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.1em;color:var(--card-more);margin-top:auto;font-weight:600}
+.card__more i{width:16px;height:1px;background:currentColor;display:block;transition:width .4s var(--ease)}
+.card:hover .card__more i{width:26px}
+/* 카드 하단 액션 (2026-11-25) — '자세히' 옆에 '상담 신청' 링크를 같은 줄에 둡니다.
+   카드를 열지 않고도 바로 상담 신청으로 갈 수 있게 하되, 목록이 산만해지지 않도록
+   버튼 박스 없이 같은 타이포의 텍스트 링크로만 둡니다. 터치 영역은 44px 높이를 확보합니다. */
+.card{cursor:pointer}
+.card__act{display:flex;align-items:center;gap:9px;margin-top:auto}
+.card__act .card__more{margin-top:0;min-height:44px;padding:0;align-items:center}
+.card__sep{color:var(--card-more);opacity:.5;font-size:12px;line-height:1;margin-top:-1px}
+.card__act a.card__more{white-space:nowrap;transition:color .3s var(--ease)}
+.card__act a.card__more:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.card__act a.card__more:focus-visible{outline-offset:2px}
+/* CTA card stays navy on every tab */
+.card--dark{background:var(--navy);border-color:rgba(197,164,126,.32);color:#fff}
+.card--dark h3{color:#fff}
+.card--dark p{color:rgba(245,241,233,.96)}
+.card--dark .card__no{color:var(--gold-l)}
+.card--dark .card__more{color:var(--gold-l)}
+.card--dark:hover{box-shadow:0 30px 60px -34px rgba(11,25,51,.7)}
+/* CTA card — one gold/cream tone on every tab so it reads as "go to 상담"
+   instead of blending into the navy / amber / sage plan cards. Colours are
+   variables so a per-tab tone is a three-line change. */
+.card--cta{background:var(--cta-bg);border-color:var(--cta-bd);color:var(--cta-ink)}
+.card--cta h3{color:var(--cta-ink)}
+.card--cta p{color:var(--cta-ink-2)}
+.card--cta .card__no{color:var(--cta-accent)}
+.card--cta .card__more{color:var(--cta-accent)}
+.card--cta::before{background:var(--cta-accent)}
+.card--cta:hover{background:var(--cta-bg-h);border-color:var(--cta-accent);box-shadow:0 26px 50px -32px rgba(11,25,51,.45)}
+.card--cta:hover .card__more{color:var(--cta-ink)}
+.card--cta:focus-visible{outline-color:var(--cta-ink)}
+/* the life/suc CTA spans the whole card row, so on desktop it reads as a wide
+   band (number · title · copy · 상담 신청) instead of a half-empty box;
+   border, radius and padding stay the same as every other card. */
+@media (min-width:901px){
+  #panel-life .card--cta,#panel-suc .card--cta{
+    flex-direction:row;align-items:center;gap:clamp(20px,2.6vw,44px);min-height:0;
+  }
+  #panel-life .card--cta .card__no,#panel-suc .card--cta .card__no{margin:0;flex:0 0 auto}
+  #panel-life .card--cta h3,#panel-suc .card--cta h3{margin:0;flex:0 0 auto}
+  #panel-life .card--cta p,#panel-suc .card--cta p{margin:0;max-width:46ch;display:block;
+    -webkit-line-clamp:unset;overflow:visible}
+  #panel-life .card--cta .card__more,#panel-suc .card--cta .card__more{margin:0 0 0 auto;white-space:nowrap}
+}
+
+/* ---------- about ---------- */
+/* 카드는 폭·크기 그대로 두고 화면 가운데로 (margin-inline:auto) */
+.philo__video{max-width:680px;margin:clamp(34px,4.2vw,54px) auto 0}
+.about__top{display:block}
+.about__body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3.2vw,52px)}
+.about__body p{font-size:17.5px;line-height:1.85;color:var(--muted);font-weight:500;margin:0}
+/* 대표 소개 영상 카드 — 철학 섹션 마지막(벤다이어그램·융합모델 문구 다음)의 소개 영상.
+   썸네일을 누르면 같은 자리에서 사이트 안 플레이어(assets/intro.mp4)가 열려 재생된다.
+   유튜브로 나가지 않고, 원본 유튜브 링크는 캡션 옆 작은 텍스트 링크로만 남긴다. */
+.video-card{display:block;margin:18px 0 0;border:1px solid var(--line);background:#fff;overflow:hidden;
+  transition:.35s var(--ease)}
+.video-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.video-card.is-playing:hover{transform:none}
+.video-card__stage{position:relative;display:block;background:#0B1933}
+.video-card__thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;
+  background:#0B1933 center/cover no-repeat;cursor:pointer;font:inherit;color:inherit;text-decoration:none;
+  -webkit-appearance:none;appearance:none}
+.video-card__player{display:none;width:100%;height:auto;aspect-ratio:16/9;background:#0B1933;
+  object-fit:contain;vertical-align:top}
+.video-card.is-playing .video-card__thumb{display:none}
+.video-card.is-playing .video-card__player{display:block}
+.video-card__player:focus-visible{outline:2px solid var(--gold-d);outline-offset:-3px}
+.video-card__play{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+  width:clamp(44px,7.4vw,62px);height:clamp(44px,7.4vw,62px);
+  border-radius:50%;background:rgba(11,25,51,.68);border:1px solid rgba(255,255,255,.65);
+  display:flex;align-items:center;justify-content:center;transition:.3s var(--ease)}
+.video-card:hover .video-card__play{background:var(--gold);border-color:var(--gold)}
+.video-card__play::before{content:"";width:0;height:0;border-style:solid;
+  border-width:0.15em 0 0.15em 0.25em;border-color:transparent transparent transparent #fff;margin-left:.05em;
+  font-size:clamp(44px,7.4vw,62px)}
+.video-card:hover .video-card__play::before{border-left-color:var(--navy)}
+.video-card__cap{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0;
+  padding:12px 16px;font-size:14px;line-height:1.4;font-weight:500;color:var(--ink)}
+.video-card__yt{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:500;
+  color:var(--gold-d);border-bottom:1px solid rgba(154,123,87,.45);padding-bottom:2px;white-space:nowrap}
+.video-card__yt:hover{color:#7A5B36;border-bottom-color:#7A5B36}
+.video-card__yt i{font-style:normal;font-size:10px;color:var(--gold);transform:translateY(-.5px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 clamp(16px,2.2vw,24px)}
+.chip{font-size:13px;letter-spacing:.02em;color:#0B1933;border:1px solid rgba(11,25,51,.28);padding:7px 14px;border-radius:999px;background:#fff;font-weight:600}
+
+.career{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,52px);margin-top:clamp(12px,1.4vw,16px);padding-top:clamp(12px,1.4vw,16px);border-top:1px solid var(--line)}
+.career h4{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);margin:0 0 6px;font-weight:600}
+.career ul{list-style:none;margin:0;padding:0}
+.career li{position:relative;padding:4px 0 4px 18px;font-size:15.5px;line-height:1.62;color:#424C5C}
+.career li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:1px;background:rgba(197,164,126,.8)}
+.career li b{color:#0F1B30;font-weight:600}
+/* 경력 목록 기울임 시안 — 기본 C안(정체 + 한 톤 누른 색).
+   A안(전체 기울임): --career-style:italic
+   B안(Past만 기울임): --career-past-style:italic  ← 이 두 줄만 바꾸면 됩니다 */
+:root{--career-style:normal;--career-past-style:normal}
+.career li{font-style:var(--career-style)}
+.career__col--past li{font-style:var(--career-past-style)}
+
+.books{display:grid;grid-template-columns:repeat(2,minmax(0,300px)) minmax(0,1fr);gap:clamp(22px,3.2vw,38px);margin-top:clamp(26px,3vw,40px);padding-top:clamp(20px,2.4vw,28px);border-top:1px solid var(--line);align-items:start}
+.books__head{grid-column:1/-1;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);margin:0 0 4px;font-weight:600}
+.book{margin:0;display:flex;flex-direction:column}
+.book__cover{position:relative;display:block;line-height:0;background:var(--navy);overflow:hidden;
+  box-shadow:0 28px 48px -28px rgba(11,25,51,.6),0 2px 5px rgba(11,25,51,.14);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.book__cover img{width:100%;height:auto;display:block}
+.book__cover::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,0) 6%,rgba(0,0,0,.16) 100%)}
+.book:hover .book__cover{transform:translateY(-4px);box-shadow:0 34px 54px -28px rgba(11,25,51,.66),0 2px 5px rgba(11,25,51,.14)}
+.book figcaption{margin-top:16px}
+.book em{display:block;font-style:normal;font-size:11.5px;letter-spacing:.2em;color:var(--gold-d);margin-bottom:7px;font-weight:500}
+.book b{display:block;font-family:var(--serif);font-size:clamp(17.5px,1.72vw,21.5px);line-height:1.5;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+.book small{display:block;margin-top:8px;font-size:14px;letter-spacing:.06em;color:var(--muted-l)}
+.book small + small{margin-top:3px}
+.book__cover:focus-visible{outline:2px solid var(--gold-d);outline-offset:3px}
+.book__links{display:flex;flex-wrap:nowrap;align-items:center;margin-top:11px;line-height:1.5;white-space:nowrap;font-size:12.5px;letter-spacing:.04em;color:var(--muted-l)}
+.book__links a{color:var(--muted-l);text-decoration:none;transition:color .3s var(--ease)}
+.book__links a:hover,.book__links a:focus-visible{color:var(--gold-d)}
+.book__links span{padding:0 .5em;color:var(--muted-l);opacity:.55}
+.books__note{display:flex;flex-direction:column;justify-content:center;align-self:center;padding:6px 0 6px clamp(0px,1.4vw,18px)}
+.books__note p{margin:0 0 14px;font-family:var(--serif);font-size:clamp(18px,1.7vw,23px);line-height:1.7;color:var(--ink);font-weight:400}
+.books__note span{font-size:clamp(15px,1.25vw,17px);line-height:1.85;color:var(--muted)}
+
+.partners{margin-top:clamp(46px,6vw,72px);padding-top:clamp(32px,4vw,44px);border-top:1px solid var(--line)}
+.partners__grid{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line)}
+.partner{flex:1 1 22%;background:var(--ivory);padding:20px 18px;transition:background .35s var(--ease);min-height:82px}
+.partner:hover{background:#fff}
+.partner small{display:block;font-size:11px;letter-spacing:.14em;color:var(--gold-d);margin-bottom:6px;text-transform:uppercase;font-weight:500}
+.partner b{font-size:14.5px;font-weight:500;color:var(--ink);line-height:1.55}
+
+/* ---------- contact ---------- */
+.contact{position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:auto 0 0 0;height:62%;background:
+  radial-gradient(80% 100% at 78% 100%,rgba(197,164,126,.16) 0%,rgba(197,164,126,0) 62%);pointer-events:none}
+.contact__grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(34px,6vw,80px);align-items:center}
+.contact h2{font-size:clamp(27px,3.6vw,46px)}
+.contact__big{display:inline-flex;align-items:center;gap:14px;margin:clamp(24px,3vw,34px) 0 8px;
+  font-family:var(--latin);font-size:clamp(27px,3.4vw,40px);letter-spacing:.06em;color:#fff;line-height:1.2;
+  border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:10px;transition:border-color .4s}
+.contact__big:hover{border-color:var(--gold)}
+.contact__big span{font-size:11px;letter-spacing:.24em;color:var(--gold);font-family:var(--sans);transform:translateY(-6px)}
+.contact__mail{font-size:15px;letter-spacing:.03em;color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:3px}
+.contact__mail:hover{color:#fff;border-color:var(--gold)}
+.contact__panel{border:1px solid rgba(255,255,255,.14);padding:clamp(24px,3vw,36px);background:rgba(255,255,255,.03);backdrop-filter:blur(2px)}
+.contact__panel h3{font-family:var(--serif);font-size:20px;font-weight:400;margin:0 0 8px;color:#F6F3ED}
+.contact__panel p{margin:0 0 22px;font-size:14.5px;line-height:1.8;color:rgba(245,241,233,.94)}
+.contact__acts{display:flex;flex-direction:column;gap:12px}
+.contact__panel .btn{width:100%;min-height:50px;padding:14px 24px}
+.contact__panel .contact__hours{margin:18px 0 0;font-size:13px;line-height:1.7;color:rgba(242,239,232,.8)}
+.btn--outline{border-color:rgba(197,164,126,.55);color:var(--gold-l)}
+.btn--outline:hover{background:rgba(197,164,126,.14);border-color:var(--gold);color:#fff}
+.contact__check{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:12px 20px;border-radius:999px;
+  border:1px solid rgba(197,164,126,.42);font-size:13.5px;letter-spacing:.03em;color:var(--gold-l);transition:.35s var(--ease);font-weight:500}
+.contact__check:hover{background:rgba(197,164,126,.12);border-color:var(--gold);color:#fff}
+.contact__check span{font-size:11px}
+.sns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.sns a{width:42px;height:42px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 20px -12px rgba(0,0,0,.7);transition:transform .3s var(--ease),filter .3s var(--ease),box-shadow .3s var(--ease)}
+.sns a svg{width:24px;height:24px;display:block}
+.sns a:hover{transform:translateY(-2px);filter:brightness(1.07);box-shadow:0 12px 22px -12px rgba(0,0,0,.8)}
+.sns__i--kakao{background:#FEE500}
+.sns__i--yt{background:#FF0000}
+.sns__i--blog{background:#03C75A}
+.sns__i--insta{background:radial-gradient(circle at 28% 102%,#FEDA75 0%,#FA7E1E 24%,#D62976 52%,#962FBF 78%,#4F5BD5 100%)}
+
+.footer{background:var(--navy);color:rgba(255,255,255,.66);padding:clamp(34px,4vw,52px) 0}
+.footer__in{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.footer .logo{font-size:19px;color:rgba(255,255,255,.9)}
+.footer__info{font-size:12.5px;line-height:1.9}
+.footer__info b{color:rgba(255,255,255,.9);font-weight:500}
+.footer__note{max-width:620px;font-size:11.5px;line-height:1.8;color:rgba(255,255,255,.46);margin-top:18px}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:120;display:flex;justify-content:flex-end;align-items:stretch;
+  opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.modal.is-open{opacity:1;visibility:visible}
+.modal__bd{position:absolute;inset:0;background:rgba(6,14,28,.62);backdrop-filter:blur(6px)}
+.modal__panel{
+  position:relative;width:min(720px,100%);max-width:100%;background:var(--ivory);
+  display:flex;flex-direction:column;transform:translateX(28px);opacity:.6;
+  transition:transform .52s var(--ease),opacity .52s var(--ease);box-shadow:-30px 0 80px rgba(6,14,28,.35);
+}
+.modal.is-open .modal__panel{transform:translateX(0);opacity:1}
+.modal__bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;
+  padding:20px clamp(20px,3vw,38px);background:rgba(250,248,245,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.modal__cat{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
+.modal__close{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;transition:.3s;color:var(--ink)}
+.modal__close:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.modal__close svg{width:14px;height:14px}
+.modal__scroll{overflow-y:auto;padding:clamp(24px,3.4vw,42px) clamp(20px,3vw,38px) clamp(40px,5vw,56px);-webkit-overflow-scrolling:touch}
+.modal h3{font-family:var(--serif);font-size:clamp(23px,2.7vw,31px);font-weight:400;line-height:1.45;margin:0 0 16px;letter-spacing:-.02em}
+.modal .m-lead{font-size:16px;line-height:1.9;color:var(--ink);font-weight:500;margin:0 0 26px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.modal h4{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin:30px 0 12px;font-weight:600}
+.modal ul,.modal ol{margin:0;padding:0;list-style:none}
+.modal li{position:relative;padding:7px 0 7px 18px;font-size:15px;line-height:1.8;color:var(--ink);font-weight:400}
+.modal li::before{content:"";position:absolute;left:0;top:16px;width:6px;height:1px;background:var(--gold)}
+.m-rows{display:grid;gap:0;border-top:1px solid var(--line);margin:0 0 8px}
+.m-row{display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.m-row b{font-size:14px;color:var(--ink);font-weight:600;letter-spacing:.01em;padding-top:1px}
+.m-row span{font-size:15px;line-height:1.8;color:var(--ink)}
+.m-points{background:var(--paper);padding:22px 24px;margin-top:22px}
+.m-points p{margin:0 0 10px;font-size:15px;line-height:1.8;color:var(--ink);position:relative;padding-left:56px}
+.m-points p:last-child{margin-bottom:0}
+.m-points p b{position:absolute;left:0;top:0;font-family:var(--latin);font-size:13px;letter-spacing:.08em;color:var(--gold-d);font-weight:600;white-space:nowrap}
+.m-concerns{background:#fff;border:1px solid var(--line);padding:20px 22px;margin:0 0 22px}
+.m-concerns p{margin:0;padding:7px 0 7px 20px;position:relative;font-size:15px;line-height:1.75;color:var(--ink);border-bottom:1px dotted rgba(11,25,51,.1)}
+.m-concerns p:last-child{border-bottom:0}
+.m-concerns p::before{content:"▸";position:absolute;left:0;top:6px;color:var(--gold);font-size:12px}
+.m-concerns p b{color:var(--ink);font-weight:600}
+.m-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 4px;background:#fff}
+.m-table caption{caption-side:top;text-align:left;font-size:12.5px;color:var(--muted-l);padding-bottom:8px;letter-spacing:.02em}
+.m-table th,.m-table td{border:1px solid rgba(11,25,51,.12);padding:9px 10px;text-align:center;color:var(--muted)}
+.m-table th{background:var(--paper);color:var(--ink);font-weight:600;font-size:13px}
+.m-table td:first-child{text-align:left}
+.m-table--kv td:last-child{text-align:left}
+.m-table td.hl{color:var(--navy);font-weight:700}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:6px}
+.table-wrap .m-table{min-width:380px}
+.m-note{font-size:12.5px;color:var(--muted);line-height:1.75;margin:14px 0 0}
+.m-flow{display:flex;flex-direction:column;gap:0;margin:8px 0 6px;border-left:1px solid rgba(197,164,126,.5);padding-left:20px}
+.m-flow div{position:relative;padding:10px 0;font-size:14.5px;line-height:1.75;color:var(--muted)}
+.m-flow div::before{content:"";position:absolute;left:-25px;top:18px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.m-flow b{display:block;color:var(--ink);font-weight:600;font-size:15px}
+.m-cta{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.m-cta p{margin:0;font-size:13.5px;color:var(--muted-l)}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .band__track,.hero__scroll i{animation:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .hero__media{width:min(42%,470px)}
+  .hero h1{font-size:clamp(26px,3.2vw,42px);line-height:1.42;max-width:min(100%,480px)}
+  .hero__sub{max-width:44ch;margin-bottom:clamp(18px,2.4vw,26px)}
+  .hero__cred{max-width:470px;padding-top:16px}
+  .hero__actions{margin-bottom:clamp(22px,3.4vh,32px)}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #panel-life .cards,#panel-suc .cards,#panel-fin .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about__top{gap:42px}
+}
+@media (max-width:900px){
+  :root{--head-h:64px}
+  .nav__menu,.nav__cta{display:none}
+  .nav__burger{display:flex}
+  .logo span{display:none}
+  .logo{font-size:21px}
+  .hero{flex-direction:column;align-items:stretch;min-height:auto;
+    padding-top:calc(var(--head-h) + 2px);padding-bottom:0;overflow:visible}
+  .hero__in{order:1}
+  /* 모바일도 데스크톱과 같은 세로 배치: 로고 → 캡션 한 줄 → 제목.
+     390 폭에서 캡션이 한 줄로 들어가도록 글자 크기와 자간을 이 폭에서만 좁힌다. */
+  .hero__eyebrow{font-size:10.5px;letter-spacing:.12em;margin-bottom:19px}
+  .hero__media{order:2;position:relative;inset:auto;width:auto;height:min(112vw,540px);max-width:none;
+    margin-top:clamp(22px,4.4vw,34px);background-position:50% bottom;background-size:auto 100%;opacity:1;z-index:1}
+  /* 컷아웃이라 위 가장자리가 투명하다. 위쪽 그라데이션은 가장자리만 살짝 눌러 주고
+     (머리카락이 navy로 먹히지 않게), 아래쪽은 잘린 상반신이 녹아들게 한다. */
+  .hero__media::after{background:
+    linear-gradient(180deg,var(--navy) 0%,rgba(11,25,51,.35) 2%,rgba(11,25,51,0) 6%),
+    linear-gradient(0deg,var(--navy) 0%,rgba(11,25,51,.55) 4%,rgba(11,25,51,0) 12%)}
+  .hero__glow{display:none}
+  .hero__actions{margin-bottom:clamp(28px,5vh,40px)}
+  .hero__cred{border-top-color:rgba(197,164,126,.26);padding-bottom:clamp(30px,6vw,46px)}
+  .hero__scroll{display:none}
+  .philo__grid{grid-template-columns:1fr;gap:44px}
+  .venn{width:min(340px,88%)}
+  .about__top{gap:30px}
+  .about__body{grid-template-columns:1fr;gap:14px}
+  .br-logo--nav{height:30px}
+  /* 모바일 히어로에도 PC와 같은 브랜드 로고를 왼쪽에 그대로 보여 준다.
+     높이는 PC(40~54px)보다 조금 낮춰 390px 폭에서 주변 요소를 밀지 않을 만큼만 줄인다. */
+  .hero__brand{display:flex;align-items:center;gap:12px;margin:0 0 14px;
+    transition:opacity .3s var(--ease),visibility .3s var(--ease)}
+  .hero__brand::after{flex-basis:72px}
+  .br-logo--hero{height:clamp(36px,10.5vw,46px)}
+  /* 스크롤해 상단 고정 내비 로고가 나타나면 히어로 로고는 사라져 두 로고가 겹쳐 보이지 않는다.
+     (PC와 같은 원칙 — 로고는 한 번에 하나만) 자리를 계속 차지하므로 레이아웃은 흔들리지 않는다. */
+  body:has(.nav.is-stuck) .hero__brand{opacity:0;visibility:hidden}
+  .contact__grid{grid-template-columns:minmax(0,1fr);gap:34px}
+  .books{grid-template-columns:1fr 1fr}
+  .books__note{grid-column:1/-1;padding-left:0;margin-top:6px}
+  .career{grid-template-columns:1fr;gap:20px}
+  .career li{font-size:14.5px;line-height:1.45;padding:2px 0 2px 18px}
+  .modal{justify-content:center;align-items:flex-end}
+  .modal__panel{width:100%;max-height:92vh;max-height:92svh;transform:translateY(30px);border-radius:16px 16px 0 0;overflow:hidden}
+  .modal.is-open .modal__panel{transform:translateY(0)}
+}
+/* 아주 좁은 폰(360 등): 캡션을 2줄로 접지 않고 390과 같은 한 줄로 유지한다. */
+@media (max-width:374px){
+  .hero__eyebrow{font-size:10px;letter-spacing:.09em}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .eyebrow{margin-bottom:16px;font-size:11px}
+  .hero h1{font-size:clamp(26px,7.4vw,34px);line-height:1.5}
+  .hero__cred{padding-top:15px}
+  .hero__cred-row{gap:4px 10px}
+  .hero__cred-role{font-size:12px;line-height:1.5}
+  .hero__actions .btn{flex:1 1 46%;padding:13px 16px;font-size:13.5px;gap:6px}
+  .hero__sub{font-size:15px}
+  .hero__sub-2{display:none}
+  .tabs{grid-template-columns:1fr;gap:8px;overflow:visible;margin-right:0;padding-right:0;border-bottom:0}
+  .tab{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 16px;
+    font-size:16px;white-space:normal}
+  .tab::after{left:-1px;right:-1px;bottom:-1px;width:auto;height:3px}
+  .tab[aria-selected="true"]::after{width:auto}
+  .tab b{font-size:12px;margin-left:10px}
+  .cards,#panel-life .cards,#panel-suc .cards,#panel-fin .cards{grid-template-columns:1fr}
+  .card{min-height:0}
+  .panel .card{min-height:0}
+  .books{grid-template-columns:1fr 1fr;gap:16px}
+  .books__head{margin-bottom:2px}
+  .book figcaption{margin-top:12px}
+  .book b{font-size:15px}
+  .m-row{grid-template-columns:72px minmax(0,1fr);gap:10px}
+  .modal__bar{padding:16px 20px}
+  .m-points p{padding-left:48px}
+  .footer__in{flex-direction:column;align-items:flex-start}
+}
+
+</style>
+<style>
+/* ===== 솔루션 상세 페이지 전용 (메인 페이지 CSS 뒤에 덧붙임) ===== */
+body{background:var(--ivory)}
+.pnav{position:fixed;inset:0 0 auto;z-index:80;height:64px;display:flex;align-items:center;
+  background:rgba(250,248,245,.96);backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid var(--line)}
+.pnav__in{max-width:var(--w);width:100%;margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.plogo{display:flex;align-items:center;line-height:1}
+.plogo .br-logo{height:30px}
+.pnav__tools{display:flex;align-items:center;gap:8px}
+.pnav__back,.pnav__home{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 15px;
+  border-radius:999px;font-size:13px;letter-spacing:.03em;color:var(--muted);font-weight:500;
+  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+.pnav__back span{font-size:15px;line-height:1;color:var(--gold-d)}
+.pnav__home{border:1px solid rgba(11,25,51,.16)}
+.pnav__back:hover,.pnav__home:hover{background:var(--paper);color:var(--ink);border-color:rgba(11,25,51,.3)}
+
+/* 상단 — 제목과 첫 상담 신청 버튼 */
+.phero{position:relative;background:var(--phero-bg,var(--navy));color:#F6F3ED;overflow:hidden;
+  padding:calc(64px + clamp(34px,5vw,64px)) 0 clamp(38px,5vw,64px)}
+.phero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(90% 90% at 12% 0%,var(--phero-glow,rgba(29,49,82,.9)) 0%,rgba(11,25,51,0) 62%),
+             radial-gradient(80% 100% at 92% 110%,rgba(197,164,126,.16) 0%,rgba(197,164,126,0) 60%)}
+.phero .wrap{position:relative;z-index:1}
+.pcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 clamp(18px,2.4vw,26px);
+  font-size:12.5px;letter-spacing:.02em;color:rgba(242,239,232,.62)}
+.pcrumb a{color:rgba(242,239,232,.82);transition:color .3s var(--ease)}
+.pcrumb a:hover{color:var(--gold-l)}
+.pcrumb i{font-style:normal;color:rgba(197,164,126,.8);font-size:12px;line-height:1}
+.pcrumb span{color:var(--gold-l)}
+.phero__eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 clamp(14px,1.8vw,20px);
+  font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-l);font-weight:600}
+.phero__eyebrow::before{content:"";width:30px;height:1px;background:var(--gold);opacity:.85}
+.phero h1{font-family:var(--serif);font-weight:300;font-size:clamp(28px,4vw,50px);line-height:1.4;
+  letter-spacing:-.025em;margin:0 0 clamp(12px,1.6vw,18px);max-width:20em;text-wrap:balance;color:#fff}
+.phero h1 em{font-style:normal;color:var(--gold-l)}
+.phero__sub{font-size:clamp(15.5px,1.32vw,17.5px);line-height:1.88;color:rgba(255,255,255,.9);
+  max-width:52ch;margin:0 0 clamp(24px,3vw,34px);font-weight:400}
+.phero__acts{display:flex;flex-wrap:wrap;gap:12px}
+.phero__acts .btn{min-height:52px}
+.phero__note{margin:clamp(16px,2vw,22px) 0 0;font-size:12.5px;letter-spacing:.02em;color:rgba(242,239,232,.6)}
+
+/* 본문(플랜 설명) */
+.pdoc{padding:clamp(42px,5.4vw,78px) 0 clamp(36px,4.4vw,60px)}
+.pdoc .wrap{max-width:920px}
+.pdoc .m-lead{font-size:clamp(16.5px,1.45vw,18.5px);line-height:1.92;color:var(--ink);font-weight:500;
+  margin:0 0 clamp(26px,3vw,34px);padding-bottom:clamp(20px,2.4vw,26px);border-bottom:1px solid var(--line)}
+.pdoc h4{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);
+  margin:clamp(30px,3.6vw,40px) 0 14px;font-weight:600}
+.pdoc h4:first-child{margin-top:0}
+.pdoc ul,.pdoc ol{margin:0;padding:0;list-style:none}
+.pdoc li{position:relative;padding:7px 0 7px 18px;font-size:16px;line-height:1.85;color:var(--ink)}
+.pdoc li::before{content:"";position:absolute;left:0;top:17px;width:6px;height:1px;background:var(--gold)}
+.pdoc .m-table{font-size:14.5px}
+.pdoc .m-table th,.pdoc .m-table td{padding:11px 12px}
+.pdoc .m-note{font-size:13.5px;line-height:1.8;margin-top:14px}
+
+/* 영상 영역(영상이 준비되면 build.py가 넣습니다) — 로고 소개 영상과 같은 카드 형태 */
+.pvideo{padding:clamp(36px,4.6vw,64px) 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pvideo .wrap{max-width:920px}
+.pvideo h2{font-size:clamp(24px,2.6vw,32px);margin-bottom:clamp(18px,2.2vw,26px)}
+.pvideo .video-card{margin:0}
+/* 영상 — 누르면 그 자리에서 사이트 안 <video>(assets/tax-venture.mp4)가 열려 바로 재생됩니다.
+   누르기 전에는 영상 파일을 받지 않으므로(preload="none") 모바일 데이터를 아낄 수 있습니다.
+   표지는 썸네일 그대로 쓰고, 재생기가 열리면 16:9로 자리를 잡습니다. */
+.video-card__cap{flex-wrap:wrap;row-gap:6px}
+.video-card__cap .video-card__cap-t{flex:1 1 16ch;min-width:0}
+.video-card__ph{position:absolute;left:0;right:0;bottom:12%;text-align:center;
+  font-family:var(--serif);font-size:clamp(17px,2vw,24px);letter-spacing:.02em;color:var(--gold-l);font-weight:500}
+.video-card__thumb--ph{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#14243F 0%,#0B1933 60%,#0A1526 100%)}
+.video-card__thumb--ph::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(60% 60% at 50% 45%,rgba(197,164,126,.16) 0%,rgba(197,164,126,0) 70%)}
+
+/* 하단 상담 신청 */
+.pcta{position:relative;background:var(--phero-bg,var(--navy));color:#EDEAE3;overflow:hidden;
+  padding:clamp(44px,5.6vw,80px) 0}
+.pcta::before{content:"";position:absolute;inset:auto 0 0 0;height:70%;pointer-events:none;
+  background:radial-gradient(80% 100% at 78% 100%,rgba(197,164,126,.18) 0%,rgba(197,164,126,0) 62%)}
+.pcta .wrap{position:relative;z-index:1;max-width:920px}
+.pcta h2{font-family:var(--serif);font-weight:300;font-size:clamp(25px,3.1vw,38px);line-height:1.5;
+  letter-spacing:-.02em;color:#F6F3ED;margin:0 0 16px}
+.pcta h2 em{font-style:normal;color:var(--gold-l)}
+.pcta__lead{font-size:clamp(15.5px,1.3vw,17px);line-height:1.88;color:rgba(242,239,232,.9);
+  max-width:56ch;margin:0 0 clamp(24px,3vw,32px)}
+.pcta__acts{display:flex;flex-wrap:wrap;gap:12px}
+.pcta__acts .btn{min-height:52px}
+.pcta__foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+  margin:clamp(26px,3.2vw,36px) 0 0;padding-top:clamp(18px,2.2vw,24px);border-top:1px solid rgba(255,255,255,.14)}
+.pcta__hours{font-size:13px;line-height:1.7;color:rgba(242,239,232,.72)}
+.pcta__back{font-size:13.5px;letter-spacing:.02em;color:var(--gold-l);
+  border-bottom:1px solid rgba(197,164,126,.5);padding-bottom:2px;transition:.3s var(--ease)}
+.pcta__back:hover{color:#fff;border-bottom-color:var(--gold)}
+
+/* 부동산 승계 구조 블록 — 홈페이지의 어두운 설명 패널을 이 페이지로 옮기며
+   밝은 종이 배경에서 읽히도록 색만 바꿈습니다(문구는 홈에 있던 그대로).
+   2026-11-26: 배경을 한 단계 밝히고(#F2EBDD → #F7F2E8) 글자를 본문 대비 7:1 이상으로
+   올렸습니다. 배경이 흐릿해 글씨가 눌려 보인다는 지적에 따른 색·굵기 조정만 했습니다.
+   2026-11-26 15:20: 배경이 너무 연하다는 말씀에 따라 패널 배경만 #F7F2E8 → #F0E7D6로
+   한 단계(약하게) 진하게 했습니다. 글자색·굵기·흰 카드는 그대로입니다. */
+.pkind{margin:clamp(34px,4.4vw,52px) 0 0;padding:clamp(24px,3.4vw,42px);
+  background:#F0E7D6;border:1px solid rgba(122,91,54,.42)}
+.pkind .eyebrow{margin-bottom:10px;color:#533616;font-weight:600}
+.pkind h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,29px);line-height:1.5;
+  letter-spacing:-.02em;color:#0B1526;margin:0 0 16px}
+.pkind h3 em{font-style:normal;color:#5C4018;font-weight:600}
+.pkind__lead{margin:0 0 clamp(22px,2.6vw,30px);font-size:15.5px;line-height:1.9;color:#16202E;font-weight:500}
+.pkind__lead b{color:#5C4018;font-weight:600}
+.pkind__pair{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);
+  margin-bottom:clamp(24px,3vw,34px)}
+.pkind__pair > div{border:1px solid rgba(122,91,54,.42);background:#fff;padding:clamp(18px,2.2vw,26px);
+  box-shadow:0 1px 2px rgba(74,52,24,.06)}
+.pkind__pair b{display:block;font-family:var(--serif);font-size:16px;font-weight:600;color:#5C4018;margin-bottom:8px}
+.pkind__pair p{margin:0;font-size:14.5px;line-height:1.85;color:#16202E;font-weight:500}
+.pkind__flow{display:flex;align-items:stretch;margin:0 0 clamp(26px,3vw,36px)}
+.pkind__node{flex:1;border:1px solid rgba(122,91,54,.42);background:#fff;
+  padding:clamp(16px,2vw,24px) clamp(12px,1.4vw,18px);text-align:center;
+  box-shadow:0 1px 2px rgba(74,52,24,.06)}
+.pkind__idx{display:block;font-family:var(--latin);font-size:10px;letter-spacing:.18em;color:#533616;
+  font-weight:600;margin-bottom:10px}
+.pkind__node em{display:block;font-family:var(--latin);font-style:normal;font-size:19px;
+  letter-spacing:.06em;color:#5C4018;line-height:1.2}
+.pkind__node b{display:block;font-family:var(--serif);font-size:15px;font-weight:600;color:#0B1526;
+  margin-top:6px;line-height:1.5}
+.pkind__node small{display:block;font-size:12.5px;font-weight:500;color:#2A3240;margin-top:2px}
+.pkind__arw{display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:clamp(24px,3vw,44px);color:#5C4018;font-size:14px;font-weight:600}
+.pkind__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,32px);
+  padding-top:clamp(22px,2.8vw,30px);border-top:1px solid rgba(122,91,54,.36)}
+.pdoc .pkind__cols h4{font-family:var(--serif);font-size:16.5px;font-weight:600;letter-spacing:-.01em;
+  text-transform:none;color:#0B1526;margin:0 0 12px}
+.pkind__cols h4 i{font-family:var(--latin);font-style:normal;color:#5C4018;font-size:12px;
+  letter-spacing:.14em;margin-right:9px;vertical-align:1px}
+.pkind__cols p{margin:0;font-size:14.5px;line-height:1.85;color:#16202E;font-weight:500}
+.pdoc .pkind__cols ol{margin:0;padding-left:1.1em;list-style:decimal}
+.pdoc .pkind__cols li{padding:0 0 9px;font-size:14.5px;line-height:1.8;color:#16202E;font-weight:500}
+.pdoc .pkind__cols li::before{content:none}
+.pkind__cols li b{color:#5C4018;font-weight:600}
+.pdoc .pkind__cols li::marker{color:#5C4018}
+
+@media (max-width:640px){
+  /* 390 폭에서는 표를 옆으로 밀지 않고 한눈에 보이게 — 칸 안에서 줄바꿈됩니다 */
+  .pdoc .m-table{min-width:0;font-size:13px}
+  .pdoc .m-table th,.pdoc .m-table td{padding:9px 7px}
+  .pdoc .m-table caption{font-size:12px}
+  .pnav__back,.pnav__home{padding:0 12px;font-size:12.5px}
+  .plogo .br-logo{height:26px}
+  .phero__acts .btn,.pcta__acts .btn{width:100%}
+  .pcta__foot{flex-direction:column;align-items:flex-start;gap:12px}
+  .pkind__pair{grid-template-columns:1fr}
+  .pkind__flow{flex-direction:column}
+  .pkind__arw{width:100%;height:26px;transform:rotate(90deg)}
+  .pkind__cols{grid-template-columns:1fr;gap:20px}
+}
+</style>
+<!-- 플랜별 상단·하단 색 — build.py 의 PLAN_ACCENT 한 곳에서 생성됩니다 -->
+<style>
+:root{--phero-bg:#5C3B16;--phero-glow:rgba(110,72,30,.92)}
+</style>
+</head>
+<body>
+
+<svg class="br-sprite" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden"><g id="brLogo"><g transform="translate(-28.05 -735.58)"><g fill="var(--br-blk,#0B1933)"><path d="M44.19 775.93C43.5 776.21 42.72 776.36 41.83 776.36L37.57 776.36L37.57 769.15L41.97 769.15C42.83 769.15 43.59 769.29 44.25 769.57C44.91 769.86 45.43 770.26 45.8 770.8C46.18 771.34 46.37 771.98 46.37 772.74C46.37 773.5 46.18 774.15 45.79 774.7C45.41 775.24 44.88 775.65 44.19 775.93Z"/><path d="M45.25 789.78C44.49 790.06 43.54 790.2 42.4 790.2L37.57 790.2L37.57 782.3L42.54 782.3C43.56 782.3 44.44 782.47 45.18 782.79C45.93 783.11 46.5 783.59 46.9 784.2C47.3 784.82 47.5 785.56 47.5 786.42C47.5 787.24 47.31 787.94 46.94 788.5C46.57 789.07 46.01 789.49 45.25 789.78Z"/><path d="M78.02 779.06C78.42 779.68 78.62 780.4 78.63 781.21L69.57 781.21C69.59 780.41 69.8 779.7 70.21 779.07C70.62 778.42 71.17 777.93 71.87 777.56C72.56 777.2 73.33 777.03 74.16 777.03C75 777.03 75.75 777.21 76.43 777.57C77.09 777.94 77.63 778.43 78.02 779.06Z"/><path d="M133.24 791.76C132.55 792.09 131.81 792.25 131.01 792.25C130.43 792.25 129.91 792.16 129.46 791.98C129.01 791.79 128.65 791.52 128.4 791.14C128.15 790.77 128.02 790.33 128.02 789.81C128.02 789.06 128.27 788.43 128.78 787.92C129.29 787.41 129.96 787.11 130.79 787.02C131.23 786.97 131.81 786.93 132.52 786.88C133.24 786.83 133.92 786.79 134.55 786.76C134.86 786.74 135.13 786.73 135.37 786.73L135.5 786.73L135.51 788.2C135.51 789.02 135.3 789.73 134.89 790.35C134.48 790.97 133.93 791.44 133.24 791.76Z"/><path d="M135.82 794.01L136.04 794.01L136.04 797.83L131.22 797.83C131.24 797.82 131.26 797.81 131.28 797.81C132.26 797.5 133.13 797.04 133.89 796.43C134.65 795.81 135.3 795 135.82 794.01Z"/><path d="M158.81 773.19L160.69 775.67L160.69 797.83L144.88 797.83L144.88 779.29C144.88 777.57 144.38 776.03 143.36 774.67C142.34 773.31 140.89 772.25 139.01 771.49C137.13 770.73 134.97 770.35 132.51 770.35C129.94 770.35 127.75 770.76 125.93 771.57C124.11 772.38 122.73 773.47 121.78 774.85C120.83 776.22 120.29 777.74 120.16 779.42L128.89 779.42C128.96 778.87 129.15 778.41 129.46 778.02C129.77 777.64 130.17 777.35 130.65 777.17C131.13 776.98 131.71 776.89 132.36 776.89C132.98 776.89 133.51 776.97 133.97 777.16C134.43 777.34 134.79 777.62 135.05 777.98C135.31 778.35 135.44 778.77 135.44 779.27L135.46 781.43L135.43 781.43C135.24 781.44 135 781.45 134.71 781.46C133.89 781.49 132.92 781.53 131.81 781.58C130.7 781.63 129.8 781.67 129.14 781.7C126.11 781.89 123.69 782.67 121.86 784.04C120.04 785.41 119.12 787.51 119.12 790.32C119.12 792.08 119.5 793.55 120.24 794.74C120.99 795.93 122.03 796.81 123.35 797.39C123.73 797.56 124.14 797.71 124.56 797.83L115.34 797.83L115.34 761.66L105.9 761.66L105.9 797.83L100.84 797.83L100.84 761.66L91.4 761.66L91.4 797.83L78.66 797.83C79.35 797.66 80.01 797.46 80.65 797.21C82.52 796.47 84.02 795.41 85.15 794.04C86.29 792.67 87.01 791.06 87.32 789.21L78.67 789.21C78.46 789.71 78.16 790.15 77.76 790.52C77.35 790.88 76.86 791.16 76.28 791.36C75.7 791.55 75.07 791.65 74.38 791.65C73.4 791.65 72.55 791.44 71.82 791.04C71.09 790.63 70.53 790.06 70.15 789.34C69.76 788.62 69.57 787.79 69.57 786.84L69.57 786.47L87.35 786.47L87.35 784.25C87.35 781.38 86.8 778.89 85.69 776.81C84.59 774.71 83.03 773.12 81 772.01C78.99 770.9 76.63 770.35 73.95 770.35C71.21 770.35 68.8 770.93 66.74 772.08C64.67 773.24 63.07 774.87 61.95 777C60.83 779.12 60.26 781.57 60.26 784.34C60.26 787.23 60.82 789.73 61.93 791.84C63.05 793.95 64.65 795.55 66.74 796.66C67.69 797.17 68.72 797.56 69.83 797.83L44.87 797.83C47.44 797.83 49.69 797.39 51.6 796.52C53.52 795.65 54.99 794.44 56.01 792.9C57.04 791.36 57.55 789.6 57.55 787.62C57.55 785.95 57.18 784.47 56.43 783.18C55.69 781.89 54.69 780.88 53.42 780.16C52.14 779.43 50.74 779.04 49.2 778.99L49.2 778.63C50.57 778.36 51.78 777.85 52.83 777.12C53.88 776.37 54.69 775.46 55.27 774.37C55.85 773.28 56.13 772.07 56.13 770.74C56.13 768.89 55.66 767.29 54.7 765.92C53.74 764.55 52.32 763.5 50.44 762.76C48.56 762.03 46.28 761.66 43.58 761.66L28.05 761.66L28.05 758.63L32.77 758.63L32.77 756.67L36.44 752.88L49.16 752.88L52.83 756.67L52.83 758.63L55.81 758.63L55.81 751.78L72.39 747.36L88.96 751.78L88.96 757.3L92.34 757.3L92.34 751.89L96.19 751.89L99.91 742.71L100.34 742.71L104.07 751.89L105.9 751.89L105.9 740.01L122.85 735.58L139.04 740.01L139.04 752.45L145.78 752.45L147.96 755.77L150.09 755.77L151.73 758.23L154.2 758.23L154.2 773.19L158.81 773.19Z"/><path d="M173.91 778.35L170.21 778.35L170.21 769.29L173.91 769.29C175.12 769.29 176.14 769.46 176.98 769.79C177.82 770.12 178.46 770.62 178.9 771.3C179.35 771.99 179.57 772.85 179.57 773.88C179.57 774.92 179.35 775.77 178.9 776.43C178.46 777.09 177.82 777.57 176.99 777.88C176.15 778.2 175.13 778.35 173.91 778.35Z"/><path d="M173.91 785.76L180.32 797.83L170.21 797.83L170.21 785.76L173.91 785.76Z"/><path d="M190.69 757.95L190.69 797.83L183.29 784.26C185.21 783.35 186.71 782.04 187.79 780.35C188.91 778.57 189.47 776.41 189.47 773.88C189.47 771.37 188.92 769.2 187.81 767.36C186.71 765.52 185.15 764.11 183.14 763.13C181.13 762.15 178.79 761.66 176.12 761.66L160.69 761.66L160.69 757.95L182.24 752.34L190.69 757.95Z"/></g><g fill="var(--br-let,#FFFFFF)"><path d="M56.43 783.18C55.68 781.89 54.68 780.89 53.4 780.17C52.14 779.43 50.73 779.05 49.19 778.99L49.19 778.63C50.56 778.36 51.78 777.85 52.82 777.11C53.87 776.37 54.68 775.46 55.26 774.37C55.84 773.28 56.13 772.07 56.13 770.74C56.13 768.9 55.65 767.29 54.69 765.92C53.73 764.56 52.31 763.5 50.43 762.77C48.56 762.03 46.27 761.66 43.57 761.66L28.05 761.66L28.05 797.83L44.86 797.83C47.44 797.83 49.68 797.39 51.6 796.52C53.51 795.65 54.98 794.44 56 792.9C57.03 791.36 57.54 789.6 57.54 787.62C57.54 785.95 57.17 784.47 56.43 783.18M37.56 769.16L41.97 769.16C42.82 769.16 43.58 769.29 44.24 769.58C44.9 769.86 45.42 770.26 45.8 770.8C46.17 771.34 46.36 771.99 46.36 772.74C46.36 773.51 46.17 774.16 45.79 774.69C45.4 775.24 44.87 775.65 44.18 775.93C43.49 776.22 42.71 776.35 41.82 776.35L37.56 776.35L37.56 769.16M46.94 788.51C46.56 789.07 46 789.5 45.24 789.77C44.48 790.06 43.53 790.2 42.39 790.2L37.56 790.2L37.56 782.31L42.53 782.31C43.56 782.31 44.44 782.47 45.18 782.79C45.92 783.11 46.49 783.59 46.9 784.2C47.29 784.83 47.49 785.56 47.49 786.43C47.49 787.25 47.31 787.94 46.94 788.51Z"/><path d="M87.34 786.48L87.34 784.25C87.34 781.38 86.79 778.9 85.68 776.81C84.58 774.72 83.01 773.12 81 772.01C78.98 770.91 76.63 770.35 73.94 770.35C71.2 770.35 68.8 770.93 66.73 772.08C64.66 773.24 63.07 774.88 61.94 777C60.82 779.13 60.26 781.57 60.26 784.34C60.26 787.24 60.82 789.74 61.93 791.84C63.04 793.95 64.64 795.56 66.73 796.67C67.67 797.17 68.71 797.56 69.82 797.83L78.67 797.83C79.36 797.67 80.01 797.46 80.64 797.21C82.51 796.47 84.01 795.42 85.15 794.04C86.28 792.67 87.01 791.06 87.31 789.21L78.66 789.21C78.46 789.72 78.16 790.16 77.75 790.51C77.34 790.88 76.85 791.17 76.27 791.35C75.7 791.55 75.07 791.65 74.37 791.65C73.39 791.65 72.54 791.44 71.81 791.04C71.08 790.63 70.52 790.07 70.14 789.34C69.75 788.62 69.57 787.79 69.57 786.84L69.57 786.48L87.34 786.48M70.2 779.07C70.61 778.42 71.16 777.92 71.86 777.57C72.56 777.21 73.32 777.03 74.16 777.03C75 777.03 75.75 777.21 76.42 777.58C77.08 777.94 77.62 778.43 78.01 779.06C78.41 779.68 78.61 780.4 78.62 781.21L69.57 781.21C69.58 780.42 69.8 779.7 70.2 779.07Z"/><path d="M91.39 761.66H100.84V797.83H91.39ZZ"/><path d="M105.89 761.66H115.33V797.83H105.89ZZ"/><path d="M143.35 774.67C142.33 773.31 140.88 772.25 139.01 771.5C137.12 770.74 134.96 770.35 132.5 770.35C129.94 770.35 127.74 770.75 125.92 771.57C124.11 772.38 122.72 773.48 121.78 774.84C120.82 776.22 120.28 777.75 120.16 779.42L128.88 779.42C128.95 778.88 129.14 778.41 129.45 778.02C129.77 777.64 130.16 777.35 130.64 777.17C131.12 776.98 131.7 776.89 132.36 776.89C132.97 776.89 133.51 776.98 133.96 777.16C134.43 777.34 134.79 777.61 135.04 777.98C135.3 778.34 135.43 778.77 135.43 779.27L135.45 781.43L135.42 781.43C135.23 781.44 134.99 781.45 134.71 781.46C133.88 781.5 132.91 781.54 131.8 781.59C130.69 781.63 129.79 781.68 129.12 781.71C126.1 781.9 123.68 782.68 121.85 784.05C120.03 785.42 119.11 787.51 119.11 790.33C119.11 792.08 119.49 793.55 120.24 794.74C120.98 795.93 122.02 796.81 123.35 797.4C123.73 797.57 124.12 797.71 124.54 797.83L131.2 797.83C131.23 797.83 131.25 797.82 131.28 797.81C132.26 797.51 133.12 797.04 133.88 796.43C134.64 795.81 135.29 795.01 135.82 794.02L136.04 794.02L136.04 797.83L144.88 797.83L144.88 779.29C144.88 777.57 144.37 776.03 143.35 774.67M134.88 790.35C134.47 790.97 133.92 791.44 133.23 791.77C132.54 792.09 131.8 792.25 131 792.25C130.42 792.25 129.91 792.16 129.45 791.98C129 791.79 128.65 791.52 128.39 791.15C128.14 790.77 128.02 790.33 128.02 789.81C128.02 789.06 128.27 788.43 128.78 787.93C129.28 787.42 129.95 787.11 130.79 787.02C131.22 786.98 131.8 786.93 132.52 786.88C133.23 786.84 133.91 786.79 134.54 786.76C134.86 786.75 135.12 786.74 135.36 786.73L135.49 786.73L135.5 788.2C135.5 789.02 135.29 789.73 134.88 790.35Z"/><path d="M193.87 770.71H203.31V797.83H193.87ZM202.65 761.25C202.22 760.58 201.65 760.05 200.93 759.66C200.21 759.27 199.43 759.07 198.59 759.07C197.74 759.07 196.95 759.27 196.24 759.66C195.51 760.05 194.94 760.58 194.52 761.25C194.1 761.91 193.89 762.64 193.89 763.43C193.89 764.21 194.1 764.93 194.52 765.6C194.94 766.27 195.51 766.8 196.24 767.2C196.95 767.59 197.74 767.79 198.59 767.79C199.43 767.79 200.21 767.59 200.93 767.2C201.65 766.8 202.22 766.27 202.65 765.6C203.07 764.93 203.28 764.21 203.28 763.43C203.28 762.64 203.07 761.91 202.65 761.25Z"/><path d="M224.83 789.1C224.47 789.75 224 790.25 223.43 790.6C222.85 790.94 222.19 791.12 221.45 791.12C220.56 791.12 219.77 790.86 219.09 790.34C218.42 789.82 217.9 789.06 217.54 788.03C217.18 787.02 217 785.76 217 784.26C217 782.77 217.18 781.51 217.54 780.5C217.9 779.48 218.42 778.71 219.09 778.2C219.77 777.69 220.56 777.43 221.45 777.43C222.19 777.43 222.85 777.61 223.42 777.95C223.99 778.3 224.46 778.8 224.81 779.44C225.17 780.09 225.39 780.89 225.48 781.83L234.25 781.83C234.23 779.52 233.69 777.5 232.63 775.77C231.57 774.04 230.07 772.71 228.13 771.76C226.19 770.82 223.91 770.35 221.31 770.35C218.45 770.35 215.97 770.93 213.86 772.1C211.75 773.26 210.14 774.9 209.03 777.01C207.91 779.12 207.36 781.56 207.36 784.34C207.36 787.11 207.91 789.56 209.03 791.67C210.14 793.77 211.75 795.41 213.86 796.57C215.97 797.74 218.46 798.32 221.33 798.32C223.93 798.32 226.19 797.85 228.12 796.89C230.04 795.94 231.53 794.59 232.6 792.85C233.65 791.1 234.21 789.06 234.25 786.72L225.48 786.72C225.41 787.65 225.19 788.44 224.83 789.1Z"/><path d="M264.22 775.25C263.44 773.71 262.34 772.51 260.9 771.65C259.47 770.78 257.8 770.35 255.92 770.35C254.59 770.35 253.38 770.56 252.3 770.99C251.22 771.43 250.29 772.05 249.51 772.87C248.73 773.69 248.15 774.66 247.74 775.81L247.46 775.81L247.46 761.66L238.35 761.66L238.35 797.83L247.8 797.83L247.8 782.52C247.8 781.6 247.97 780.8 248.31 780.11C248.65 779.43 249.13 778.92 249.76 778.56C250.38 778.21 251.1 778.03 251.93 778.03C252.78 778.03 253.5 778.21 254.11 778.56C254.71 778.92 255.17 779.42 255.48 780.09C255.79 780.76 255.94 781.55 255.94 782.48L255.94 797.83L265.38 797.83L265.38 780.52C265.38 778.54 265 776.79 264.22 775.25Z"/></g><g fill="var(--br-gold,#E4B477)"><path d="M183.28 784.26C185.2 783.34 186.71 782.04 187.78 780.34C188.91 778.57 189.47 776.42 189.47 773.89C189.47 771.38 188.91 769.2 187.81 767.36C186.7 765.51 185.15 764.11 183.14 763.13C181.13 762.16 178.79 761.66 176.12 761.66L160.68 761.66L160.68 797.83L170.2 797.83L170.2 785.76L173.91 785.76L180.32 797.83L190.68 797.83L183.28 784.26M178.9 776.42C178.46 777.09 177.82 777.58 176.99 777.88C176.15 778.19 175.12 778.35 173.9 778.35L170.2 778.35L170.2 769.29L173.9 769.29C175.11 769.29 176.13 769.46 176.98 769.79C177.82 770.12 178.46 770.62 178.9 771.31C179.34 771.99 179.56 772.85 179.56 773.89C179.56 774.92 179.34 775.76 178.9 776.42Z"/><path d="M196.23 767.2C196.95 767.6 197.73 767.79 198.58 767.79C199.42 767.79 200.21 767.6 200.93 767.2C201.64 766.81 202.21 766.27 202.64 765.6C203.06 764.93 203.27 764.21 203.27 763.43C203.27 762.64 203.06 761.91 202.64 761.25C202.21 760.58 201.64 760.05 200.93 759.66C200.21 759.27 199.42 759.07 198.58 759.07C197.73 759.07 196.95 759.27 196.23 759.66C195.51 760.05 194.94 760.58 194.52 761.25C194.09 761.91 193.88 762.64 193.88 763.43C193.88 764.21 194.09 764.93 194.52 765.6C194.94 766.27 195.51 766.81 196.23 767.2Z"/><path d="M193.86 770.71H203.31V797.83H193.86ZZ"/><path d="M219.09 778.2C219.76 777.69 220.55 777.43 221.44 777.43C222.19 777.43 222.84 777.61 223.41 777.95C223.98 778.3 224.45 778.8 224.81 779.45C225.17 780.09 225.39 780.89 225.47 781.83L234.25 781.83C234.22 779.52 233.68 777.5 232.62 775.77C231.56 774.04 230.06 772.71 228.12 771.76C226.18 770.82 223.91 770.35 221.3 770.35C218.44 770.35 215.96 770.93 213.85 772.1C211.74 773.27 210.13 774.9 209.02 777.01C207.91 779.12 207.35 781.56 207.35 784.34C207.35 787.12 207.91 789.56 209.02 791.67C210.13 793.77 211.74 795.41 213.85 796.58C215.96 797.74 218.45 798.32 221.32 798.32C223.92 798.32 226.19 797.85 228.11 796.89C230.04 795.94 231.53 794.59 232.59 792.85C233.65 791.11 234.2 789.06 234.25 786.72L225.47 786.72C225.4 787.65 225.19 788.44 224.83 789.1C224.47 789.75 224 790.25 223.42 790.6C222.85 790.95 222.19 791.12 221.44 791.12C220.55 791.12 219.76 790.86 219.09 790.34C218.41 789.82 217.89 789.06 217.53 788.04C217.17 787.02 216.99 785.76 216.99 784.27C216.99 782.77 217.17 781.52 217.53 780.5C217.89 779.48 218.41 778.71 219.09 778.2Z"/><path d="M264.21 775.25C263.44 773.72 262.33 772.52 260.89 771.65C259.46 770.78 257.8 770.35 255.91 770.35C254.58 770.35 253.38 770.57 252.29 771C251.21 771.43 250.28 772.05 249.5 772.87C248.73 773.69 248.14 774.67 247.74 775.81L247.46 775.81L247.46 761.66L238.34 761.66L238.34 797.83L247.79 797.83L247.79 782.52C247.79 781.6 247.96 780.8 248.3 780.12C248.65 779.43 249.13 778.92 249.75 778.56C250.38 778.21 251.1 778.03 251.92 778.03C252.77 778.03 253.5 778.21 254.1 778.56C254.71 778.92 255.17 779.43 255.47 780.09C255.78 780.76 255.93 781.55 255.93 782.48L255.93 797.83L265.38 797.83L265.38 780.52C265.38 778.55 264.99 776.79 264.21 775.25Z"/></g></g></g></svg>
+
+<header class="pnav">
+  <div class="pnav__in">
+    <a class="plogo" href="/" aria-label="벨라리치 홈">
+      <svg class="br-logo br-logo--nav" viewBox="0 0 237.33 62.74" role="img" aria-label="벨라리치"><use href="#brLogo"/></svg>
+    </a>
+    <div class="pnav__tools">
+      <button class="pnav__back" id="pnavBack" type="button"><span aria-hidden="true">←</span> 뒤로</button>
+      <a class="pnav__home" href="/">홈으로</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 상단: 제목 + 첫 번째 상담 신청 버튼 -->
+  <section class="phero">
+    <div class="wrap">
+      <nav class="pcrumb" aria-label="현재 위치">
+        <a href="/">홈</a><i aria-hidden="true">›</i><a href="/#solutions">솔루션 메뉴</a><i aria-hidden="true">›</i><span>상속 · 증여 신탁</span>
+      </nav>
+      <p class="phero__eyebrow">Solution 04 · 부동산·가업 승계 플랜</p>
+      <h1>상속 · 증여 <em>신탁</em></h1>
+      <p class="phero__sub">유언·신탁 등 법적 수단을 통한 승계 구조. 법무법인 서초 자산관리센터와 협업합니다.</p>
+      <div class="phero__acts">
+        <a class="btn btn--gold" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청 <span>→</span></a>
+        <a class="btn btn--ghost" href="tel:010-4825-5383">010-4825-5383 <span>TEL</span></a>
+      </div>
+      <p class="phero__note">평일 09:00 – 21:00 · 상담 내용은 비밀이 보장됩니다</p>
+    </div>
+  </section>
+
+  <!-- 플랜 설명 — 메인 페이지 카드 모달의 문구를 그대로 옮겼습니다 -->
+  <section class="pdoc">
+    <div class="wrap">
+<p class="m-lead">세무만으로는 완성되지 않는 승계. 유언·신탁 등 법적 수단을 함께 설계합니다.</p><h4>주요 내용</h4><ul><li><b>유언·신탁</b> 등 법적 수단을 통한 승계 설계</li><li><b>신탁</b>을 통한 재산 관리와 권한 유보 구조</li><li>상속인 간 <b>분쟁 예방</b> 구조</li><li><b>법무법인 서초 자산관리센터</b> 협업</li></ul><h4>Point</h4><div class="m-points"><p><b>Point 1</b>세무 설계와 법률 설계를 한 흐름으로 맞춥니다.</p><p><b>Point 2</b>가족 구성과 사업 구조에 맞는 신탁 활용 방안을 검토합니다.</p></div>
+    </div>
+  </section>
+
+
+  <!-- 하단: 영상까지 본 사람을 위한 두 번째 상담 신청 버튼 -->
+  <section class="pcta" id="contact">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--gold-l)">Contact</p>
+      <h2>상속 · 증여 신탁,<br><em>1:1 상담</em>으로 확정하세요</h2>
+      <p class="pcta__lead">이 플랜이 궁금하시다면 상담을 신청해 주세요. 지금 상황을 남겨 주시면 담당 전문가가 확인 후 연락드립니다.</p>
+      <div class="pcta__acts">
+        <a class="btn btn--gold" href="https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform" data-contact-link target="_blank" rel="noopener">상담 신청 <span>→</span></a>
+        <a class="btn btn--ghost" href="tel:010-4825-5383">전화 상담 <span>010-4825-5383</span></a>
+      </div>
+      <div class="pcta__foot">
+        <p class="pcta__hours">평일 09:00 – 21:00 · 상담 내용은 비밀이 보장됩니다</p>
+        <a class="pcta__back" href="/#solutions">다른 솔루션 메뉴 보기 →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <div>
+        <a class="logo" href="/" aria-label="벨라리치 홈">
+          <svg class="br-logo br-logo--footer" viewBox="0 0 237.33 62.74" role="img" aria-label="벨라리치"><use href="#brLogo"/></svg>
+        </a>
+        <p class="footer__info" style="margin:14px 0 0">
+          <b>벨라리치(주)</b> &nbsp;|&nbsp; 대표 김자영<br>
+          서울 서대문구 이화여대길 38, 201-51<br>
+          Tel 010-4825-5383 &nbsp;·&nbsp; Email bellarich7@naver.com<br>
+          카카오채널 pf.kakao.com/_xkySDn
+        </p>
+      </div>
+      <p class="footer__info" style="text-align:right">법인특화 부동산자산관리<br>CORPORATE REAL ESTATE &amp; ASSET SOLUTIONS</p>
+    </div>
+    <p class="footer__note">© 2026 BELLARICH Co., Ltd. All rights reserved. &nbsp;|&nbsp; 본 페이지에 기재된 소득공제율·세율·운용조건 등은 이해를 돕기 위한 예시이며, 세법 개정과 개인·법인의 상황에 따라 달라질 수 있습니다. 세부 내용은 상담을 통해 확정됩니다.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 상담신청 링크 — 메인 페이지와 같은 구글 폼 응답 주소 (한 곳에서 관리) */
+  var CONTACT_LINK = 'https://docs.google.com/forms/d/1pvpYq1jJblmrxjHUQeo-nbmB_C3n87T8OCYVzhN5aZE/viewform';
+  document.querySelectorAll('[data-contact-link]').forEach(function(a){
+    a.setAttribute('href', CONTACT_LINK);
+  });
+
+  /* 뒤로 가기 — 사이트 안에서 들어왔으면 앞 페이지로, 아니면 솔루션 메뉴로 */
+  var back = document.getElementById('pnavBack');
+  if(back){
+    back.addEventListener('click', function(){
+      var ref = document.referrer || '';
+      var same = false;
+      try { same = ref.indexOf(location.origin + '/') === 0; } catch(e){}
+      if(same && history.length > 1) history.back();
+      else location.href = '/#solutions';
+    });
+  }
+
+  /* 등장 애니메이션(메인 페이지와 동일) */
+  var rvs = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && rvs.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    rvs.forEach(function(el){ io.observe(el); });
+  } else {
+    rvs.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* 영상: 누르기 전에는 영상 파일을 받지 않고(preload="none"), 표지도 assets에서만 받습니다.
+     누르면 같은 자리에서 사이트 안 <video>(assets/tax-venture.mp4)가 열려
+     모바일·PC 모두 페이지 안에서 바로 재생됩니다(유튜브로 나가지 않음).
+     자영님 폰(안드로이드 크롬·아이폰 사파리)에서 탭 한 번에 소리와 함께 재생되도록
+     클릭 핸들러 안에서 바로 video.play()를 호출합니다(playsinline 유지). */
+  var vCard = document.getElementById('videoCard');
+  var vBtn = document.getElementById('videoPlay');
+  var vEl = document.getElementById('videoPlayer');
+  if(vCard && vBtn && vEl){
+    vBtn.addEventListener('click', function(){
+      vCard.classList.add('is-playing');
+      vEl.preload = 'auto';
+      var p = vEl.play();
+      if(p && p.catch){ p.catch(function(){ vEl.controls = true; }); }
+      try { vEl.focus({preventScroll:true}); } catch(e){ vEl.focus(); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
