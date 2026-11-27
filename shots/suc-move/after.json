@@ -1,0 +1,503 @@
+{
+ "1440x900": {
+  "docH": 6197,
+  "viewportH": 900,
+  "horScroll": 0,
+  "overflow": [
+   "DIV.hero__glow",
+   "SPAN."
+  ],
+  "badges": {
+   "tab-life": "법인CEO 생애주기별 부동산 플랜 07",
+   "tab-suc": "부동산·가업 승계 플랜 05",
+   "tab-fin": "법인 재무·경영지원 플랜 06"
+  },
+  "panels": {
+   "life": {
+    "note": "법인CEO 생애주기별 부동산 Plan",
+    "cards": [
+     {
+      "no": "01",
+      "title": "사옥/공장 만들기 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "가족법인 부동산 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "CEO 은퇴 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "04",
+      "title": "CEO 자녀 보금자리 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "개인소득세 절세 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "06",
+      "title": "부동산 자산운용 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "07",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   },
+   "suc": {
+    "note": "부동산 승계 플랜 · 자녀 창업법인 · 가업상속공제·증여특례 · 상속·증여 신탁",
+    "cards": [
+     {
+      "no": "01",
+      "title": "부동산 승계 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "자녀 창업법인으로가업승계",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "가업상속공제· 증여특례",
+      "cls": "card card--link"
+     },
+     {
+      "no": "04",
+      "title": "상속 · 증여 신탁",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   },
+   "fin": {
+    "note": "재무구조·세무·지배구조·M&A까지, 법인의 재무와 구조를 정리합니다",
+    "cards": [
+     {
+      "no": "01",
+      "title": "재무구조·신용등급 개선",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "주주이익 환원 · 지배구조",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "개인사업자 법인전환",
+      "cls": "card card--wide card--feature card--link"
+     },
+     {
+      "no": "04",
+      "title": "사내근로복지기금",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "M&A·분할합병 · 법인설립",
+      "cls": "card card--link"
+     },
+     {
+      "no": "06",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   }
+  },
+  "errors": [],
+  "badResponses": []
+ },
+ "768x1024": {
+  "docH": 7337,
+  "viewportH": 1024,
+  "horScroll": 0,
+  "overflow": [
+   "SPAN."
+  ],
+  "badges": {
+   "tab-life": "법인CEO 생애주기별 부동산 플랜 07",
+   "tab-suc": "부동산·가업 승계 플랜 05",
+   "tab-fin": "법인 재무·경영지원 플랜 06"
+  },
+  "panels": {
+   "life": {
+    "note": "법인CEO 생애주기별 부동산 Plan",
+    "cards": [
+     {
+      "no": "01",
+      "title": "사옥/공장 만들기 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "가족법인 부동산 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "CEO 은퇴 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "04",
+      "title": "CEO 자녀 보금자리 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "개인소득세 절세 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "06",
+      "title": "부동산 자산운용 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "07",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   },
+   "suc": {
+    "note": "부동산 승계 플랜 · 자녀 창업법인 · 가업상속공제·증여특례 · 상속·증여 신탁",
+    "cards": [
+     {
+      "no": "01",
+      "title": "부동산 승계 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "자녀 창업법인으로가업승계",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "가업상속공제· 증여특례",
+      "cls": "card card--link"
+     },
+     {
+      "no": "04",
+      "title": "상속 · 증여 신탁",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   },
+   "fin": {
+    "note": "재무구조·세무·지배구조·M&A까지, 법인의 재무와 구조를 정리합니다",
+    "cards": [
+     {
+      "no": "01",
+      "title": "재무구조·신용등급 개선",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "주주이익 환원 · 지배구조",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "개인사업자 법인전환",
+      "cls": "card card--wide card--feature card--link"
+     },
+     {
+      "no": "04",
+      "title": "사내근로복지기금",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "M&A·분할합병 · 법인설립",
+      "cls": "card card--link"
+     },
+     {
+      "no": "06",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   }
+  },
+  "errors": [],
+  "badResponses": []
+ },
+ "390x844": {
+  "docH": 8128,
+  "viewportH": 844,
+  "horScroll": 0,
+  "overflow": [
+   "SPAN."
+  ],
+  "badges": {
+   "tab-life": "법인CEO 생애주기별 부동산 플랜 07",
+   "tab-suc": "부동산·가업 승계 플랜 05",
+   "tab-fin": "법인 재무·경영지원 플랜 06"
+  },
+  "panels": {
+   "life": {
+    "note": "법인CEO 생애주기별 부동산 Plan",
+    "cards": [
+     {
+      "no": "01",
+      "title": "사옥/공장 만들기 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "가족법인 부동산 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "CEO 은퇴 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "04",
+      "title": "CEO 자녀 보금자리 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "개인소득세 절세 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "06",
+      "title": "부동산 자산운용 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "07",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   },
+   "suc": {
+    "note": "부동산 승계 플랜 · 자녀 창업법인 · 가업상속공제·증여특례 · 상속·증여 신탁",
+    "cards": [
+     {
+      "no": "01",
+      "title": "부동산 승계 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "자녀 창업법인으로가업승계",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "가업상속공제· 증여특례",
+      "cls": "card card--link"
+     },
+     {
+      "no": "04",
+      "title": "상속 · 증여 신탁",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   },
+   "fin": {
+    "note": "재무구조·세무·지배구조·M&A까지, 법인의 재무와 구조를 정리합니다",
+    "cards": [
+     {
+      "no": "01",
+      "title": "재무구조·신용등급 개선",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "주주이익 환원 · 지배구조",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "개인사업자 법인전환",
+      "cls": "card card--wide card--feature card--link"
+     },
+     {
+      "no": "04",
+      "title": "사내근로복지기금",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "M&A·분할합병 · 법인설립",
+      "cls": "card card--link"
+     },
+     {
+      "no": "06",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   }
+  },
+  "errors": [],
+  "badResponses": []
+ },
+ "320x780": {
+  "docH": 8682,
+  "viewportH": 780,
+  "horScroll": 0,
+  "overflow": [
+   "SPAN."
+  ],
+  "badges": {
+   "tab-life": "법인CEO 생애주기별 부동산 플랜 07",
+   "tab-suc": "부동산·가업 승계 플랜 05",
+   "tab-fin": "법인 재무·경영지원 플랜 06"
+  },
+  "panels": {
+   "life": {
+    "note": "법인CEO 생애주기별 부동산 Plan",
+    "cards": [
+     {
+      "no": "01",
+      "title": "사옥/공장 만들기 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "가족법인 부동산 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "CEO 은퇴 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "04",
+      "title": "CEO 자녀 보금자리 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "개인소득세 절세 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "06",
+      "title": "부동산 자산운용 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "07",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   },
+   "suc": {
+    "note": "부동산 승계 플랜 · 자녀 창업법인 · 가업상속공제·증여특례 · 상속·증여 신탁",
+    "cards": [
+     {
+      "no": "01",
+      "title": "부동산 승계 플랜",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "자녀 창업법인으로가업승계",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "가업상속공제· 증여특례",
+      "cls": "card card--link"
+     },
+     {
+      "no": "04",
+      "title": "상속 · 증여 신탁",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   },
+   "fin": {
+    "note": "재무구조·세무·지배구조·M&A까지, 법인의 재무와 구조를 정리합니다",
+    "cards": [
+     {
+      "no": "01",
+      "title": "재무구조·신용등급 개선",
+      "cls": "card card--link"
+     },
+     {
+      "no": "02",
+      "title": "주주이익 환원 · 지배구조",
+      "cls": "card card--link"
+     },
+     {
+      "no": "03",
+      "title": "개인사업자 법인전환",
+      "cls": "card card--wide card--feature card--link"
+     },
+     {
+      "no": "04",
+      "title": "사내근로복지기금",
+      "cls": "card card--link"
+     },
+     {
+      "no": "05",
+      "title": "M&A·분할합병 · 법인설립",
+      "cls": "card card--link"
+     },
+     {
+      "no": "06",
+      "title": "어떤 메뉴를 골라야 할지모르겠다면",
+      "cls": "card card--cta"
+     }
+    ],
+    "hasBlock": false
+   }
+  },
+  "errors": [],
+  "badResponses": []
+ }
+}

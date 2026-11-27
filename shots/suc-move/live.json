@@ -1,0 +1,595 @@
+{
+ "1440x900": {
+  "hor": 0,
+  "over": [
+   "SPAN."
+  ],
+  "docH": 6197,
+  "tabs": [
+   "법인CEO 생애주기별 부동산 플랜 07",
+   "부동산·가업 승계 플랜 05",
+   "법인 재무·경영지원 플랜 06"
+  ],
+  "life": [
+   {
+    "no": "01",
+    "title": "사옥/공장 만들기 플랜"
+   },
+   {
+    "no": "02",
+    "title": "가족법인 부동산 플랜"
+   },
+   {
+    "no": "03",
+    "title": "CEO 은퇴 플랜"
+   },
+   {
+    "no": "04",
+    "title": "CEO 자녀 보금자리 플랜"
+   },
+   {
+    "no": "05",
+    "title": "개인소득세 절세 플랜"
+   },
+   {
+    "no": "06",
+    "title": "부동산 자산운용 플랜"
+   },
+   {
+    "no": "07",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "suc": [
+   {
+    "no": "01",
+    "title": "부동산 승계 플랜"
+   },
+   {
+    "no": "02",
+    "title": "자녀 창업법인으로가업승계"
+   },
+   {
+    "no": "03",
+    "title": "가업상속공제· 증여특례"
+   },
+   {
+    "no": "04",
+    "title": "상속 · 증여 신탁"
+   },
+   {
+    "no": "05",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "fin": [
+   {
+    "no": "01",
+    "title": "재무구조·신용등급 개선"
+   },
+   {
+    "no": "02",
+    "title": "주주이익 환원 · 지배구조"
+   },
+   {
+    "no": "03",
+    "title": "개인사업자 법인전환"
+   },
+   {
+    "no": "04",
+    "title": "사내근로복지기금"
+   },
+   {
+    "no": "05",
+    "title": "M&A·분할합병 · 법인설립"
+   },
+   {
+    "no": "06",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "flow": true,
+  "flowText": "부동산 승계 구조 STEP 01 · 개인A′ 부모님 개인부동산개인 명의 자산 → STEP 02 · 법인화(주)A′ 부모님 100%법인 전환 → STEP 03 · 승계(주)B 자녀법인 100%지분 이전",
+  "navSuc": true,
+  "blockOnHome": false,
+  "hrefs": [
+   "/plan/office/",
+   "/plan/family-corp/",
+   "/plan/retirement/",
+   "/plan/home-for-kids/",
+   "/plan/tax/",
+   "/plan/asset/",
+   "/plan/in-kind/",
+   "/plan/startup-succession/",
+   "/plan/family-business/",
+   "/plan/trust/",
+   "/plan/credit/",
+   "/plan/governance/",
+   "/plan/incorporation/",
+   "/plan/welfare-fund/",
+   "/plan/ma/"
+  ],
+  "errors": [],
+  "bad": []
+ },
+ "768x1024": {
+  "hor": 0,
+  "over": [
+   "SPAN."
+  ],
+  "docH": 7337,
+  "tabs": [
+   "법인CEO 생애주기별 부동산 플랜 07",
+   "부동산·가업 승계 플랜 05",
+   "법인 재무·경영지원 플랜 06"
+  ],
+  "life": [
+   {
+    "no": "01",
+    "title": "사옥/공장 만들기 플랜"
+   },
+   {
+    "no": "02",
+    "title": "가족법인 부동산 플랜"
+   },
+   {
+    "no": "03",
+    "title": "CEO 은퇴 플랜"
+   },
+   {
+    "no": "04",
+    "title": "CEO 자녀 보금자리 플랜"
+   },
+   {
+    "no": "05",
+    "title": "개인소득세 절세 플랜"
+   },
+   {
+    "no": "06",
+    "title": "부동산 자산운용 플랜"
+   },
+   {
+    "no": "07",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "suc": [
+   {
+    "no": "01",
+    "title": "부동산 승계 플랜"
+   },
+   {
+    "no": "02",
+    "title": "자녀 창업법인으로가업승계"
+   },
+   {
+    "no": "03",
+    "title": "가업상속공제· 증여특례"
+   },
+   {
+    "no": "04",
+    "title": "상속 · 증여 신탁"
+   },
+   {
+    "no": "05",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "fin": [
+   {
+    "no": "01",
+    "title": "재무구조·신용등급 개선"
+   },
+   {
+    "no": "02",
+    "title": "주주이익 환원 · 지배구조"
+   },
+   {
+    "no": "03",
+    "title": "개인사업자 법인전환"
+   },
+   {
+    "no": "04",
+    "title": "사내근로복지기금"
+   },
+   {
+    "no": "05",
+    "title": "M&A·분할합병 · 법인설립"
+   },
+   {
+    "no": "06",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "flow": true,
+  "flowText": "부동산 승계 구조 STEP 01 · 개인A′ 부모님 개인부동산개인 명의 자산 → STEP 02 · 법인화(주)A′ 부모님 100%법인 전환 → STEP 03 · 승계(주)B 자녀법인 100%지분 이전",
+  "navSuc": true,
+  "blockOnHome": false,
+  "hrefs": [
+   "/plan/office/",
+   "/plan/family-corp/",
+   "/plan/retirement/",
+   "/plan/home-for-kids/",
+   "/plan/tax/",
+   "/plan/asset/",
+   "/plan/in-kind/",
+   "/plan/startup-succession/",
+   "/plan/family-business/",
+   "/plan/trust/",
+   "/plan/credit/",
+   "/plan/governance/",
+   "/plan/incorporation/",
+   "/plan/welfare-fund/",
+   "/plan/ma/"
+  ],
+  "errors": [],
+  "bad": []
+ },
+ "390x844": {
+  "hor": 0,
+  "over": [
+   "SPAN."
+  ],
+  "docH": 8128,
+  "tabs": [
+   "법인CEO 생애주기별 부동산 플랜 07",
+   "부동산·가업 승계 플랜 05",
+   "법인 재무·경영지원 플랜 06"
+  ],
+  "life": [
+   {
+    "no": "01",
+    "title": "사옥/공장 만들기 플랜"
+   },
+   {
+    "no": "02",
+    "title": "가족법인 부동산 플랜"
+   },
+   {
+    "no": "03",
+    "title": "CEO 은퇴 플랜"
+   },
+   {
+    "no": "04",
+    "title": "CEO 자녀 보금자리 플랜"
+   },
+   {
+    "no": "05",
+    "title": "개인소득세 절세 플랜"
+   },
+   {
+    "no": "06",
+    "title": "부동산 자산운용 플랜"
+   },
+   {
+    "no": "07",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "suc": [
+   {
+    "no": "01",
+    "title": "부동산 승계 플랜"
+   },
+   {
+    "no": "02",
+    "title": "자녀 창업법인으로가업승계"
+   },
+   {
+    "no": "03",
+    "title": "가업상속공제· 증여특례"
+   },
+   {
+    "no": "04",
+    "title": "상속 · 증여 신탁"
+   },
+   {
+    "no": "05",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "fin": [
+   {
+    "no": "01",
+    "title": "재무구조·신용등급 개선"
+   },
+   {
+    "no": "02",
+    "title": "주주이익 환원 · 지배구조"
+   },
+   {
+    "no": "03",
+    "title": "개인사업자 법인전환"
+   },
+   {
+    "no": "04",
+    "title": "사내근로복지기금"
+   },
+   {
+    "no": "05",
+    "title": "M&A·분할합병 · 법인설립"
+   },
+   {
+    "no": "06",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "flow": true,
+  "flowText": "부동산 승계 구조 STEP 01 · 개인A′ 부모님 개인부동산개인 명의 자산 → STEP 02 · 법인화(주)A′ 부모님 100%법인 전환 → STEP 03 · 승계(주)B 자녀법인 100%지분 이전",
+  "navSuc": true,
+  "blockOnHome": false,
+  "hrefs": [
+   "/plan/office/",
+   "/plan/family-corp/",
+   "/plan/retirement/",
+   "/plan/home-for-kids/",
+   "/plan/tax/",
+   "/plan/asset/",
+   "/plan/in-kind/",
+   "/plan/startup-succession/",
+   "/plan/family-business/",
+   "/plan/trust/",
+   "/plan/credit/",
+   "/plan/governance/",
+   "/plan/incorporation/",
+   "/plan/welfare-fund/",
+   "/plan/ma/"
+  ],
+  "errors": [],
+  "bad": []
+ },
+ "320x780": {
+  "hor": 0,
+  "over": [
+   "SPAN."
+  ],
+  "docH": 8682,
+  "tabs": [
+   "법인CEO 생애주기별 부동산 플랜 07",
+   "부동산·가업 승계 플랜 05",
+   "법인 재무·경영지원 플랜 06"
+  ],
+  "life": [
+   {
+    "no": "01",
+    "title": "사옥/공장 만들기 플랜"
+   },
+   {
+    "no": "02",
+    "title": "가족법인 부동산 플랜"
+   },
+   {
+    "no": "03",
+    "title": "CEO 은퇴 플랜"
+   },
+   {
+    "no": "04",
+    "title": "CEO 자녀 보금자리 플랜"
+   },
+   {
+    "no": "05",
+    "title": "개인소득세 절세 플랜"
+   },
+   {
+    "no": "06",
+    "title": "부동산 자산운용 플랜"
+   },
+   {
+    "no": "07",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "suc": [
+   {
+    "no": "01",
+    "title": "부동산 승계 플랜"
+   },
+   {
+    "no": "02",
+    "title": "자녀 창업법인으로가업승계"
+   },
+   {
+    "no": "03",
+    "title": "가업상속공제· 증여특례"
+   },
+   {
+    "no": "04",
+    "title": "상속 · 증여 신탁"
+   },
+   {
+    "no": "05",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "fin": [
+   {
+    "no": "01",
+    "title": "재무구조·신용등급 개선"
+   },
+   {
+    "no": "02",
+    "title": "주주이익 환원 · 지배구조"
+   },
+   {
+    "no": "03",
+    "title": "개인사업자 법인전환"
+   },
+   {
+    "no": "04",
+    "title": "사내근로복지기금"
+   },
+   {
+    "no": "05",
+    "title": "M&A·분할합병 · 법인설립"
+   },
+   {
+    "no": "06",
+    "title": "어떤 메뉴를 골라야 할지모르겠다면"
+   }
+  ],
+  "flow": true,
+  "flowText": "부동산 승계 구조 STEP 01 · 개인A′ 부모님 개인부동산개인 명의 자산 → STEP 02 · 법인화(주)A′ 부모님 100%법인 전환 → STEP 03 · 승계(주)B 자녀법인 100%지분 이전",
+  "navSuc": true,
+  "blockOnHome": false,
+  "hrefs": [
+   "/plan/office/",
+   "/plan/family-corp/",
+   "/plan/retirement/",
+   "/plan/home-for-kids/",
+   "/plan/tax/",
+   "/plan/asset/",
+   "/plan/in-kind/",
+   "/plan/startup-succession/",
+   "/plan/family-business/",
+   "/plan/trust/",
+   "/plan/credit/",
+   "/plan/governance/",
+   "/plan/incorporation/",
+   "/plan/welfare-fund/",
+   "/plan/ma/"
+  ],
+  "errors": [],
+  "bad": []
+ },
+ "inkind-1440": {
+  "docH": 3278,
+  "hor": 0,
+  "over": [],
+  "title": "부동산 승계 플랜 | 벨라리치(주)",
+  "h1": "부동산 승계 플랜",
+  "cat": "Solution 01 · 부동산·가업 승계 플랜",
+  "h3": "부동산승계 법인컨설팅",
+  "nodes": 3,
+  "cols": 3,
+  "pairs": 2,
+  "order": [
+   "div.wrap"
+  ],
+  "errors": [],
+  "bad": []
+ },
+ "inkind-390": {
+  "docH": 4073,
+  "hor": 0,
+  "over": [],
+  "title": "부동산 승계 플랜 | 벨라리치(주)",
+  "h1": "부동산 승계 플랜",
+  "cat": "Solution 01 · 부동산·가업 승계 플랜",
+  "h3": "부동산승계 법인컨설팅",
+  "nodes": 3,
+  "cols": 3,
+  "pairs": 2,
+  "order": [
+   "div.wrap"
+  ],
+  "errors": [],
+  "bad": []
+ },
+ "planPages": {
+  "office": {
+   "status": 200,
+   "title": "사옥/공장 만들기 플랜 | 벨라리치(주)",
+   "cat": "Solution 01 · 생애주기 플랜",
+   "h1": "사옥/공장 만들기 플랜",
+   "errs": []
+  },
+  "family-corp": {
+   "status": 200,
+   "title": "가족법인 부동산 플랜 | 벨라리치(주)",
+   "cat": "Solution 02 · 생애주기 플랜",
+   "h1": "가족법인 부동산 플랜",
+   "errs": []
+  },
+  "retirement": {
+   "status": 200,
+   "title": "CEO 은퇴 플랜 | 벨라리치(주)",
+   "cat": "Solution 03 · 생애주기 플랜",
+   "h1": "CEO 은퇴 플랜",
+   "errs": []
+  },
+  "home-for-kids": {
+   "status": 200,
+   "title": "CEO 자녀 보금자리 플랜 | 벨라리치(주)",
+   "cat": "Solution 04 · 생애주기 플랜",
+   "h1": "CEO 자녀 보금자리 플랜",
+   "errs": []
+  },
+  "tax": {
+   "status": 200,
+   "title": "개인소득세 절세 플랜 | 벨라리치(주)",
+   "cat": "Solution 05 · 생애주기 플랜",
+   "h1": "개인소득세 절세 플랜",
+   "errs": []
+  },
+  "asset": {
+   "status": 200,
+   "title": "부동산 자산운용 플랜 | 벨라리치(주)",
+   "cat": "Solution 06 · 생애주기 플랜",
+   "h1": "부동산 자산운용 플랜",
+   "errs": []
+  },
+  "in-kind": {
+   "status": 200,
+   "title": "부동산 승계 플랜 | 벨라리치(주)",
+   "cat": "Solution 01 · 부동산·가업 승계 플랜",
+   "h1": "부동산 승계 플랜",
+   "errs": []
+  },
+  "startup-succession": {
+   "status": 200,
+   "title": "자녀 창업법인으로 가업승계 | 벨라리치(주)",
+   "cat": "Solution 02 · 부동산·가업 승계 플랜",
+   "h1": "자녀 창업법인으로 가업승계",
+   "errs": []
+  },
+  "family-business": {
+   "status": 200,
+   "title": "가업상속공제 · 증여특례 | 벨라리치(주)",
+   "cat": "Solution 03 · 부동산·가업 승계 플랜",
+   "h1": "가업상속공제 · 증여특례",
+   "errs": []
+  },
+  "trust": {
+   "status": 200,
+   "title": "상속 · 증여 신탁 | 벨라리치(주)",
+   "cat": "Solution 04 · 부동산·가업 승계 플랜",
+   "h1": "상속 · 증여 신탁",
+   "errs": []
+  },
+  "credit": {
+   "status": 200,
+   "title": "재무구조·신용등급 개선 | 벨라리치(주)",
+   "cat": "Solution 01 · 법인재무·경영지원 플랜",
+   "h1": "재무구조·신용등급 개선",
+   "errs": []
+  },
+  "governance": {
+   "status": 200,
+   "title": "주주이익 환원 · 지배구조 | 벨라리치(주)",
+   "cat": "Solution 02 · 법인재무·경영지원 플랜",
+   "h1": "주주이익 환원 · 지배구조",
+   "errs": []
+  },
+  "incorporation": {
+   "status": 200,
+   "title": "개인사업자 법인전환 | 벨라리치(주)",
+   "cat": "Solution 03 · 법인재무·경영지원 플랜",
+   "h1": "개인사업자 법인전환",
+   "errs": []
+  },
+  "welfare-fund": {
+   "status": 200,
+   "title": "사내근로복지기금 | 벨라리치(주)",
+   "cat": "Solution 04 · 법인재무·경영지원 플랜",
+   "h1": "사내근로복지기금",
+   "errs": []
+  },
+  "ma": {
+   "status": 200,
+   "title": "M&A·분할합병 · 법인설립 | 벨라리치(주)",
+   "cat": "Solution 05 · 법인재무·경영지원 플랜",
+   "h1": "M&A·분할합병 · 법인설립",
+   "errs": []
+  }
+ }
+}
