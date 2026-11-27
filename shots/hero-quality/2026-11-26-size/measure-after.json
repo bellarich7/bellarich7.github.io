@@ -1,0 +1,497 @@
+[
+ {
+  "label": "2560",
+  "vp": [
+   2560,
+   1440,
+   1
+  ],
+  "src": "ceo-hero-pc-1x.webp",
+  "nat": [
+   466,
+   578
+  ],
+  "draw": [
+   466.0,
+   578.0
+  ],
+  "need": [
+   466,
+   578
+  ],
+  "up": 1.0,
+  "media": [
+   1774,
+   230.4,
+   466,
+   1209.6
+  ],
+  "facePx": [
+   107.2,
+   167.6
+  ],
+  "facePctVW": 4.2,
+  "facePctVH": 11.6,
+  "drawPctVW": 18.2,
+  "drawPctVH": 40.1,
+  "rightGap": 320.0,
+  "heroH": 1440,
+  "h1right": 1420,
+  "credRight": 1260,
+  "quoteTop": 1005.3,
+  "quoteBottom": 1085.9,
+  "docH": 6745,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "2560d2",
+  "vp": [
+   2560,
+   1440,
+   2
+  ],
+  "src": "ceo-hero-pc-2x.webp",
+  "nat": [
+   932,
+   1157
+  ],
+  "draw": [
+   466.0,
+   578.5
+  ],
+  "need": [
+   932,
+   1157
+  ],
+  "up": 1.0,
+  "media": [
+   1774,
+   230.4,
+   466,
+   1209.6
+  ],
+  "facePx": [
+   107.2,
+   167.8
+  ],
+  "facePctVW": 4.2,
+  "facePctVH": 11.7,
+  "drawPctVW": 18.2,
+  "drawPctVH": 40.2,
+  "rightGap": 320.0,
+  "heroH": 1440,
+  "h1right": 1420,
+  "credRight": 1260,
+  "quoteTop": 1005.3,
+  "quoteBottom": 1085.9,
+  "docH": 6745,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1920",
+  "vp": [
+   1920,
+   1080,
+   1
+  ],
+  "src": "ceo-hero-pc-1x.webp",
+  "nat": [
+   466,
+   578
+  ],
+  "draw": [
+   466.0,
+   578.0
+  ],
+  "need": [
+   466,
+   578
+  ],
+  "up": 1.0,
+  "media": [
+   1134,
+   172.8,
+   466,
+   907.2
+  ],
+  "facePx": [
+   107.2,
+   167.6
+  ],
+  "facePctVW": 5.6,
+  "facePctVH": 15.5,
+  "drawPctVW": 24.3,
+  "drawPctVH": 53.5,
+  "rightGap": 320.0,
+  "heroH": 1080,
+  "h1right": 1100,
+  "credRight": 940,
+  "quoteTop": 839.9,
+  "quoteBottom": 920.6,
+  "docH": 6385,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1920x15",
+  "vp": [
+   1920,
+   1080,
+   1.5
+  ],
+  "src": "ceo-hero-pc-15x.webp",
+  "nat": [
+   699,
+   868
+  ],
+  "draw": [
+   466.0,
+   578.7
+  ],
+  "need": [
+   699,
+   868
+  ],
+  "up": 1.0,
+  "media": [
+   1134,
+   172.8,
+   466,
+   907.2
+  ],
+  "facePx": [
+   107.2,
+   167.8
+  ],
+  "facePctVW": 5.6,
+  "facePctVH": 15.5,
+  "drawPctVW": 24.3,
+  "drawPctVH": 53.6,
+  "rightGap": 320.0,
+  "heroH": 1080,
+  "h1right": 1100,
+  "credRight": 940,
+  "quoteTop": 839.9,
+  "quoteBottom": 920.6,
+  "docH": 6385,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1920d2",
+  "vp": [
+   1920,
+   1080,
+   2
+  ],
+  "src": "ceo-hero-pc-2x.webp",
+  "nat": [
+   932,
+   1157
+  ],
+  "draw": [
+   466.0,
+   578.5
+  ],
+  "need": [
+   932,
+   1157
+  ],
+  "up": 1.0,
+  "media": [
+   1134,
+   172.8,
+   466,
+   907.2
+  ],
+  "facePx": [
+   107.2,
+   167.8
+  ],
+  "facePctVW": 5.6,
+  "facePctVH": 15.5,
+  "drawPctVW": 24.3,
+  "drawPctVH": 53.6,
+  "rightGap": 320.0,
+  "heroH": 1080,
+  "h1right": 1100,
+  "credRight": 940,
+  "quoteTop": 839.9,
+  "quoteBottom": 920.6,
+  "docH": 6385,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1440",
+  "vp": [
+   1440,
+   900,
+   1
+  ],
+  "src": "ceo-hero-pc-1x.webp",
+  "nat": [
+   466,
+   578
+  ],
+  "draw": [
+   466.0,
+   578.0
+  ],
+  "need": [
+   466,
+   578
+  ],
+  "up": 1.0,
+  "media": [
+   874,
+   144.1,
+   466,
+   756.3
+  ],
+  "facePx": [
+   107.2,
+   167.6
+  ],
+  "facePctVW": 7.4,
+  "facePctVH": 18.6,
+  "drawPctVW": 32.4,
+  "drawPctVH": 64.2,
+  "rightGap": 100.0,
+  "heroH": 900.4,
+  "h1right": 860,
+  "credRight": 700,
+  "quoteTop": 755.7,
+  "quoteBottom": 836.4,
+  "docH": 6197,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1440d2",
+  "vp": [
+   1440,
+   900,
+   2
+  ],
+  "src": "ceo-hero-pc-2x.webp",
+  "nat": [
+   932,
+   1157
+  ],
+  "draw": [
+   466.0,
+   578.5
+  ],
+  "need": [
+   932,
+   1157
+  ],
+  "up": 1.0,
+  "media": [
+   874,
+   144.1,
+   466,
+   756.3
+  ],
+  "facePx": [
+   107.2,
+   167.8
+  ],
+  "facePctVW": 7.4,
+  "facePctVH": 18.6,
+  "drawPctVW": 32.4,
+  "drawPctVH": 64.3,
+  "rightGap": 100.0,
+  "heroH": 900.4,
+  "h1right": 860,
+  "credRight": 700,
+  "quoteTop": 755.7,
+  "quoteBottom": 836.4,
+  "docH": 6197,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1366",
+  "vp": [
+   1366,
+   768,
+   1
+  ],
+  "src": "ceo-hero-pc-1x.webp",
+  "nat": [
+   466,
+   578
+  ],
+  "draw": [
+   466.0,
+   578.0
+  ],
+  "need": [
+   466,
+   578
+  ],
+  "up": 1.0,
+  "media": [
+   837,
+   122.9,
+   466,
+   645.2
+  ],
+  "facePx": [
+   107.2,
+   167.6
+  ],
+  "facePctVW": 7.8,
+  "facePctVH": 21.8,
+  "drawPctVW": 34.1,
+  "drawPctVH": 75.3,
+  "rightGap": 63.0,
+  "heroH": 768.1,
+  "h1right": 823,
+  "credRight": 663,
+  "quoteTop": 668.6,
+  "quoteBottom": 732.1,
+  "docH": 5976,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1280",
+  "vp": [
+   1280,
+   800,
+   1
+  ],
+  "src": "ceo-hero-pc-1x.webp",
+  "nat": [
+   466,
+   578
+  ],
+  "draw": [
+   466.0,
+   578.0
+  ],
+  "need": [
+   466,
+   578
+  ],
+  "up": 1.0,
+  "media": [
+   794,
+   128,
+   466,
+   672
+  ],
+  "facePx": [
+   107.2,
+   167.6
+  ],
+  "facePctVW": 8.4,
+  "facePctVH": 21.0,
+  "drawPctVW": 36.4,
+  "drawPctVH": 72.2,
+  "rightGap": 20.0,
+  "heroH": 800,
+  "h1right": 780,
+  "credRight": 620,
+  "quoteTop": 659.2,
+  "quoteBottom": 719.3,
+  "docH": 5926,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1081",
+  "vp": [
+   1081,
+   800,
+   1
+  ],
+  "src": "ceo-hero-pc-1x.webp",
+  "nat": [
+   466,
+   578
+  ],
+  "draw": [
+   466.0,
+   578.0
+  ],
+  "need": [
+   466,
+   578
+  ],
+  "up": 1.0,
+  "media": [
+   615,
+   128,
+   466,
+   672
+  ],
+  "facePx": [
+   107.2,
+   167.6
+  ],
+  "facePctVW": 9.9,
+  "facePctVH": 21.0,
+  "drawPctVW": 43.1,
+  "drawPctVH": 72.2,
+  "rightGap": 0.0,
+  "heroH": 800,
+  "h1right": 760,
+  "credRight": 600,
+  "quoteTop": 614.1,
+  "quoteBottom": 664.8,
+  "docH": 5718,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "m390",
+  "vp": [
+   390,
+   844,
+   2
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   351.9,
+   436.8
+  ],
+  "need": [
+   704,
+   874
+  ],
+  "up": 0.648,
+  "media": [
+   0,
+   666.7,
+   390,
+   436.8
+  ],
+  "facePx": [
+   80.9,
+   126.7
+  ],
+  "facePctVW": 20.8,
+  "facePctVH": 15.0,
+  "drawPctVW": 90.2,
+  "drawPctVH": 51.8,
+  "rightGap": 0.0,
+  "heroH": 1103.5,
+  "h1right": 370,
+  "credRight": 370,
+  "quoteTop": 557.1,
+  "quoteBottom": 614.7,
+  "docH": 8128,
+  "overflow": 0,
+  "errors": []
+ }
+]

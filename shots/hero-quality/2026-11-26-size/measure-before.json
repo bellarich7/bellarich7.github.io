@@ -1,0 +1,497 @@
+[
+ {
+  "label": "2560",
+  "vp": [
+   2560,
+   1440,
+   1
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   700.0,
+   868.9
+  ],
+  "need": [
+   700,
+   869
+  ],
+  "up": 0.645,
+  "media": [
+   1860,
+   230.4,
+   700,
+   1209.6
+  ],
+  "facePx": [
+   161.0,
+   252.0
+  ],
+  "facePctVW": 6.3,
+  "facePctVH": 17.5,
+  "drawPctVW": 27.3,
+  "drawPctVH": 60.3,
+  "rightGap": 0.0,
+  "heroH": 1440,
+  "h1right": 1420,
+  "credRight": 1260,
+  "quoteTop": 1005.3,
+  "quoteBottom": 1085.9,
+  "docH": 6745,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "2560d2",
+  "vp": [
+   2560,
+   1440,
+   2
+  ],
+  "src": "ceo-hero-2x.webp",
+  "nat": [
+   1400,
+   1738
+  ],
+  "draw": [
+   700.0,
+   869.0
+  ],
+  "need": [
+   1400,
+   1738
+  ],
+  "up": 1.0,
+  "media": [
+   1860,
+   230.4,
+   700,
+   1209.6
+  ],
+  "facePx": [
+   161.0,
+   252.0
+  ],
+  "facePctVW": 6.3,
+  "facePctVH": 17.5,
+  "drawPctVW": 27.3,
+  "drawPctVH": 60.3,
+  "rightGap": 0.0,
+  "heroH": 1440,
+  "h1right": 1420,
+  "credRight": 1260,
+  "quoteTop": 1005.3,
+  "quoteBottom": 1085.9,
+  "docH": 6745,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1920",
+  "vp": [
+   1920,
+   1080,
+   1
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   700.0,
+   868.9
+  ],
+  "need": [
+   700,
+   869
+  ],
+  "up": 0.645,
+  "media": [
+   1220,
+   172.8,
+   700,
+   907.2
+  ],
+  "facePx": [
+   161.0,
+   252.0
+  ],
+  "facePctVW": 8.4,
+  "facePctVH": 23.3,
+  "drawPctVW": 36.5,
+  "drawPctVH": 80.5,
+  "rightGap": 0.0,
+  "heroH": 1080,
+  "h1right": 1100,
+  "credRight": 940,
+  "quoteTop": 839.9,
+  "quoteBottom": 920.6,
+  "docH": 6385,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1920x15",
+  "vp": [
+   1920,
+   1080,
+   1.5
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   700.0,
+   868.9
+  ],
+  "need": [
+   1050,
+   1303
+  ],
+  "up": 0.967,
+  "media": [
+   1220,
+   172.8,
+   700,
+   907.2
+  ],
+  "facePx": [
+   161.0,
+   252.0
+  ],
+  "facePctVW": 8.4,
+  "facePctVH": 23.3,
+  "drawPctVW": 36.5,
+  "drawPctVH": 80.5,
+  "rightGap": 0.0,
+  "heroH": 1080,
+  "h1right": 1100,
+  "credRight": 940,
+  "quoteTop": 839.9,
+  "quoteBottom": 920.6,
+  "docH": 6385,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1920d2",
+  "vp": [
+   1920,
+   1080,
+   2
+  ],
+  "src": "ceo-hero-2x.webp",
+  "nat": [
+   1400,
+   1738
+  ],
+  "draw": [
+   700.0,
+   869.0
+  ],
+  "need": [
+   1400,
+   1738
+  ],
+  "up": 1.0,
+  "media": [
+   1220,
+   172.8,
+   700,
+   907.2
+  ],
+  "facePx": [
+   161.0,
+   252.0
+  ],
+  "facePctVW": 8.4,
+  "facePctVH": 23.3,
+  "drawPctVW": 36.5,
+  "drawPctVH": 80.5,
+  "rightGap": 0.0,
+  "heroH": 1080,
+  "h1right": 1100,
+  "credRight": 940,
+  "quoteTop": 839.9,
+  "quoteBottom": 920.6,
+  "docH": 6385,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1440",
+  "vp": [
+   1440,
+   900,
+   1
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   609.3,
+   756.3
+  ],
+  "need": [
+   609,
+   756
+  ],
+  "up": 0.561,
+  "media": [
+   740,
+   144.1,
+   700,
+   756.3
+  ],
+  "facePx": [
+   140.1,
+   219.3
+  ],
+  "facePctVW": 9.7,
+  "facePctVH": 24.4,
+  "drawPctVW": 42.3,
+  "drawPctVH": 84.0,
+  "rightGap": 0.0,
+  "heroH": 900.4,
+  "h1right": 860,
+  "credRight": 700,
+  "quoteTop": 755.7,
+  "quoteBottom": 836.4,
+  "docH": 6197,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1440d2",
+  "vp": [
+   1440,
+   900,
+   2
+  ],
+  "src": "ceo-hero-2x.webp",
+  "nat": [
+   1400,
+   1738
+  ],
+  "draw": [
+   609.2,
+   756.3
+  ],
+  "need": [
+   1218,
+   1513
+  ],
+  "up": 0.87,
+  "media": [
+   740,
+   144.1,
+   700,
+   756.3
+  ],
+  "facePx": [
+   140.1,
+   219.3
+  ],
+  "facePctVW": 9.7,
+  "facePctVH": 24.4,
+  "drawPctVW": 42.3,
+  "drawPctVH": 84.0,
+  "rightGap": 0.0,
+  "heroH": 900.4,
+  "h1right": 860,
+  "credRight": 700,
+  "quoteTop": 755.7,
+  "quoteBottom": 836.4,
+  "docH": 6197,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1366",
+  "vp": [
+   1366,
+   768,
+   1
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   519.8,
+   645.2
+  ],
+  "need": [
+   520,
+   645
+  ],
+  "up": 0.479,
+  "media": [
+   683,
+   122.9,
+   683,
+   645.2
+  ],
+  "facePx": [
+   119.6,
+   187.1
+  ],
+  "facePctVW": 8.8,
+  "facePctVH": 24.4,
+  "drawPctVW": 38.1,
+  "drawPctVH": 84.0,
+  "rightGap": 0.0,
+  "heroH": 768.1,
+  "h1right": 823,
+  "credRight": 663,
+  "quoteTop": 668.6,
+  "quoteBottom": 732.1,
+  "docH": 5976,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1280",
+  "vp": [
+   1280,
+   800,
+   1
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   541.4,
+   672.0
+  ],
+  "need": [
+   541,
+   672
+  ],
+  "up": 0.499,
+  "media": [
+   640,
+   128,
+   640,
+   672
+  ],
+  "facePx": [
+   124.5,
+   194.9
+  ],
+  "facePctVW": 9.7,
+  "facePctVH": 24.4,
+  "drawPctVW": 42.3,
+  "drawPctVH": 84.0,
+  "rightGap": 0.0,
+  "heroH": 800,
+  "h1right": 780,
+  "credRight": 620,
+  "quoteTop": 659.2,
+  "quoteBottom": 719.3,
+  "docH": 5926,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "1081",
+  "vp": [
+   1081,
+   800,
+   1
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   540.5,
+   670.9
+  ],
+  "need": [
+   540,
+   671
+  ],
+  "up": 0.498,
+  "media": [
+   540.5,
+   128,
+   540.5,
+   672
+  ],
+  "facePx": [
+   124.3,
+   194.6
+  ],
+  "facePctVW": 11.5,
+  "facePctVH": 24.3,
+  "drawPctVW": 50.0,
+  "drawPctVH": 83.9,
+  "rightGap": 0.0,
+  "heroH": 800,
+  "h1right": 760,
+  "credRight": 600,
+  "quoteTop": 614.1,
+  "quoteBottom": 664.8,
+  "docH": 5718,
+  "overflow": 0,
+  "errors": []
+ },
+ {
+  "label": "m390",
+  "vp": [
+   390,
+   844,
+   2
+  ],
+  "src": "QlAAA",
+  "nat": [
+   1086,
+   1348
+  ],
+  "draw": [
+   351.9,
+   436.8
+  ],
+  "need": [
+   704,
+   874
+  ],
+  "up": 0.648,
+  "media": [
+   0,
+   666.7,
+   390,
+   436.8
+  ],
+  "facePx": [
+   80.9,
+   126.7
+  ],
+  "facePctVW": 20.8,
+  "facePctVH": 15.0,
+  "drawPctVW": 90.2,
+  "drawPctVH": 51.8,
+  "rightGap": 0.0,
+  "heroH": 1103.5,
+  "h1right": 370,
+  "credRight": 370,
+  "quoteTop": 557.1,
+  "quoteBottom": 614.7,
+  "docH": 8128,
+  "overflow": 0,
+  "errors": []
+ }
+]
