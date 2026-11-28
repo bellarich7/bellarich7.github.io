@@ -2468,6 +2468,27 @@ const CATEGORY_META = [
 
 <!-- ========== INTRO SCREEN ========== -->
 <main id="main-content">
+<!-- ===== 저장된 결과지 다시보기(?sid=...) 로딩·안내 화면 ===== -->
+<style>
+  @keyframes sidspin { to { transform: rotate(360deg); } }
+  #screen-loading .sid-wrap { max-width: 520px; margin: 0 auto; padding: 90px 20px 70px; text-align: center; }
+  #screen-loading .sid-spinner { width: 44px; height: 44px; margin: 0 auto 24px; border: 3px solid #E8E3DA; border-top-color: #C5A47E; border-radius: 50%; animation: sidspin 0.9s linear infinite; }
+  #screen-loading .sid-title { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 700; color: #0B1933; margin: 0 0 12px; }
+  #screen-loading .sid-desc { font-size: 15px; line-height: 1.75; color: #5B6478; margin: 0; }
+  #screen-loading .sid-actions { margin-top: 28px; display: none; }
+  #screen-loading .sid-btn { display: inline-block; padding: 14px 24px; border: none; border-radius: 10px; background: #0B1933; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+</style>
+<div id="screen-loading" class="screen">
+  <div class="sid-wrap">
+    <div class="sid-spinner" id="sid-spinner" aria-hidden="true"></div>
+    <p class="sid-title" id="sid-title">진단 결과지를 불러오는 중입니다</p>
+    <p class="sid-desc" id="sid-desc">잠시만 기다려 주세요.</p>
+    <div class="sid-actions" id="sid-actions">
+      <button type="button" class="sid-btn" onclick="fallbackToIntro()">1분 진단 해 보기</button>
+    </div>
+  </div>
+</div>
+
 <div id="screen-intro" class="screen active">
 
   <!-- TEST ENTRY -->
@@ -3755,8 +3776,93 @@ const CATEGORY_META = [
     document.body.removeChild(ta);
   }
 
+  // ====== 저장된 결과지 다시보기 (?sid=...) ======
+  // 카카오 알림톡의 [결과확인] 버튼이 https://bellarich.co.kr/check/?sid=<세션ID> 로 들어온다.
+  // 진단 폼을 건너뛰고 그 세션의 결과지를 진단 직후와 같은 화면으로 바로 띄운다.
+  // 개인정보(이름·휴대폰 번호)는 서버가 내려주지 않고, 이 화면은 새 접수로 기록하지 않는다.
+  function bootSavedResult() {
+    let sid = '';
+    try { sid = (new URLSearchParams(window.location.search).get('sid') || '').trim(); } catch (e) { sid = ''; }
+    if (!sid) return;
+
+    // 다시보기는 새 진단이 아니다 — 접수·이탈·만족도 어느 것도 보내지 않는다.
+    dataCollectionAllowed = false;
+    showScreen('screen-loading');
+
+    function sidFail(msg) {
+      const sp = document.getElementById('sid-spinner');
+      if (sp) sp.style.display = 'none';
+      const t = document.getElementById('sid-title');
+      if (t) t.textContent = '결과지를 불러오지 못했습니다';
+      const d = document.getElementById('sid-desc');
+      if (d) d.textContent = msg;
+      const a = document.getElementById('sid-actions');
+      if (a) a.style.display = 'block';
+    }
+
+    if (!SUBMIT_ENDPOINT) { sidFail('진단 서버 주소가 설정되지 않았습니다.'); return; }
+
+    // Apps Script는 ?sid= 값을 자체 처리해 막는 경우가 있어 ?r= 로 넘긴다 (스크립트는 둘 다 받는다).
+    const url = SUBMIT_ENDPOINT + '?r=' + encodeURIComponent(sid);
+
+    fetch(url, { method: 'GET', cache: 'no-store' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (d) {
+        if (!d || d.found !== true) {
+          sidFail('이 링크에 해당하는 진단 기록을 찾지 못했습니다. 링크가 잘못되었거나 기록이 남아 있지 않을 수 있습니다. 1분 진단은 다시 하실 수 있습니다.');
+          return;
+        }
+        if (!CATEGORIES[d.category]) {
+          sidFail('진단 영역 정보를 읽지 못했습니다. 1분 진단을 다시 해 주세요.');
+          return;
+        }
+        const cat = CATEGORIES[d.category];
+        currentCategory = d.category;
+        currentQuestions = cat.questions || [];
+        answers.length = 0;
+        for (let i = 0; i < currentQuestions.length; i++) answers.push(null);
+        const grade = String(d.grade || '');
+        const info = (cat.grades && cat.grades[grade]) ? cat.grades[grade] : { name: '진단 결과', summary: '', findings: [], cta: {} };
+        lastResult = {
+          score: (typeof d.score === 'number' && isFinite(d.score)) ? d.score : 0,
+          grade: grade,
+          name: info.name || '진단 결과',
+          summary: info.summary || '',
+          findings: info.findings || [],
+          cta: info.cta || {},
+          category: cat
+        };
+        showResult();
+        // 다시보기에서는 "방금 보냈다"는 안내를 쓰지 않는다.
+        const box = document.querySelector('.result-mail-sent');
+        if (box) {
+          box.innerHTML = '<span class="result-mail-icon" aria-hidden="true">📄</span>' +
+            '<div class="result-mail-text"><strong>신청하신 진단 결과지입니다</strong>' +
+            '<span>' + (cat.title || '진단') + ' 영역 진단 결과를 다시 보고 계십니다.</span></div>';
+        }
+      })
+      .catch(function () {
+        sidFail('인터넷 연결이나 서버 상태 때문에 결과지를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
+      });
+  }
+
+  // 다시보기에 실패했을 때 진단 첫 화면으로 돌아간다.
+  function fallbackToIntro() {
+    showScreen('screen-intro');
+  }
+
   // 초기화: 랜딩 단계 도달 기록
   markStep(FUNNEL.LANDING);
+
+  // ?sid= 가 있으면 저장된 결과지를 바로 띄운다 (없으면 기존 진단 화면 그대로).
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootSavedResult);
+  } else {
+    bootSavedResult();
+  }
 </script>
 
 <!-- Scroll to top button -->
