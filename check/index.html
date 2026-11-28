@@ -3841,7 +3841,7 @@ const CATEGORY_META = [
         if (box) {
           box.innerHTML = '<span class="result-mail-icon" aria-hidden="true">📄</span>' +
             '<div class="result-mail-text"><strong>신청하신 진단 결과지입니다</strong>' +
-            '<span>' + (cat.title || '진단') + ' 영역 진단 결과를 다시 보고 계십니다.</span></div>';
+            '<span>' + (d.category_label || cat.title || '진단') + ' 진단 결과를 다시 보고 계십니다.</span></div>';
         }
       })
       .catch(function () {
