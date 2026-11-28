@@ -649,23 +649,25 @@
     box-shadow: 0 4px 20px rgba(15, 37, 71, 0.04);
   }
   .findings-title {
-    font-size: 17px; font-weight: 800; color: #0f2547;
+    font-size: 19px; font-weight: 800; color: #0f2547;
     margin: 0 0 18px; letter-spacing: -0.3px;
   }
   .finding {
     display: flex; align-items: flex-start; gap: 12px;
     padding: 14px 16px;
-    background: #fafbfc;
-    border-left: 3px solid #b08d4f;
+    background: #fdfaf3;
+    border: 1px solid #efe4cc;
+    border-left: 4px solid #b08d4f;
     border-radius: 6px;
     margin-bottom: 10px;
-    font-size: 15.5px; color: #111827; font-weight: 500; line-height: 1.6;
+    font-size: 17px; color: #0f2547; font-weight: 600; line-height: 1.6;
+    word-break: keep-all;
   }
   .finding:last-child { margin-bottom: 0; }
   .finding-icon {
     flex-shrink: 0;
-    color: #b08d4f; font-weight: 800; font-size: 14px;
-    margin-top: 2px;
+    color: #b08d4f; font-weight: 800; font-size: 16px;
+    margin-top: 1px;
   }
 
   /* 문항별 진단 의견 (예전 메일 결과지의 6문항 상세 의견) */
@@ -974,7 +976,8 @@
     .grade-circle { width: 96px; height: 96px; font-size: 48px; }
     .grade-name { font-size: 21px; }
     .qa-card { padding: 24px 18px; }
-    .finding { font-size: 15px; }
+    .findings-title { font-size: 18.5px; }
+    .finding { font-size: 16.5px; }
     .qa-q { font-size: 16.5px; }
     .qa-feedback { font-size: 15px; padding: 13px 14px; }
     .qa-answer-text { font-size: 14px; }
