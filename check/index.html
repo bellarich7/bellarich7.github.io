@@ -668,6 +668,53 @@
     margin-top: 2px;
   }
 
+  /* 문항별 진단 의견 (예전 메일 결과지의 6문항 상세 의견) */
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #ececec;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(15, 37, 71, 0.04);
+  }
+  .qa-title {
+    font-size: 15px; font-weight: 800; color: #0f2547;
+    margin: 0 0 6px; letter-spacing: -0.3px;
+  }
+  .qa-sub {
+    font-size: 12.5px; color: #8a93a8;
+    margin: 0 0 6px; line-height: 1.6;
+  }
+  .qa-item { padding: 20px 0 2px; }
+  .qa-item + .qa-item { border-top: 1px solid #eef0f3; }
+  .qa-num {
+    font-size: 11.5px; font-weight: 800; letter-spacing: 0.08em;
+    color: #b08d4f; margin-bottom: 6px;
+  }
+  .qa-q {
+    font-size: 15px; font-weight: 700; color: #0f2547;
+    line-height: 1.5; margin: 0 0 12px; letter-spacing: -0.2px;
+  }
+  .qa-answer {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 8px;
+    margin-bottom: 12px;
+  }
+  .qa-answer-label { font-size: 11.5px; color: #8a93a8; font-weight: 600; }
+  .qa-answer-text {
+    font-size: 13.5px; color: #1a1f2e; font-weight: 700;
+    background: #fdf6e3; border: 1px solid #f0e3c4;
+    border-radius: 100px; padding: 4px 12px;
+  }
+  .qa-feedback {
+    font-size: 13.5px; color: #4a5263; line-height: 1.75;
+    margin: 0 0 16px;
+    padding: 14px 16px;
+    background: #fafbfc;
+    border-left: 3px solid #c9a14a;
+    border-radius: 6px;
+    word-break: keep-all;
+  }
+
   .cta-card {
     background: linear-gradient(135deg, #0f2547 0%, #1a3a6b 100%);
     color: #ffffff;
@@ -923,6 +970,10 @@
     .q-text { font-size: 19px; }
     .grade-circle { width: 96px; height: 96px; font-size: 48px; }
     .grade-name { font-size: 21px; }
+    .qa-card { padding: 24px 18px; }
+    .qa-q { font-size: 14.5px; }
+    .qa-feedback { font-size: 13px; padding: 13px 14px; }
+    .qa-answer-text { font-size: 13px; }
     .credentials { grid-template-columns: 1fr; }
     .services { grid-template-columns: 1fr; }
     .hero-stat-num { font-size: 17px; }
@@ -936,7 +987,8 @@
     .result-top { background: #ffffff !important; color: #000000 !important; padding: 24px 0; }
     .grade-circle { box-shadow: none; border: 2px solid #0f2547; }
     .grade-name, .grade-summary { color: #000000 !important; }
-    .score-card, .findings-card, .cta-card { box-shadow: none; border: 1px solid #cccccc; page-break-inside: avoid; }
+    .score-card, .findings-card, .qa-card, .cta-card { box-shadow: none; border: 1px solid #cccccc; page-break-inside: avoid; }
+    .qa-feedback { background: #ffffff !important; }
     .cta-card { background: #ffffff !important; color: #000000 !important; }
     .cta-eyebrow, .cta-title, .cta-desc { color: #000000 !important; }
     .cta-perk { border: 1px solid #cccccc; color: #000000 !important; background: transparent !important; }
@@ -2845,6 +2897,12 @@ const CATEGORY_META = [
         <div id="findings-list"></div>
       </div>
 
+      <div class="qa-card" id="qa-card">
+        <h3 class="qa-title">문항별 진단 의견</h3>
+        <p class="qa-sub">선택하신 답변과, 그 답변이 뜻하는 바를 문항별로 정리했습니다.</p>
+        <div id="qa-list"></div>
+      </div>
+
       <div class="cta-card">
         <div class="cta-inner">
           <div class="cta-eyebrow" id="cta-eyebrow">무료 1:1 진단</div>
@@ -3179,6 +3237,9 @@ const CATEGORY_META = [
   let currentCategory = null;       // 'tax' | 'realestate' | 'succession' | 'retirement' | 'management'
   let currentQuestions = [];        // 현재 카테고리 questions 배열
   const answers = [];                // 동적 길이
+  // ?sid= 결과지 다시보기에서 서버가 내려준 답변 라벨·진단 의견 [{label, feedback}].
+  // 방금 진단을 마친 경우에는 null 이고, answers 의 선택지 번호로 찾는다.
+  let savedQa = null;
 
   // ====== RENDER ======
   function showScreen(id) {
@@ -3219,6 +3280,7 @@ const CATEGORY_META = [
     current = 0;
     answers.length = 0;
     for (let i = 0; i < currentQuestions.length; i++) answers.push(null);
+    savedQa = null;   // 새 진단이므로 다시보기용 답변은 버린다
     // 진행률 라벨 업데이트
     const label = document.getElementById('q-category-label');
     if (label) label.textContent = CATEGORIES[id].subtitle;
@@ -3472,9 +3534,8 @@ const CATEGORY_META = [
       ctaDescEl.textContent = kakaoCtaDescs[catId] || '제도나 기한에 변화가 생기면 카카오톡으로 알려드립니다.';
     }
 
-    // 화면에는 등급 + 한 줄 멘트 + 점수만 표시 (findings는 결과지에만)
-    const findingsCard = document.querySelector('.findings-card');
-    if (findingsCard) findingsCard.style.display = 'none';
+    // 핵심 포인트 + 문항별 진단 의견 — 예전 메일 결과지에 담기던 내용을 화면에도 그대로 편다.
+    renderResultDetails(r);
 
     // 상담 CTA — 등급별 cta 문구는 쓰지 않는다.
     // quiz-data.js 의 cta.desc 에 검증되지 않은 절감률 수치가 있어서,
@@ -3495,6 +3556,73 @@ const CATEGORY_META = [
     markStep(FUNNEL.SUBMITTED);
     sendData(true);
     markStep(FUNNEL.RESULT);
+  }
+
+  // ====== RESULT: 핵심 포인트 · 문항별 진단 의견 ======
+  // 예전에는 결과지를 메일로만 보냈기 때문에 화면에서는 findings-card 를 숨겼다.
+  // 이제는 카카오 알림톡의 [결과확인] 링크로 들어온 웹 결과지가 완결된 리포트 역할을 하므로,
+  // 등급 바로 아래에 핵심 포인트와 6개 문항별 상세 의견을 모두 보여 준다.
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function renderFindings(r) {
+    const card = document.querySelector('.findings-card');
+    const list = document.getElementById('findings-list');
+    if (!card || !list) return;
+    const findings = (r && r.findings ? r.findings : []).filter(function (t) {
+      return t && String(t).trim();
+    });
+    if (!findings.length) { card.style.display = 'none'; return; }
+    card.style.display = '';
+    list.innerHTML = findings.map(function (t, i) {
+      return '<div class="finding">' +
+             '<span class="finding-icon" aria-hidden="true">' + (i + 1) + '</span>' +
+             '<span>' + escapeHtml(t) + '</span></div>';
+    }).join('');
+  }
+
+  function renderQa() {
+    const card = document.getElementById('qa-card');
+    const list = document.getElementById('qa-list');
+    if (!card || !list) return;
+
+    const questions = currentQuestions || [];
+    const total = savedQa ? Math.max(questions.length, savedQa.length) : questions.length;
+    let html = '';
+    let shown = 0;
+    for (let i = 0; i < total; i++) {
+      const q = questions[i] || {};
+      let label = '';
+      let feedback = '';
+      if (savedQa) {
+        const s = savedQa[i];
+        if (s) { label = s.label || ''; feedback = s.feedback || ''; }
+      } else {
+        const idx = answers[i];
+        const opt = (typeof idx === 'number' && q.options && q.options[idx]) ? q.options[idx] : null;
+        if (opt) { label = opt.label || ''; feedback = opt.feedback || ''; }
+      }
+      if (!label && !feedback) continue;
+      shown++;
+      html += '<div class="qa-item">' +
+        '<div class="qa-num">문항 ' + (i + 1) + '</div>' +
+        (q.text ? '<p class="qa-q">' + escapeHtml(q.text) + '</p>' : '') +
+        (label ? '<div class="qa-answer"><span class="qa-answer-label">선택하신 답</span>' +
+                 '<span class="qa-answer-text">' + escapeHtml(label) + '</span></div>' : '') +
+        (feedback ? '<p class="qa-feedback">' + escapeHtml(feedback) + '</p>' : '') +
+        '</div>';
+    }
+    if (!shown) { card.style.display = 'none'; return; }
+    card.style.display = '';
+    list.innerHTML = html;
+  }
+
+  function renderResultDetails(r) {
+    renderFindings(r);
+    renderQa();
   }
 
   // ====== RETAKE ======
@@ -3826,6 +3954,19 @@ const CATEGORY_META = [
         for (let i = 0; i < currentQuestions.length; i++) answers.push(null);
         const grade = String(d.grade || '');
         const info = (cat.grades && cat.grades[grade]) ? cat.grades[grade] : { name: '진단 결과', summary: '', findings: [], cta: {} };
+        // 서버가 내려준 답변 라벨과 진단 의견을 문항 순서대로 붙여 둔다.
+        // showResult() → renderQa() 가 이 값을 우선 사용한다.
+        const ansArr = Array.isArray(d.answers) ? d.answers : [];
+        const fbArr = Array.isArray(d.feedback) ? d.feedback : [];
+        if (ansArr.length || fbArr.length) {
+          savedQa = [];
+          const n = Math.max(ansArr.length, fbArr.length);
+          for (let i = 0; i < n; i++) {
+            savedQa.push({ label: ansArr[i] || '', feedback: fbArr[i] || '' });
+          }
+        } else {
+          savedQa = null;
+        }
         lastResult = {
           score: (typeof d.score === 'number' && isFinite(d.score)) ? d.score : 0,
           grade: grade,
